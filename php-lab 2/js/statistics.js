@@ -1,5 +1,5 @@
 import {sessionScore} from './quiz.js';
-import {needsReview} from './storage.js';
+import {needsReview} from './storage.js?v=erreurs-20261125';
 export function stats(bank,state) {
   const byId=new Map(bank.map(q=>[q.id,q])), entries=bank.map(q=>state.progress[q.id]).filter(Boolean);
   const attempts=entries.reduce((n,p)=>n+p.attempts,0),correct=entries.reduce((n,p)=>n+p.correct,0);

@@ -10,7 +10,7 @@
 - Le même essai n’est pas compté deux fois ; une nouvelle réponse incorrecte réactive une erreur retirée.
 - Les anciennes sauvegardes reconnaissent les erreurs déjà réussies sans effacer leurs résultats.
 
-Les JavaScript modulaire et autonome passent la vérification de syntaxe. La version autonome a été régénérée à partir des modules corrigés.
+Les modules modifiés portent une version dans leurs URL pour éviter de réutiliser l’ancien suivi depuis le cache après publication. Les JavaScript modulaire et autonome passent la vérification de syntaxe. La version autonome a été régénérée à partir des modules corrigés.
 
 
 La révision 2 comporte **21 tests réussis**, des questions autonomes et des examens limités aux chapitres 2 et 3. Voir [le rapport de révision 2](REVISION-2.md) pour la portée actuelle et la limite du contrôle visuel.

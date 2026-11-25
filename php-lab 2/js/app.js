@@ -1,7 +1,7 @@
 import {shuffle,isAnswered,exactAnswer,selectQuestions,makeSession,sessionScore,elapsedSeconds,remainingSeconds} from './quiz.js';
 import {generateExam, EXAM_CHAPTERS, EXAM_COUNTS} from './exam.js';
-import {loadState,saveState,validateState,freshState,recordAttempt,archiveSession,needsReview,dismissError} from './storage.js';
-import {stats} from './statistics.js';
+import {loadState,saveState,validateState,freshState,recordAttempt,archiveSession,needsReview,dismissError} from './storage.js?v=erreurs-20261125';
+import {stats} from './statistics.js?v=erreurs-20261125';
 import {escapeHtml as e,highlight,mountEditor} from './code-editor.js';
 const $=s=>document.querySelector(s), main=$('#main');
 let bank=[],chapters=[],byId,state,route='',saveWarning=false,errorTab='errors';
