@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {spawnSync} from 'node:child_process';
 import {shuffle,exactAnswer,makeSession,sessionScore,selectQuestions,remainingSeconds,isAnswered} from '../js/quiz.js';
 import {generateExam, EXAM_CHAPTERS, hasExamComposition} from '../js/exam.js';
-import {freshState,validateState,recordAttempt,archiveSession,loadState,saveState} from '../js/storage.js';
+import {freshState,validateState,recordAttempt,archiveSession,loadState,saveState,needsReview,dismissError} from '../js/storage.js';
 import {stats} from '../js/statistics.js';
 const bank=[1,2,3,4].flatMap(i=>JSON.parse(readFileSync(new URL(`../data/chapitre-${i}.json`,import.meta.url))));
 const byId=new Map(bank.map(q=>[q.id,q]));
@@ -82,4 +82,74 @@ test('tous les extraits PHP ajoutés aux QCM passent la vérification de syntaxe
     const r=spawnSync('php',['-l'],{input:'<?php\n'+code,encoding:'utf8'});
     assert.equal(r.status,0,`${q.id}: ${r.stdout} ${r.stderr}`);
   }
+});
+
+
+test('une reprise entièrement juste vide les erreurs sans déclarer la maîtrise',()=>{
+  const state=freshState(),questions=[bank.find(q=>q.type==='unique'),bank.find(q=>q.type==='multiple'),bank.find(q=>q.type==='code')];
+  const initial=makeSession(questions,{mode:'custom'});
+  for(const q of questions)recordAttempt(state,initial,q,false);
+  assert.equal(stats(bank,state).errors.length,3);
+  const retry=makeSession(stats(bank,state).errors,{mode:'errors',immediate:true});
+  for(const q of questions){
+    if(q.type==='code'){retry.answers[q.id]=q.answer;retry.grades[q.id]=1;recordAttempt(state,retry,q,retry.grades[q.id]===1);}
+    else{retry.answers[q.id]=[...q.answer].reverse();recordAttempt(state,retry,q,exactAnswer(q,retry.answers[q.id]));}
+    assert.equal(needsReview(state.progress[q.id]),false);
+  }
+  retry.status='submitted';retry.submittedAt=Date.now();archiveSession(state,retry);
+  assert.equal(stats(bank,state).errors.length,0);assert.equal(stats(bank,state).mastered,0);
+  assert.equal(stats(bank,state).attempts,6);assert.equal(stats(bank,state).success,50);
+  state.current=retry;
+  const restored=validateState(JSON.parse(JSON.stringify(state)),byId);
+  assert.equal(stats(bank,restored).errors.length,0);
+  for(const q of questions)recordAttempt(restored,restored.current,q,false);
+  assert.equal(stats(bank,restored).errors.length,0);assert.equal(stats(bank,restored).attempts,6);
+});
+test('réponse multiple incomplète et code à 50 % restent à retravailler',()=>{
+  const state=freshState(),multiple=bank.find(q=>q.type==='multiple'),code=bank.find(q=>q.type==='code');
+  recordAttempt(state,makeSession([multiple]),multiple,exactAnswer(multiple,multiple.answer.slice(1)));
+  recordAttempt(state,makeSession([code]),code,.5===1);
+  assert.deepEqual(stats(bank,state).errors.map(q=>q.id).sort(),[multiple.id,code.id].sort());
+  recordAttempt(state,makeSession([multiple]),multiple,exactAnswer(multiple,multiple.answer));
+  recordAttempt(state,makeSession([code]),code,1===1);
+  assert.equal(stats(bank,state).errors.length,0);
+});
+test('retrait manuel persistant sans altérer compteurs, favoris ni historique',()=>{
+  const state=freshState(),q=bank[0],session=makeSession([q]);
+  recordAttempt(state,session,q,false);session.status='submitted';session.submittedAt=Date.now();
+  archiveSession(state,session);state.current=session;state.favorites=[q.id];
+  const before=JSON.parse(JSON.stringify(state));
+  assert.equal(dismissError(state,q.id),true);assert.equal(stats(bank,state).errors.length,0);
+  assert.equal(stats(bank,state).mastered,0);assert.equal(stats(bank,state).success,0);
+  const {errorDismissed,...counts}=state.progress[q.id];assert.equal(errorDismissed,true);
+  assert.deepEqual(counts,before.progress[q.id]);assert.deepEqual(state.history,before.history);
+  assert.deepEqual(state.current,before.current);assert.deepEqual(state.favorites,before.favorites);
+  assert.deepEqual(validateState(JSON.parse(JSON.stringify(state)),byId),state);
+  const original=globalThis.localStorage;let saved;
+  try{
+    globalThis.localStorage={getItem:()=>saved,setItem:(key,value)=>{saved=value;}};
+    assert.equal(saveState(state),true);const restored=loadState(byId);
+    assert.equal(stats(bank,restored).errors.length,0);assert.deepEqual(restored,state);
+  }finally{globalThis.localStorage=original;}
+});
+test('un nouvel échec réactive une erreur retirée, sans double comptage des anciens essais',()=>{
+  const state=freshState(),q=bank[0],session=makeSession([q]);
+  recordAttempt(state,session,q,false);dismissError(state,q.id);
+  recordAttempt(state,session,q,false);
+  assert.equal(stats(bank,state).errors.length,0);assert.equal(state.progress[q.id].attempts,1);
+  recordAttempt(state,makeSession([q]),q,false);
+  assert.equal(stats(bank,state).errors.length,1);assert.equal(state.progress[q.id].attempts,2);
+  dismissError(state,q.id);recordAttempt(state,makeSession([q]),q,true);
+  assert.equal(stats(bank,state).errors.length,0);assert.equal(state.progress[q.id].streak,1);
+  recordAttempt(state,makeSession([q]),q,false);assert.equal(stats(bank,state).errors.length,1);
+});
+test('les anciennes sauvegardes retirent les erreurs déjà réussies et gardent les échecs',()=>{
+  const state=freshState();
+  for(let streak=0;streak<=2;streak++)state.progress[bank[streak].id]={attempts:streak+1,correct:streak,wrong:1,streak,lastAt:1234};
+  const restored=validateState(JSON.parse(JSON.stringify(state)),byId);
+  assert.deepEqual(restored.progress,state.progress);
+  assert.deepEqual(stats(bank,restored).errors.map(q=>q.id),[bank[0].id]);
+  assert.equal(dismissError(restored,bank[1].id),false);assert.equal(dismissError(restored,'inconnue'),false);
+  const invalid=JSON.parse(JSON.stringify(state));invalid.progress[bank[0].id].errorDismissed='true';
+  assert.throws(()=>validateState(invalid,byId),/Statistiques/);
 });

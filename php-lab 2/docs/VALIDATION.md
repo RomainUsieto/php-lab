@@ -1,5 +1,18 @@
 # Journal de validation
 
+## Correctif du suivi des erreurs — 25 novembre 2026
+
+`npm test` : **26 tests réussis, zéro échec**. Les cinq nouveaux tests vérifient :
+
+- Une reprise juste retire immédiatement chaque question des erreurs, y compris après remise et restauration. La maîtrise conserve son seuil de trois succès.
+- Un QCM multiple incomplet ou un code auto-évalué à 50 % reste à retravailler.
+- Le retrait manuel conserve les compteurs, favoris et historique ; il persiste dans LocalStorage et dans une sauvegarde JSON.
+- Le même essai n’est pas compté deux fois ; une nouvelle réponse incorrecte réactive une erreur retirée.
+- Les anciennes sauvegardes reconnaissent les erreurs déjà réussies sans effacer leurs résultats.
+
+Les JavaScript modulaire et autonome passent la vérification de syntaxe. La version autonome a été régénérée à partir des modules corrigés.
+
+
 La révision 2 comporte **21 tests réussis**, des questions autonomes et des examens limités aux chapitres 2 et 3. Voir [le rapport de révision 2](REVISION-2.md) pour la portée actuelle et la limite du contrôle visuel.
 
 ## Validation initiale — avant la révision 2

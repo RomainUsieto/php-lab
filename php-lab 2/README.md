@@ -4,6 +4,8 @@ Application de révision statique, en français, à partir des quatre PowerPoint
 
 ## Mise à jour du site déjà publié
 
+Le suivi des erreurs est corrigé : les questions déjà réussies lors d’une reprise quittent automatiquement la liste, y compris dans les anciennes sauvegardes. Les résultats et l’historique sont conservés.
+
 La révision 2 corrige les renvois à des exemples absents et limite les nouveaux examens blancs aux chapitres 2 et 3. La banque des quatre chapitres reste disponible dans les autres modes. Les identifiants et réponses attendues sont conservés ; les anciens résultats et examens sauvegardés restent lisibles. Une copie commencée avec l’ancienne formule est identifiée comme « Ancien examen · 4 chapitres ».
 
 Pour remplacer un seul fichier sur GitHub, utiliser l’`index.html` autonome fourni dans `php-lab-mise-a-jour`. Dans le dépôt actuel, ouvrir le dossier **php-lab 2**, puis **Add file → Upload files**, envoyer cet `index.html` et valider **Commit changes**. Il contient tout le code et toutes les questions : les anciens dossiers ne sont plus utilisés par cette page. L’adresse publique reste la même et la clé LocalStorage est conservée.
@@ -36,7 +38,7 @@ Pour `index.html`, le serveur sert uniquement les fichiers statiques. Il n’ex�
 - **Par chapitre** : résumé, fiche détaillée, 10 ou 50 QCM, 15 exercices, couverture, taux de réussite et thèmes à retravailler.
 - **QCM personnalisé** : chapitres, nombre, difficulté, choix unique/multiples/vrai-faux, correction immédiate ou différée, minuterie facultative. Si le filtre fournit moins de questions, la taille réelle est annoncée et limitée au disponible.
 - **Code** : éditeur avec coloration, numéros de ligne, Tab et indentation à la ligne suivante, indice, référence, variantes, explications et grille de vérification.
-- **Erreurs** : questions ratées et questions marquées difficiles, reprises ciblées, corrections, regroupement des erreurs récurrentes par thème. Une erreur quitte la liste après trois bonnes réponses consécutives sur la question.
+- **Erreurs** : questions ratées et questions marquées difficiles, reprises ciblées, corrections, regroupement des erreurs récurrentes par thème. Une erreur quitte la liste dès la prochaine bonne réponse (100 % pour le code). Le bouton « Retirer de mes erreurs » permet aussi un retrait manuel, conservé à la réouverture et dans les exports. Ce retrait ne modifie ni les résultats ni les favoris et ne compte pas comme une réussite. Une nouvelle réponse incorrecte remet la question dans la liste. La maîtrise reste calculée après trois bonnes réponses consécutives.
 - **Express** : douze questions équilibrées (deux QCM et un code par chapitre), erreurs prioritaires puis notions essentielles.
 
 Les quatre fiches et la fiche globale « L’essentiel à connaître avant l’examen » sont consultables et imprimables. « Imprimer les 5 fiches » ouvre une page réunissant les fiches ; utiliser ensuite le bouton d’impression pour enregistrer en PDF.

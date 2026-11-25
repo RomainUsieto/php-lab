@@ -8,8 +8,9 @@ export function validateState(data, byId) {
   const state=freshState();
   for(const [id,p] of Object.entries(data.progress)) {
     if(!byId.has(id)) continue;
-    if(!plain(p)||!['attempts','correct','streak','wrong'].every(k=>Number.isInteger(p[k])&&p[k]>=0)||p.correct>p.attempts||p.wrong>p.attempts||p.streak>p.correct||p.correct+p.wrong!==p.attempts) throw new Error('Statistiques incohérentes.');
+    if(!plain(p)||!['attempts','correct','streak','wrong'].every(k=>Number.isInteger(p[k])&&p[k]>=0)||p.correct>p.attempts||p.wrong>p.attempts||p.streak>p.correct||p.correct+p.wrong!==p.attempts||(p.errorDismissed!==undefined&&typeof p.errorDismissed!=='boolean')) throw new Error('Statistiques incohérentes.');
     state.progress[id]={attempts:p.attempts,correct:p.correct,streak:p.streak,wrong:p.wrong,lastAt:finite(p.lastAt)?p.lastAt:0};
+    if(p.errorDismissed===true)state.progress[id].errorDismissed=true;
   }
   state.favorites=[...new Set(data.favorites.filter(id=>typeof id==='string'&&byId.has(id)))];
   state.prefs={theme:['light','dark'].includes(data.prefs.theme)?data.prefs.theme:'light',duration:Math.min(180,Math.max(1,Number(data.prefs.duration)||45)),qcmWeight:Math.min(20,Math.max(.25,Number(data.prefs.qcmWeight)||1)),codeWeight:Math.min(20,Math.max(.25,Number(data.prefs.codeWeight)||5))};
@@ -35,9 +36,19 @@ export function validateState(data, byId) {
 }
 export function loadState(byId) { try {const raw=localStorage.getItem(KEY);return raw?validateState(JSON.parse(raw),byId):freshState();}catch {return freshState();} }
 export function saveState(state) {try{localStorage.setItem(KEY,JSON.stringify(state));return true;}catch{return false;} }
+export function needsReview(progress) {
+  return !!(progress?.wrong>0&&progress.streak===0&&progress.errorDismissed!==true);
+}
+export function dismissError(state,id) {
+  if(!needsReview(state.progress[id]))return false;
+  state.progress[id].errorDismissed=true;
+  return true;
+}
 export function recordAttempt(state,s,q,success) {
   if(s.recorded[q.id])return;
   const p=state.progress[q.id]||{attempts:0,correct:0,wrong:0,streak:0,lastAt:0};
+  // Une nouvelle erreur réactive la révision sans effacer les résultats passés.
+  delete p.errorDismissed;
   p.attempts++;if(success){p.correct++;p.streak++;}else{p.wrong++;p.streak=0;}p.lastAt=Date.now();state.progress[q.id]=p;s.recorded[q.id]=true;
 }
 export function archiveSession(state,s){const ix=state.history.findIndex(h=>h.id===s.id);const copy=JSON.parse(JSON.stringify(s));if(ix>=0)state.history[ix]=copy;else state.history.push(copy);state.history=state.history.slice(-100);}
