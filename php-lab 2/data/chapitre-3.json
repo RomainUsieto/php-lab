@@ -1,0 +1,2391 @@
+[
+  {
+    "id": "c3-q001",
+    "chapter": 3,
+    "slides": [
+      3
+    ],
+    "theme": "Persistance",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Pourquoi les seuls objets en mémoire ne suffisent-ils pas à une application de gestion ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Leurs données disparaissent à la fin de l’exécution",
+        "explanation": "Un stockage durable est nécessaire."
+      },
+      {
+        "id": "1",
+        "text": "Leur visibilité private interdit toute lecture ultérieure",
+        "explanation": "Le problème de durée de vie est distinct de la visibilité."
+      },
+      {
+        "id": "2",
+        "text": "Leur constructeur stocke automatiquement les valeurs dans une table temporaire",
+        "explanation": "Le constructeur ne crée pas de stockage persistant automatiquement."
+      },
+      {
+        "id": "3",
+        "text": "Un nouvel objet possède nécessairement les valeurs du précédent",
+        "explanation": "Sans stockage et relecture, les données ne se transmettent pas automatiquement."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La persistance conserve les informations au-delà de la vie du programme.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q002",
+    "chapter": 3,
+    "slides": [
+      4
+    ],
+    "theme": "Persistance",
+    "difficulty": "facile",
+    "type": "multiple",
+    "prompt": "Quelles sont les deux étapes de mise en place de la persistance décrites ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Prévoir une structure permanente",
+        "explanation": "La base ou le fichier accueille durablement les informations."
+      },
+      {
+        "id": "1",
+        "text": "Créer une passerelle avec les objets",
+        "explanation": "Il faut enregistrer et retrouver les données du modèle objet."
+      },
+      {
+        "id": "2",
+        "text": "Déclarer tous les attributs métier static",
+        "explanation": "La portée statique ne conserve pas les données après l’exécution."
+      },
+      {
+        "id": "3",
+        "text": "Allonger uniquement la durée du constructeur",
+        "explanation": "Cela ne met pas en place un support permanent ni une passerelle."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Structure de stockage et passerelle sont complémentaires.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q003",
+    "chapter": 3,
+    "slides": [
+      4
+    ],
+    "theme": "Stockage",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quels supports permanents le cours cite-t-il ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Base relationnelle et fichier XML",
+        "explanation": "Les deux supports sont explicitement mentionnés."
+      },
+      {
+        "id": "1",
+        "text": "Les propriétés statiques de toutes les classes",
+        "explanation": "Elles restent des données mémoire pendant l’exécution."
+      },
+      {
+        "id": "2",
+        "text": "Les seules variables d’instance privées",
+        "explanation": "La visibilité ne transforme pas la mémoire en stockage permanent."
+      },
+      {
+        "id": "3",
+        "text": "Le constructeur et le destructeur seuls",
+        "explanation": "Ce sont des méthodes du cycle de vie, pas des supports permanents."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La persistance n’impose pas uniquement une base relationnelle.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q004",
+    "chapter": 3,
+    "slides": [
+      5
+    ],
+    "theme": "Passerelle",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Créer une table Personne suffit-il pour que l’objet Personne se sauvegarde tout seul ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Non",
+        "explanation": "Le code de liaison objet/stockage reste à écrire."
+      },
+      {
+        "id": "1",
+        "text": "Oui",
+        "explanation": "Une classe et une table ne sont pas automatiquement reliées."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le DAO assure cette passerelle.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q005",
+    "chapter": 3,
+    "slides": [
+      6
+    ],
+    "theme": "Couplage",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel problème apparaît si Personne contient directement son SQL ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Un couplage étroit entre métier et stockage",
+        "explanation": "Changer le stockage oblige à toucher le code métier."
+      },
+      {
+        "id": "1",
+        "text": "Une indépendance du métier vis-à-vis du stockage",
+        "explanation": "Le SQL dans le métier crée précisément une dépendance."
+      },
+      {
+        "id": "2",
+        "text": "Une factorisation de tous les accès dans une seule passerelle séparée",
+        "explanation": "Le code est inclus dans le composant métier, pas isolé dans un DAO."
+      },
+      {
+        "id": "3",
+        "text": "Une simple règle de visibilité sans impact sur le stockage",
+        "explanation": "Le problème concerne la dépendance entre responsabilités."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours motive les DAO par la réduction de ce couplage.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q006",
+    "chapter": 3,
+    "slides": [
+      7
+    ],
+    "theme": "DAO",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle solution isole l’accès au stockage ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Une classe DAO associée au métier",
+        "explanation": "Elle concentre les échanges avec la structure permanente."
+      },
+      {
+        "id": "1",
+        "text": "Déplacer le même SQL dans tous les constructeurs métier",
+        "explanation": "Le couplage métier/stockage demeure."
+      },
+      {
+        "id": "2",
+        "text": "Rendre les attributs public pour que la base les trouve automatiquement",
+        "explanation": "La visibilité ne réalise pas de correspondance avec une table."
+      },
+      {
+        "id": "3",
+        "text": "Partager une instance métier entre toutes les tables",
+        "explanation": "Cela ne crée pas une passerelle d’accès aux données."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le DAO est un objet d’accès aux données.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q007",
+    "chapter": 3,
+    "slides": [
+      8
+    ],
+    "theme": "Responsabilités",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle méthode appartient naturellement à PersonneDAO ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "insertionPersonne($personne)",
+        "explanation": "Elle enregistre les informations dans le stockage."
+      },
+      {
+        "id": "1",
+        "text": "setNom($nom) sur l’état métier en mémoire uniquement",
+        "explanation": "Un setter métier ne réalise pas à lui seul une opération de stockage."
+      },
+      {
+        "id": "2",
+        "text": "getSociete() renvoyant seulement une propriété de Personne",
+        "explanation": "Cette lecture d’attribut relève de l’objet métier."
+      },
+      {
+        "id": "3",
+        "text": "afficherInfos() construisant la présentation de la personne",
+        "explanation": "Le DAO gère les données stockées, pas la présentation."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le DAO gère notamment insertion et suppression.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q008",
+    "chapter": 3,
+    "slides": [
+      9
+    ],
+    "theme": "Architecture",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "N couches signifie-t-il obligatoirement N machines physiques ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Non",
+        "explanation": "Plusieurs couches peuvent fonctionner sur une seule machine."
+      },
+      {
+        "id": "1",
+        "text": "Oui",
+        "explanation": "Le cours distingue explicitement couches et machines."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La séparation logique ne dicte pas un déploiement physique.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q009",
+    "chapter": 3,
+    "slides": [
+      10
+    ],
+    "theme": "Architecture",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quel chemin correspond au schéma de couches du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Utilisateur, interface, métier, DAO, base",
+        "explanation": "Le DAO est entre le métier et le stockage."
+      },
+      {
+        "id": "1",
+        "text": "Utilisateur, interface, métier contenant directement tout le SQL, base",
+        "explanation": "Cette forme omet la passerelle DAO demandée."
+      },
+      {
+        "id": "2",
+        "text": "Utilisateur, DAO, interface, métier, base",
+        "explanation": "Le DAO est la passerelle entre métier et stockage, pas la couche d’interface."
+      },
+      {
+        "id": "3",
+        "text": "Utilisateur, interface, base, DAO, métier",
+        "explanation": "Le stockage ne doit pas précéder sa passerelle dans ce chemin."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le schéma attribue une responsabilité à chaque couche.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q010",
+    "chapter": 3,
+    "slides": [
+      11
+    ],
+    "theme": "DAO",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Un même objet DAO peut-il servir plusieurs objets d’une même classe métier ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Oui",
+        "explanation": "Le cours prévoit le même DAO pour ces objets."
+      },
+      {
+        "id": "1",
+        "text": "Non, un DAO par instance est obligatoire",
+        "explanation": "Ce n’est pas le principe énoncé."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Un DAO ne représente pas une seule occurrence métier.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q011",
+    "chapter": 3,
+    "slides": [
+      11
+    ],
+    "theme": "DAO",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle association de classes le cours propose-t-il ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Personne et PersonneDAO",
+        "explanation": "Une classe métier possède sa classe DAO associée."
+      },
+      {
+        "id": "1",
+        "text": "Un objet Personne avec un DAO nouveau pour chaque attribut",
+        "explanation": "Le cours associe le DAO à la classe métier, pas à chaque attribut."
+      },
+      {
+        "id": "2",
+        "text": "Un DAO qui impose la disparition de la classe Personne",
+        "explanation": "Le DAO échange les informations de l’objet métier ; il ne le remplace pas."
+      },
+      {
+        "id": "3",
+        "text": "Une seule classe mélangeant Personne, interface et tout le SQL",
+        "explanation": "Cela annule la séparation recherchée."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La responsabilité de persistance est associée à l’entité métier.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q012",
+    "chapter": 3,
+    "slides": [
+      12
+    ],
+    "theme": "Évolution",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "On passe de la base à un fichier en gardant la même interface DAO. Que faut-il principalement réécrire ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "L’intérieur des méthodes du DAO",
+        "explanation": "Le métier conserve son interface vers la persistance."
+      },
+      {
+        "id": "1",
+        "text": "Tous les getters de Personne pour y ajouter la lecture du fichier",
+        "explanation": "La passerelle doit rester dans le DAO."
+      },
+      {
+        "id": "2",
+        "text": "Les appels métier pour y écrire eux-mêmes le XML",
+        "explanation": "Conserver l’interface DAO évite de disperser cette implémentation."
+      },
+      {
+        "id": "3",
+        "text": "Les noms des méthodes publiques DAO nécessairement",
+        "explanation": "L’intérêt est de conserver le contrat en changeant l’implémentation."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le DAO limite l’impact d’un changement de stockage.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q013",
+    "chapter": 3,
+    "slides": [
+      12
+    ],
+    "theme": "Factorisation",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel avantage apporte la centralisation du code d’accès aux données ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Éviter sa répétition dans plusieurs endroits",
+        "explanation": "Les opérations sont regroupées dans le DAO."
+      },
+      {
+        "id": "1",
+        "text": "Éviter tout appel au DAO dans le programme",
+        "explanation": "Le programme doit utiliser le point d’accès prévu, selon la stratégie."
+      },
+      {
+        "id": "2",
+        "text": "Obliger chaque classe métier à conserver ses propres requêtes",
+        "explanation": "Cela répète et couple le code que l’on veut isoler."
+      },
+      {
+        "id": "3",
+        "text": "Créer une connexion distincte pour chaque propriété métier",
+        "explanation": "La factorisation ne demande pas cette multiplication."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Factoriser signifie regrouper le code commun.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q014",
+    "chapter": 3,
+    "slides": [
+      13
+    ],
+    "theme": "Métier",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel membre est cohérent dans la classe métier Soiree ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "getLaNature()",
+        "explanation": "Il renvoie une propriété de la soirée."
+      },
+      {
+        "id": "1",
+        "text": "getConnexion() créant le Singleton technique de toute l’application",
+        "explanation": "Le cours confie la connexion à GestionConnexion."
+      },
+      {
+        "id": "2",
+        "text": "creer($soiree) écrivant directement dans la table",
+        "explanation": "Cette opération appartient au DAO dans l’architecture séparée."
+      },
+      {
+        "id": "3",
+        "text": "findAll() interrogeant toutes les soirées du stockage",
+        "explanation": "La recherche persistante relève du DAO."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La soirée décrit les données et comportements métier.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q015",
+    "chapter": 3,
+    "slides": [
+      14
+    ],
+    "theme": "DAO",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Dans creer($objLaSoiree), pourquoi appeler les getters de l’objet ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Pour récupérer les valeurs à enregistrer",
+        "explanation": "Le DAO lit les informations de l’objet métier."
+      },
+      {
+        "id": "1",
+        "text": "Pour obliger le métier à exécuter lui-même le SQL",
+        "explanation": "Le DAO utilise les valeurs, sans déplacer la requête dans le métier."
+      },
+      {
+        "id": "2",
+        "text": "Pour accéder directement aux propriétés privées du DAO",
+        "explanation": "Les getters appelés sont ceux de l’objet métier."
+      },
+      {
+        "id": "3",
+        "text": "Pour enregistrer les noms des méthodes au lieu des valeurs",
+        "explanation": "Les appels renvoient les informations à stocker."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La passerelle utilise les informations métier pour le stockage.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q016",
+    "chapter": 3,
+    "slides": [
+      15
+    ],
+    "theme": "XML",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Que montre le remplacement de la base par du XML dans SoireeDAO ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Le changement d’implémentation derrière une responsabilité stable",
+        "explanation": "creer enregistre toujours la soirée, avec un autre support."
+      },
+      {
+        "id": "1",
+        "text": "La nécessité de réécrire aussi tous les attributs métier",
+        "explanation": "Le changement de support doit être isolé par le DAO."
+      },
+      {
+        "id": "2",
+        "text": "La suppression obligatoire de la méthode creer",
+        "explanation": "La responsabilité de création demeure."
+      },
+      {
+        "id": "3",
+        "text": "La transformation du DAO en classe métier Soiree",
+        "explanation": "Le rôle de la passerelle ne change pas."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le DAO masque les détails du stockage.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q017",
+    "chapter": 3,
+    "slides": [
+      16
+    ],
+    "theme": "Conception",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Pour une structure importante, quelle granularité le cours suggère-t-il ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Une classe DAO par table",
+        "explanation": "La classe regroupe les opérations sur cette table."
+      },
+      {
+        "id": "1",
+        "text": "Une classe DAO par instance de chaque ligne",
+        "explanation": "Le même DAO peut traiter plusieurs objets de la classe."
+      },
+      {
+        "id": "2",
+        "text": "Une classe DAO différente pour chaque getter métier",
+        "explanation": "Le cours regroupe les opérations par table."
+      },
+      {
+        "id": "3",
+        "text": "Une copie de tous les accès dans chaque classe métier",
+        "explanation": "Cela réintroduit la dispersion et le couplage."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La taille du stockage influence l’organisation des DAO.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q018",
+    "chapter": 3,
+    "slides": [
+      17
+    ],
+    "theme": "PDO",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle API PHP d’accès aux bases relationnelles est citée ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "PDO",
+        "explanation": "PHP Data Objects est l’API PHP du cours."
+      },
+      {
+        "id": "1",
+        "text": "JDBC",
+        "explanation": "JDBC est présenté pour Java."
+      },
+      {
+        "id": "2",
+        "text": "OLE DB",
+        "explanation": "Le cours l’associe à l’environnement .NET."
+      },
+      {
+        "id": "3",
+        "text": "MVC",
+        "explanation": "MVC organise l’application ; ce n’est pas cette API."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Ne pas confondre API d’accès aux données et architecture.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q019",
+    "chapter": 3,
+    "slides": [
+      17
+    ],
+    "theme": "API",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Que signifie API dans ce contexte ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Application Programming Interface",
+        "explanation": "Un ensemble d’outils utilisables par les programmes."
+      },
+      {
+        "id": "1",
+        "text": "Une classe obligatoirement identique dans tous les langages",
+        "explanation": "Les API diffèrent dans leur architecture et leurs noms."
+      },
+      {
+        "id": "2",
+        "text": "Une norme qui impose les mêmes méthodes PDO et JDBC",
+        "explanation": "Le cours souligne leurs différences."
+      },
+      {
+        "id": "3",
+        "text": "Un support permanent remplaçant les bases",
+        "explanation": "Une API fournit des outils pour accéder au support."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "PDO, JDBC et les API citées accomplissent des responsabilités d’accès aux données.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q020",
+    "chapter": 3,
+    "slides": [
+      18
+    ],
+    "theme": "Connexion",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel est le rôle de GestionConnexion ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Fournir une connexion aux DAO",
+        "explanation": "Le DAO utilise ensuite cette connexion."
+      },
+      {
+        "id": "1",
+        "text": "Exécuter elle-même toutes les opérations CRUD du métier",
+        "explanation": "Le DAO utilise la connexion pour ses opérations."
+      },
+      {
+        "id": "2",
+        "text": "Construire une nouvelle Personne à chaque demande de connexion",
+        "explanation": "Le service technique ne crée pas cet objet métier."
+      },
+      {
+        "id": "3",
+        "text": "Conserver uniquement les données de la dernière ligne SQL",
+        "explanation": "Elle fournit un objet de connexion, pas une ligne métier."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La classe technique sépare gestion de connexion et opérations métier.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q021",
+    "chapter": 3,
+    "slides": [
+      18
+    ],
+    "theme": "Singleton",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel objectif motive le Singleton de connexion ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Limiter la création de connexions en réutilisant celle fournie",
+        "explanation": "Cela maîtrise la charge du serveur de données."
+      },
+      {
+        "id": "1",
+        "text": "Créer une connexion différente pour chaque appel DAO",
+        "explanation": "Le but du Singleton de l’exemple est la réutilisation."
+      },
+      {
+        "id": "2",
+        "text": "Partager un unique objet métier entre toutes les tables",
+        "explanation": "L’unicité porte ici sur la gestion de connexion."
+      },
+      {
+        "id": "3",
+        "text": "Enregistrer automatiquement toutes les instances en mémoire",
+        "explanation": "La connexion partagée ne réalise pas le CRUD sans appels."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le Singleton de l’exemple centralise la connexion.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q022",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Singleton",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Pourquoi le constructeur de GestionConnexion est-il private ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Pour contrôler la création depuis la classe",
+        "explanation": "Le programme passe par getConnexion."
+      },
+      {
+        "id": "1",
+        "text": "Pour interdire toute création, même depuis getConnexion",
+        "explanation": "La classe peut appeler son constructeur privé."
+      },
+      {
+        "id": "2",
+        "text": "Pour rendre getConnexion accessible uniquement aux classes filles",
+        "explanation": "La méthode d’accès est publique statique."
+      },
+      {
+        "id": "3",
+        "text": "Pour obliger les DAO à hériter de GestionConnexion",
+        "explanation": "L’accès statique ne nécessite pas cet héritage."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La création est contrôlée par la méthode statique.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q023",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Singleton",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel appel le programme doit-il utiliser pour obtenir la connexion ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "GestionConnexion::getConnexion()",
+        "explanation": "La méthode publique est statique."
+      },
+      {
+        "id": "1",
+        "text": "new GestionConnexion()",
+        "explanation": "Le constructeur présenté est privé."
+      },
+      {
+        "id": "2",
+        "text": "GestionConnexion->getConnexion()",
+        "explanation": "-> nécessite un objet."
+      },
+      {
+        "id": "3",
+        "text": "$_POST[\"connexion\"]",
+        "explanation": "Un champ HTTP ne fournit pas l’objet PDO."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le point d’accès public est la méthode de classe.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q024",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Singleton",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "À quoi sert is_null(self::$_instance) dans getConnexion ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Détecter l’absence d’instance",
+        "explanation": "On ne crée l’instance que si elle manque."
+      },
+      {
+        "id": "1",
+        "text": "Détecter l’absence de lignes dans la table",
+        "explanation": "Le test porte sur l’instance technique, pas sur un résultat SQL."
+      },
+      {
+        "id": "2",
+        "text": "Vérifier que le mot de passe de connexion est vide",
+        "explanation": "Il ne lit pas le mot de passe."
+      },
+      {
+        "id": "3",
+        "text": "Forcer une nouvelle connexion à chaque appel même si elle existe",
+        "explanation": "Le test conditionne la création à l’absence de l’instance."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La condition permet l’initialisation à la première demande.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q025",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "PDO",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quelles informations apparaissent dans new PDO(...) dans le support ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Un DSN MySQL avec hôte et base",
+        "explanation": "Il indique le support et la base visés."
+      },
+      {
+        "id": "1",
+        "text": "Un identifiant et un mot de passe",
+        "explanation": "Ils sont passés en arguments."
+      },
+      {
+        "id": "2",
+        "text": "Le nom du DAO comme premier argument à la place du DSN",
+        "explanation": "PDO attend ici le DSN de connexion, pas le nom d’une classe DAO."
+      },
+      {
+        "id": "3",
+        "text": "L’objet métier à sauvegarder comme troisième argument",
+        "explanation": "Le troisième argument présenté est le mot de passe."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Le cours montre new PDO(DSN, login, mdp).",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q026",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Singleton",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Que renvoie getConnexion dans l’exemple ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "self::$laConnexion",
+        "explanation": "Le résultat est l’objet de connexion PDO conservé."
+      },
+      {
+        "id": "1",
+        "text": "self::$_instance",
+        "explanation": "Cette propriété conserve GestionConnexion ; la méthode renvoie sa connexion PDO."
+      },
+      {
+        "id": "2",
+        "text": "Un booléen indiquant uniquement que la connexion a été demandée",
+        "explanation": "Le DAO doit recevoir la connexion pour l’utiliser."
+      },
+      {
+        "id": "3",
+        "text": "Une nouvelle chaîne DSN uniquement",
+        "explanation": "Une chaîne de configuration n’est pas l’objet PDO déjà créé."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "$_instance pilote la création ; $laConnexion est la valeur renvoyée.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q027",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Connexion",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Que fait liberer() dans la classe technique du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Mettre les deux références statiques à null",
+        "explanation": "Elle cesse de conserver instance et connexion dans ces propriétés."
+      },
+      {
+        "id": "1",
+        "text": "Supprimer les enregistrements métier persistants",
+        "explanation": "Mettre des références mémoire à null n’exécute pas de DELETE."
+      },
+      {
+        "id": "2",
+        "text": "Rendre tous les objets métier null automatiquement",
+        "explanation": "Le code touche uniquement les deux propriétés statiques montrées."
+      },
+      {
+        "id": "3",
+        "text": "Garantir la destruction immédiate même si un DAO garde PDO",
+        "explanation": "Une autre référence peut encore conserver l’objet PDO."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "D’autres références éventuelles à PDO peuvent encore exister.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q028",
+    "chapter": 3,
+    "slides": [
+      20
+    ],
+    "theme": "DAO instance",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Où l’approche avec un objet DAO conserve-t-elle sa connexion ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Dans une propriété privée d’instance",
+        "explanation": "Le constructeur l’initialise via GestionConnexion."
+      },
+      {
+        "id": "1",
+        "text": "Dans une variable locale du constructeur seulement",
+        "explanation": "Les autres méthodes ne retrouveraient pas cette variable locale."
+      },
+      {
+        "id": "2",
+        "text": "Dans chaque propriété de l’objet métier fourni",
+        "explanation": "La connexion appartient ici au DAO, pas aux données métier."
+      },
+      {
+        "id": "3",
+        "text": "Dans le nom de la méthode inserer",
+        "explanation": "Un nom de méthode ne conserve pas une référence PDO."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le DAO possède ici $this->laConnexion.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q029",
+    "chapter": 3,
+    "slides": [
+      20
+    ],
+    "theme": "DAO instance",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Quel constructeur initialise correctement la connexion du DAO ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "public function __construct() { $this->laConnexion = GestionConnexion::getConnexion(); }",
+        "explanation": "Il affecte la propriété d’instance."
+      },
+      {
+        "id": "1",
+        "text": "public function __construct() { $laConnexion = GestionConnexion::getConnexion(); }",
+        "explanation": "Cette variante conserve seulement une variable locale."
+      },
+      {
+        "id": "2",
+        "text": "public function __construct() { echo \"connexion\"; }",
+        "explanation": "Afficher une chaîne n’obtient pas PDO."
+      },
+      {
+        "id": "3",
+        "text": "private $laConnexion = \"PDO\";",
+        "explanation": "Une chaîne ne représente pas la connexion."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Il faut affecter l’attribut utilisé par les autres méthodes.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q030",
+    "chapter": 3,
+    "slides": [
+      21
+    ],
+    "theme": "DAO statique",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Dans la seconde forme de DAO, comment les méthodes sont-elles déclarées ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "public static function ...",
+        "explanation": "L’appel direct par la classe est alors possible."
+      },
+      {
+        "id": "1",
+        "text": "Comme méthodes d’instance utilisant uniquement $this",
+        "explanation": "Ce serait la première forme de DAO."
+      },
+      {
+        "id": "2",
+        "text": "En gardant un constructeur public obligatoire pour chaque appel",
+        "explanation": "Les méthodes statiques sont appelées directement sur la classe."
+      },
+      {
+        "id": "3",
+        "text": "Comme propriétés statiques contenant le nom des opérations",
+        "explanation": "Une opération est une méthode, pas une chaîne de propriété."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours oppose DAO d’instance et méthodes DAO statiques.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q031",
+    "chapter": 3,
+    "slides": [
+      20,
+      21
+    ],
+    "theme": "DAO statique",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Quel couple appel/déclaration est cohérent ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "NomTableDAO::inserer(...) avec public static function inserer(...)",
+        "explanation": "La portée de l’appel correspond à la déclaration."
+      },
+      {
+        "id": "1",
+        "text": "NomTableDAO->inserer(...) avec une classe non instanciée",
+        "explanation": "Il manque un objet avant ->."
+      },
+      {
+        "id": "2",
+        "text": "$dao[\"inserer\"] avec une méthode d’instance",
+        "explanation": "Ce n’est pas un appel de méthode."
+      },
+      {
+        "id": "3",
+        "text": "inserer::NomTableDAO(...)",
+        "explanation": "L’ordre classe puis méthode est inversé."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Pour la forme d’instance, on crée un objet puis on utilise ->.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q032",
+    "chapter": 3,
+    "slides": [
+      22
+    ],
+    "theme": "CRUD",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que désigne le C de CRUD ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Create : créer une donnée",
+        "explanation": "C’est l’ajout d’un enregistrement."
+      },
+      {
+        "id": "1",
+        "text": "Connect : uniquement ouvrir PDO",
+        "explanation": "La connexion n’est pas le C de CRUD."
+      },
+      {
+        "id": "2",
+        "text": "Control : sélectionner une vue",
+        "explanation": "Cela concerne plutôt le contrôleur."
+      },
+      {
+        "id": "3",
+        "text": "Count : exclusivement compter",
+        "explanation": "Un comptage relève d’une lecture calculée."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "CRUD décrit quatre familles d’opérations persistantes.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q033",
+    "chapter": 3,
+    "slides": [
+      22
+    ],
+    "theme": "CRUD",
+    "difficulty": "facile",
+    "type": "multiple",
+    "prompt": "Quelles opérations appartiennent au CRUD ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Read",
+        "explanation": "C’est la lecture ou recherche."
+      },
+      {
+        "id": "1",
+        "text": "Update",
+        "explanation": "C’est la modification."
+      },
+      {
+        "id": "2",
+        "text": "Retrieve et Render comme deux opérations distinctes du CRUD",
+        "explanation": "Read/Retrieve désigne la lecture ; Render n’est pas une opération CRUD."
+      },
+      {
+        "id": "3",
+        "text": "Connect et Disconnect",
+        "explanation": "La connexion est technique ; ce ne sont pas les quatre opérations de données."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "CRUD signifie Create, Read, Update, Delete.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q034",
+    "chapter": 3,
+    "slides": [
+      23
+    ],
+    "theme": "Create",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quelles signatures de création sont proposées ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "creer($date, $nature, $places)",
+        "explanation": "On transmet les valeurs séparées."
+      },
+      {
+        "id": "1",
+        "text": "creer($objetSoiree)",
+        "explanation": "On transmet un objet métier."
+      },
+      {
+        "id": "2",
+        "text": "creer($id) en l’absence de toutes les autres informations requises",
+        "explanation": "Dans cet exemple date, nature et places doivent être fournis."
+      },
+      {
+        "id": "3",
+        "text": "creer($connexion) uniquement",
+        "explanation": "La connexion seule ne contient pas les informations de la soirée."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Les données peuvent être transmises séparément ou via un objet.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q035",
+    "chapter": 3,
+    "slides": [
+      24
+    ],
+    "theme": "Create",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quels retours peuvent être utiles après une création ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Un booléen de réussite",
+        "explanation": "Il informe l’appelant du succès ou de l’échec."
+      },
+      {
+        "id": "1",
+        "text": "L’identifiant généré",
+        "explanation": "Il permet de retrouver l’enregistrement créé."
+      },
+      {
+        "id": "2",
+        "text": "Obligatoirement un objet PDO nouvellement créé",
+        "explanation": "Ce n’est pas le résultat métier d’une création décrit ici."
+      },
+      {
+        "id": "3",
+        "text": "Aucun retour, car une création ne peut jamais être une fonction",
+        "explanation": "Le cours autorise explicitement une forme qui renvoie une valeur."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Le contrat de la méthode détermine son résultat.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q036",
+    "chapter": 3,
+    "slides": [
+      25
+    ],
+    "theme": "Read",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Lesquels sont les trois types de résultats de lecture du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Un objet, une collection, une donnée calculée",
+        "explanation": "Ces trois variantes sont décrites."
+      },
+      {
+        "id": "1",
+        "text": "Uniquement un identifiant, un booléen ou rien",
+        "explanation": "La lecture peut aussi renvoyer objets, collections et calculs."
+      },
+      {
+        "id": "2",
+        "text": "Une insertion, une suppression, une modification",
+        "explanation": "Ce sont d’autres opérations CRUD, pas des résultats de lecture."
+      },
+      {
+        "id": "3",
+        "text": "Obligatoirement une collection même pour une donnée calculée",
+        "explanation": "Le cours distingue explicitement plusieurs formes de retour."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le retour dépend de ce qui est recherché.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q037",
+    "chapter": 3,
+    "slides": [
+      26
+    ],
+    "theme": "Finders",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel est le rôle de findById($id) ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Rechercher l’enregistrement désigné par son identifiant",
+        "explanation": "L’identifiant sélectionne une occurrence unique."
+      },
+      {
+        "id": "1",
+        "text": "Renvoyer tous les tuples sans filtre",
+        "explanation": "C’est findAll."
+      },
+      {
+        "id": "2",
+        "text": "Supprimer l’enregistrement",
+        "explanation": "C’est une opération Delete."
+      },
+      {
+        "id": "3",
+        "text": "Créer un identifiant dans chaque vue",
+        "explanation": "Ce n’est pas un finder."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Un finder est une méthode de recherche.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q038",
+    "chapter": 3,
+    "slides": [
+      26
+    ],
+    "theme": "Finders",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle méthode lit toute la table selon les noms du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "findAll()",
+        "explanation": "Elle recherche tous les tuples."
+      },
+      {
+        "id": "1",
+        "text": "findById($id)",
+        "explanation": "Elle cible un identifiant."
+      },
+      {
+        "id": "2",
+        "text": "creer($objet)",
+        "explanation": "Elle ajoute une occurrence."
+      },
+      {
+        "id": "3",
+        "text": "detruire($id)",
+        "explanation": "Elle supprime une occurrence."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "findAll et findById diffèrent par leur sélection.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q039",
+    "chapter": 3,
+    "slides": [
+      25
+    ],
+    "theme": "Read",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Une méthode renvoie le nombre de places réservées. À quelle famille appartient-elle ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Read",
+        "explanation": "C’est une donnée calculée lue."
+      },
+      {
+        "id": "1",
+        "text": "Create",
+        "explanation": "Aucune création n’est décrite."
+      },
+      {
+        "id": "2",
+        "text": "Update",
+        "explanation": "Aucune donnée n’est modifiée."
+      },
+      {
+        "id": "3",
+        "text": "Delete",
+        "explanation": "Aucune suppression n’est décrite."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une lecture peut renvoyer un calcul, pas seulement des objets.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q040",
+    "chapter": 3,
+    "slides": [
+      27
+    ],
+    "theme": "Update",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quels paramètres peuvent être prévus pour une modification ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Un identifiant et les nouvelles valeurs",
+        "explanation": "L’identifiant cible la donnée et les valeurs décrivent le changement."
+      },
+      {
+        "id": "1",
+        "text": "Un objet métier contenant les modifications",
+        "explanation": "C’est la seconde variante citée."
+      },
+      {
+        "id": "2",
+        "text": "Uniquement l’identifiant sans aucune nouvelle valeur ni autre source",
+        "explanation": "Le DAO doit connaître les changements à appliquer."
+      },
+      {
+        "id": "3",
+        "text": "Uniquement le nom de la classe métier",
+        "explanation": "Ce nom ne fournit ni l’occurrence cible ni ses nouvelles données."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Le cours présente deux formes d’entrée pour Update.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q041",
+    "chapter": 3,
+    "slides": [
+      27
+    ],
+    "theme": "Update",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Une méthode Update doit-elle obligatoirement renvoyer un booléen ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Non",
+        "explanation": "Le cours indique que ce retour est possible, sans être obligatoire."
+      },
+      {
+        "id": "1",
+        "text": "Oui",
+        "explanation": "Le contrat peut aussi être de type procédure."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Il faut lire le contrat de la méthode.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q042",
+    "chapter": 3,
+    "slides": [
+      28
+    ],
+    "theme": "Delete",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Comment désigner l’élément à supprimer selon le cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Par son identifiant ou par l’objet métier",
+        "explanation": "Ces deux variantes sont indiquées."
+      },
+      {
+        "id": "1",
+        "text": "Par le seul nom de la table sans aucune occurrence ciblée",
+        "explanation": "Le contrat de suppression d’un enregistrement doit le désigner."
+      },
+      {
+        "id": "2",
+        "text": "Par l’ensemble des nouvelles valeurs sans identifier la ligne",
+        "explanation": "C’est insuffisant pour cibler le tuple à supprimer dans ce contrat."
+      },
+      {
+        "id": "3",
+        "text": "En appelant __destruct sur le DAO sans opération de stockage",
+        "explanation": "Détruire un objet mémoire ne supprime pas sa ligne persistante."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Delete agit sur un enregistrement identifié.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q043",
+    "chapter": 3,
+    "slides": [
+      30
+    ],
+    "theme": "Stratégie 1",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Dans la stratégie 1, qui connaît le DAO ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "L’objet métier",
+        "explanation": "Il possède une référence au DAO et gère sa sauvegarde via lui."
+      },
+      {
+        "id": "1",
+        "text": "Seulement le programme, jamais l’objet métier",
+        "explanation": "Ce serait la stratégie 2."
+      },
+      {
+        "id": "2",
+        "text": "Chaque enregistrement de la base connaît le DAO PHP",
+        "explanation": "Le schéma porte sur les références entre objets de l’application."
+      },
+      {
+        "id": "3",
+        "text": "La connexion PDO qui appelle elle-même le métier",
+        "explanation": "PDO est utilisé par le DAO ; il ne pilote pas les objets métier."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le programme utilisateur des objets métier peut ignorer le DAO.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q044",
+    "chapter": 3,
+    "slides": [
+      31
+    ],
+    "theme": "Stratégie 1",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quel appel illustre la stratégie 1 au niveau du programme ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$uneSoiree->sauvegardeToi();",
+        "explanation": "L’objet métier délègue à son DAO."
+      },
+      {
+        "id": "1",
+        "text": "$dao->creer($uneSoiree); directement",
+        "explanation": "Cela illustre la stratégie 2 au niveau du programme."
+      },
+      {
+        "id": "2",
+        "text": "echo $uneSoiree;",
+        "explanation": "Ce n’est pas un appel de persistance."
+      },
+      {
+        "id": "3",
+        "text": "new SoireeDAO() uniquement",
+        "explanation": "Créer le DAO seul ne demande pas la sauvegarde."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "L’objet métier connaît et utilise sa passerelle.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q045",
+    "chapter": 3,
+    "slides": [
+      32
+    ],
+    "theme": "Stratégie 2",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Pourquoi le cours privilégie-t-il souvent la stratégie 2 ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Une meilleure isolation de la persistance",
+        "explanation": "L’objet métier ne possède pas de référence au DAO."
+      },
+      {
+        "id": "1",
+        "text": "L’absence de tout DAO dans le programme",
+        "explanation": "La stratégie 2 le fait appeler explicitement par le programme."
+      },
+      {
+        "id": "2",
+        "text": "Une meilleure isolation obtenue en recopiant le SQL dans le métier",
+        "explanation": "Cela produit au contraire du couplage."
+      },
+      {
+        "id": "3",
+        "text": "Une sauvegarde automatique dès new Soiree",
+        "explanation": "La stratégie demande toujours un appel à la méthode du DAO."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le programme orchestre la persistance et le métier reste indépendant.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q046",
+    "chapter": 3,
+    "slides": [
+      33
+    ],
+    "theme": "Stratégie 2",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle séquence représente la stratégie 2 ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Créer une Soiree, créer un SoireeDAO, appeler creer($soiree)",
+        "explanation": "Le programme appelle le DAO avec l’objet métier."
+      },
+      {
+        "id": "1",
+        "text": "Faire Soiree appeler son propre DAO via sauvegardeToi",
+        "explanation": "C’est la stratégie 1."
+      },
+      {
+        "id": "2",
+        "text": "Faire le programme écrire INSERT sans utiliser le DAO",
+        "explanation": "Cela contourne la passerelle."
+      },
+      {
+        "id": "3",
+        "text": "Faire le constructeur métier créer directement PDO",
+        "explanation": "Cela lie le métier à la persistance."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le programme connaît explicitement les deux objets.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q047",
+    "chapter": 3,
+    "slides": [
+      34
+    ],
+    "theme": "Centralisation",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Après mise en place des DAO, comment le reste de l’application doit-il accéder à une table ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Via les méthodes du DAO correspondant",
+        "explanation": "Le DAO devient le point de passage prévu."
+      },
+      {
+        "id": "1",
+        "text": "Par une requête SQL directe dans chaque classe métier",
+        "explanation": "Cela contourne l’isolation du DAO."
+      },
+      {
+        "id": "2",
+        "text": "En lisant directement les propriétés privées de la connexion",
+        "explanation": "Les méthodes du DAO constituent l’interface prévue."
+      },
+      {
+        "id": "3",
+        "text": "En créant un PDO dans chaque vue qui en a besoin",
+        "explanation": "Cela disperse l’accès aux données et contourne les DAO."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le support demande de ne pas contourner les DAO.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c3-q048",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Syntaxe",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle correction donne accès à la connexion statique ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "self::$laConnexion",
+        "explanation": "Une propriété statique exige le dollar."
+      },
+      {
+        "id": "1",
+        "text": "self::laConnexion",
+        "explanation": "Cela désigne un nom de constante."
+      },
+      {
+        "id": "2",
+        "text": "$this->laConnexion dans une méthode statique",
+        "explanation": "Aucun $this n’est disponible ici."
+      },
+      {
+        "id": "3",
+        "text": "self->laConnexion",
+        "explanation": "L’opérateur de portée de classe est ::."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La syntaxe est identique aux propriétés statiques du chapitre 2.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-q049",
+    "chapter": 3,
+    "slides": [
+      14,
+      33
+    ],
+    "theme": "Syntaxe",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Quel défaut empêche les autres méthodes de retrouver la connexion dans ce DAO ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Le constructeur affecte une variable locale",
+        "explanation": "Il faut $this->_db = GestionConnexion::getConnexion();"
+      },
+      {
+        "id": "1",
+        "text": "La connexion doit être publique pour être accessible aux méthodes de la classe",
+        "explanation": "private autorise bien l’accès interne à cette classe."
+      },
+      {
+        "id": "2",
+        "text": "La connexion doit être une propriété de Soiree et non du DAO",
+        "explanation": "Le DAO d’instance est précisément censé la conserver."
+      },
+      {
+        "id": "3",
+        "text": "Le constructeur doit appeler getConnexion avec -> sur le nom de classe",
+        "explanation": "Le point d’accès de GestionConnexion est statique."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La propriété et la variable locale sont distinctes.",
+    "code": "class SoireeDAO {\n private $_db;\n public function __construct() {\n   $_db = GestionConnexion::getConnexion();\n }\n}",
+    "essential": false
+  },
+  {
+    "id": "c3-q050",
+    "chapter": 3,
+    "slides": [
+      19,
+      21
+    ],
+    "theme": "Connexion",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Quelle instruction correspond à la méthode liberer définie dans GestionConnexion ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "GestionConnexion::liberer();",
+        "explanation": "C’est la méthode statique de la classe technique."
+      },
+      {
+        "id": "1",
+        "text": "$pdo->liberer();",
+        "explanation": "PDO ne possède pas cette méthode personnalisée."
+      },
+      {
+        "id": "2",
+        "text": "echo liberer;",
+        "explanation": "Ce n’est pas un appel de méthode."
+      },
+      {
+        "id": "3",
+        "text": "new liberer();",
+        "explanation": "liberer n’est pas une classe."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une diapositive appelle liberer sur la connexion ; la méthode montrée appartient à GestionConnexion.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c3-e001",
+    "chapter": 3,
+    "slides": [
+      20
+    ],
+    "theme": "DAO instance",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Déclare PersonneDAO avec une propriété privée laConnexion, initialisée dans son constructeur par GestionConnexion::getConnexion().",
+    "answer": "class PersonneDAO {\n    private $laConnexion;\n    public function __construct() {\n        $this->laConnexion = GestionConnexion::getConnexion();\n    }\n}",
+    "explanation": "Lignes 1–2 : déclarent le DAO et son attribut. Ligne 3 : déclare le constructeur. Ligne 4 : conserve la connexion dans l’objet. Lignes 5–6 : ferment les blocs.",
+    "lineExplanation": [
+      "Lignes 1–2 : déclarent le DAO et son attribut.",
+      "Ligne 3 : déclare le constructeur.",
+      "Ligne 4 : conserve la connexion dans l’objet.",
+      "Lignes 5–6 : ferment les blocs."
+    ],
+    "hint": "La connexion doit rester accessible aux autres méthodes.",
+    "commonErrors": [
+      "Laisser la connexion dans une variable locale.",
+      "Instancier directement GestionConnexion dont le constructeur est privé."
+    ],
+    "rubric": [
+      "Le DAO est déclaré.",
+      "La connexion est une propriété privée.",
+      "Le constructeur affecte cette propriété avec le service technique."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e002",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Connexion",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Obtiens la connexion partagée et conserve-la dans $pdo.",
+    "answer": "$pdo = GestionConnexion::getConnexion();",
+    "explanation": "Ligne 1 : appelle le point d’accès statique et conserve son retour.",
+    "lineExplanation": [
+      "Ligne 1 : appelle le point d’accès statique et conserve son retour."
+    ],
+    "hint": "L’appel se fait sur la classe technique.",
+    "commonErrors": [
+      "Utiliser new GestionConnexion.",
+      "Oublier l’affectation."
+    ],
+    "rubric": [
+      "L’appel vise GestionConnexion.",
+      "getConnexion est appelé avec ::.",
+      "$pdo reçoit le résultat."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e003",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "PDO",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Écris l’instruction créant $pdo pour MySQL sur localhost, base nomBase, identifiant login et mot de passe mdp.",
+    "answer": "$pdo = new PDO(\"mysql:host=localhost;dbname=nomBase\", \"login\", \"mdp\");",
+    "explanation": "Ligne 1 : crée PDO avec DSN MySQL, identifiant et mot de passe.",
+    "lineExplanation": [
+      "Ligne 1 : crée PDO avec DSN MySQL, identifiant et mot de passe."
+    ],
+    "hint": "Le DSN contient le pilote, host et dbname.",
+    "commonErrors": [
+      "Inverser base et hôte.",
+      "Oublier new."
+    ],
+    "rubric": [
+      "Le DSN cible MySQL et localhost.",
+      "La base est nomBase.",
+      "login et mdp sont passés dans cet ordre."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e004",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Singleton",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Dans GestionConnexion, déclare les propriétés statiques privées _instance (null) et laConnexion.",
+    "answer": "private static $_instance = null;\nprivate static $laConnexion;",
+    "explanation": "Ligne 1 : initialise la référence de contrôle. Ligne 2 : prévoit l’emplacement de PDO.",
+    "lineExplanation": [
+      "Ligne 1 : initialise la référence de contrôle.",
+      "Ligne 2 : prévoit l’emplacement de PDO."
+    ],
+    "hint": "Les deux valeurs sont à portée de classe.",
+    "commonErrors": [
+      "Créer des propriétés d’instance.",
+      "Oublier $ dans le nom."
+    ],
+    "rubric": [
+      "Les deux propriétés existent.",
+      "Elles sont privées statiques.",
+      "_instance est initialisée à null."
+    ],
+    "alternatives": [],
+    "context": "Fragment à l’intérieur de GestionConnexion.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e005",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Singleton",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans getConnexion(), instancie GestionConnexion uniquement si self::$_instance est null.",
+    "answer": "if (is_null(self::$_instance)) {\n    self::$_instance = new GestionConnexion();\n}",
+    "explanation": "Ligne 1 : teste l’absence d’instance. Ligne 2 : initialise seulement dans ce cas. Ligne 3 : ferme le test.",
+    "lineExplanation": [
+      "Ligne 1 : teste l’absence d’instance.",
+      "Ligne 2 : initialise seulement dans ce cas.",
+      "Ligne 3 : ferme le test."
+    ],
+    "hint": "La création reste interne à la classe.",
+    "commonErrors": [
+      "Instancier à chaque appel sans test.",
+      "Utiliser $this dans une méthode statique."
+    ],
+    "rubric": [
+      "La nullité est testée.",
+      "L’instanciation est conditionnelle.",
+      "L’instance est conservée dans la propriété statique."
+    ],
+    "alternatives": [],
+    "context": "Fragment de méthode statique à l’intérieur de GestionConnexion.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e006",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Singleton",
+    "difficulty": "difficile",
+    "type": "code",
+    "prompt": "Écris getConnexion() public statique complet à partir de _instance, laConnexion et du constructeur privé déjà présents.",
+    "answer": "public static function getConnexion() {\n    if (is_null(self::$_instance)) {\n        self::$_instance = new GestionConnexion();\n    }\n    return self::$laConnexion;\n}",
+    "explanation": "Ligne 1 : expose un accès de classe. Lignes 2–4 : initialisent si nécessaire. Ligne 5 : renvoie PDO. Ligne 6 : ferme la méthode.",
+    "lineExplanation": [
+      "Ligne 1 : expose un accès de classe.",
+      "Lignes 2–4 : initialisent si nécessaire.",
+      "Ligne 5 : renvoie PDO.",
+      "Ligne 6 : ferme la méthode."
+    ],
+    "hint": "L’instance de contrôle et la connexion renvoyée sont distinctes.",
+    "commonErrors": [
+      "Renvoyer _instance à la place de laConnexion.",
+      "Créer systématiquement une nouvelle connexion."
+    ],
+    "rubric": [
+      "La méthode est publique statique.",
+      "La création est protégée par le test.",
+      "La connexion est renvoyée."
+    ],
+    "alternatives": [],
+    "context": "Méthode interne de GestionConnexion ; le constructeur crée self::$laConnexion.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e007",
+    "chapter": 3,
+    "slides": [
+      19
+    ],
+    "theme": "Connexion",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Écris la méthode publique statique liberer qui remet _instance et laConnexion à null dans GestionConnexion.",
+    "answer": "public static function liberer() {\n    self::$_instance = null;\n    self::$laConnexion = null;\n}",
+    "explanation": "Ligne 1 : déclare l’opération statique. Lignes 2–3 : enlèvent les références conservées. Ligne 4 : ferme la méthode.",
+    "lineExplanation": [
+      "Ligne 1 : déclare l’opération statique.",
+      "Lignes 2–3 : enlèvent les références conservées.",
+      "Ligne 4 : ferme la méthode."
+    ],
+    "hint": "Ne remets pas seulement une variable locale à null.",
+    "commonErrors": [
+      "Utiliser self::laConnexion sans $.",
+      "Croire que cela supprime des tables."
+    ],
+    "rubric": [
+      "La méthode est publique statique.",
+      "_instance est remise à null.",
+      "laConnexion est remise à null."
+    ],
+    "alternatives": [],
+    "context": "Fragment interne de GestionConnexion.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e008",
+    "chapter": 3,
+    "slides": [
+      33
+    ],
+    "theme": "Stratégie 2",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Crée une soirée dans $soiree avec \"23/03/2021\", \"Observer La Lune\", 30, crée son DAO dans $dao puis appelle creer avec la soirée.",
+    "answer": "$soiree = new Soiree(\"23/03/2021\", \"Observer La Lune\", 30);\n$dao = new SoireeDAO();\n$dao->creer($soiree);",
+    "explanation": "Ligne 1 : construit l’objet métier. Ligne 2 : construit le DAO. Ligne 3 : demande la persistance depuis le programme.",
+    "lineExplanation": [
+      "Ligne 1 : construit l’objet métier.",
+      "Ligne 2 : construit le DAO.",
+      "Ligne 3 : demande la persistance depuis le programme."
+    ],
+    "hint": "Le programme connaît les deux objets.",
+    "commonErrors": [
+      "Utiliser le point pour appeler creer.",
+      "Passer le DAO à la place de la soirée."
+    ],
+    "rubric": [
+      "La soirée contient les trois valeurs.",
+      "Le DAO est instancié.",
+      "creer reçoit l’objet métier."
+    ],
+    "alternatives": [],
+    "context": "Soiree et SoireeDAO existent avec les signatures du cours.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e009",
+    "chapter": 3,
+    "slides": [
+      31
+    ],
+    "theme": "Stratégie 1",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans Soiree, écris sauvegardeToi() qui renvoie le résultat de creer($this) sur le DAO conservé dans objSoireeDAO.",
+    "answer": "public function sauvegardeToi() {\n    return $this->objSoireeDAO->creer($this);\n}",
+    "explanation": "Ligne 1 : expose l’action de sauvegarde métier. Ligne 2 : transmet l’objet courant à son DAO et renvoie le résultat. Ligne 3 : ferme la méthode.",
+    "lineExplanation": [
+      "Ligne 1 : expose l’action de sauvegarde métier.",
+      "Ligne 2 : transmet l’objet courant à son DAO et renvoie le résultat.",
+      "Ligne 3 : ferme la méthode."
+    ],
+    "hint": "Le DAO doit recevoir l’objet courant.",
+    "commonErrors": [
+      "Utiliser objSoireeDAO sans $this->.",
+      "Utiliser . au lieu de ->."
+    ],
+    "rubric": [
+      "La méthode est définie.",
+      "Le DAO de l’objet est appelé.",
+      "$this est transmis et le résultat renvoyé."
+    ],
+    "alternatives": [],
+    "context": "Fragment de Soiree ; objSoireeDAO est une propriété déjà initialisée.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e010",
+    "chapter": 3,
+    "slides": [
+      26
+    ],
+    "theme": "Finders",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "$dao existe. Récupère la personne d’id 12 dans $personne avec findById puis toute la table dans $personnes avec findAll.",
+    "answer": "$personne = $dao->findById(12);\n$personnes = $dao->findAll();",
+    "explanation": "Ligne 1 : recherche une occurrence par identifiant. Ligne 2 : récupère la collection entière.",
+    "lineExplanation": [
+      "Ligne 1 : recherche une occurrence par identifiant.",
+      "Ligne 2 : récupère la collection entière."
+    ],
+    "hint": "Un finder retourne les données recherchées.",
+    "commonErrors": [
+      "Inverser findAll et findById.",
+      "Oublier de stocker les retours."
+    ],
+    "rubric": [
+      "findById reçoit 12.",
+      "Son retour est stocké dans $personne.",
+      "findAll est stocké dans $personnes."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e011",
+    "chapter": 3,
+    "slides": [
+      23,
+      14
+    ],
+    "theme": "Create",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans SoireeDAO, écris creer($soiree) qui récupère date, nature et places dans $date, $nature et $places avec les getters du cours. Pas de SQL demandé.",
+    "answer": "public function creer($soiree) {\n    $date = $soiree->getLaDateSoiree();\n    $nature = $soiree->getLaNature();\n    $places = $soiree->getLeNbPlaces();\n}",
+    "explanation": "Ligne 1 : reçoit l’objet métier. Lignes 2–4 : extraient les informations à enregistrer. Ligne 5 : ferme le fragment de méthode.",
+    "lineExplanation": [
+      "Ligne 1 : reçoit l’objet métier.",
+      "Lignes 2–4 : extraient les informations à enregistrer.",
+      "Ligne 5 : ferme le fragment de méthode."
+    ],
+    "hint": "Les informations sont accessibles par les méthodes publiques.",
+    "commonErrors": [
+      "Accéder directement aux attributs privés.",
+      "Oublier les parenthèses des getters."
+    ],
+    "rubric": [
+      "La méthode reçoit un objet.",
+      "Les trois getters corrects sont appelés.",
+      "Les valeurs sont stockées dans les variables demandées."
+    ],
+    "alternatives": [],
+    "context": "Méthode interne de SoireeDAO ; exercice limité à la préparation des données.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e012",
+    "chapter": 3,
+    "slides": [
+      21
+    ],
+    "theme": "DAO statique",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "La classe PersonneDAO définit une méthode publique statique inserer. Appelle-la avec $personne et conserve son résultat dans $succes.",
+    "answer": "$succes = PersonneDAO::inserer($personne);",
+    "explanation": "Ligne 1 : utilise la forme statique et conserve le retour.",
+    "lineExplanation": [
+      "Ligne 1 : utilise la forme statique et conserve le retour."
+    ],
+    "hint": "Pas besoin de créer un objet pour cette forme de DAO.",
+    "commonErrors": [
+      "Utiliser PersonneDAO->.",
+      "Oublier de passer $personne."
+    ],
+    "rubric": [
+      "L’appel est statique.",
+      "L’objet métier est transmis.",
+      "Le résultat est stocké."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e013",
+    "chapter": 3,
+    "slides": [
+      27
+    ],
+    "theme": "Update",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Le contrat fourni est $dao->modifier($id, $nom). Modifie la personne 12 avec le nom \"Anna\" et conserve le retour dans $succes.",
+    "answer": "$succes = $dao->modifier(12, \"Anna\");",
+    "explanation": "Ligne 1 : transmet identifiant puis nouvelle valeur et conserve le résultat.",
+    "lineExplanation": [
+      "Ligne 1 : transmet identifiant puis nouvelle valeur et conserve le résultat."
+    ],
+    "hint": "L’identifiant cible la ligne à modifier.",
+    "commonErrors": [
+      "Inverser identifiant et nom.",
+      "Appeler creer au lieu de modifier."
+    ],
+    "rubric": [
+      "La méthode est modifier.",
+      "Les arguments sont 12 puis Anna.",
+      "Le retour est stocké dans $succes."
+    ],
+    "alternatives": [],
+    "context": "Le nom et la signature sont fournis par cet exercice ; ils illustrent la variante Update du cours.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e014",
+    "chapter": 3,
+    "slides": [
+      28
+    ],
+    "theme": "Delete",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Le DAO fournit supprimer($id). Supprime l’enregistrement d’id 12 et conserve son résultat dans $succes.",
+    "answer": "$succes = $dao->supprimer(12);",
+    "explanation": "Ligne 1 : appelle Delete avec l’identifiant et conserve le résultat.",
+    "lineExplanation": [
+      "Ligne 1 : appelle Delete avec l’identifiant et conserve le résultat."
+    ],
+    "hint": "Le paramètre identifie l’enregistrement, pas la classe.",
+    "commonErrors": [
+      "Passer le nom de la table à la place de 12.",
+      "Confondre destructeur PHP et suppression dans le stockage."
+    ],
+    "rubric": [
+      "La méthode supprimer est utilisée.",
+      "L’identifiant 12 est transmis.",
+      "Le retour est conservé."
+    ],
+    "alternatives": [],
+    "context": "La méthode supprimer($id) est déjà définie dans $dao.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c3-e015",
+    "chapter": 3,
+    "slides": [
+      14,
+      33
+    ],
+    "theme": "Correction",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Corrige l’affectation locale $_db = GestionConnexion::getConnexion(); pour initialiser la propriété _db de l’objet DAO.",
+    "answer": "$this->_db = GestionConnexion::getConnexion();",
+    "explanation": "Ligne 1 : affecte la connexion à la propriété d’instance au lieu d’une variable locale.",
+    "lineExplanation": [
+      "Ligne 1 : affecte la connexion à la propriété d’instance au lieu d’une variable locale."
+    ],
+    "hint": "L’attribut doit appartenir à l’objet courant.",
+    "commonErrors": [
+      "Écrire $this->$_db.",
+      "Laisser $_db comme variable locale."
+    ],
+    "rubric": [
+      "La cible est $this->_db.",
+      "La méthode technique est appelée statiquement.",
+      "L’affectation est syntaxiquement valide."
+    ],
+    "alternatives": [],
+    "context": "Cette instruction se place dans le constructeur du DAO.",
+    "essential": false,
+    "validation": "self"
+  }
+]

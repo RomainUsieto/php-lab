@@ -1,0 +1,403 @@
+[
+  {
+    "id": 1,
+    "title": "Rappels PHP et pages dynamiques",
+    "short": "Les fondamentaux",
+    "subtitle": "Syntaxe, tableaux, fonctions et formulaires",
+    "slides": 48,
+    "sections": [
+      {
+        "title": "Du serveur au navigateur",
+        "slides": "3, 31–32",
+        "items": [
+          "PHP est interprété côté serveur. Le navigateur reçoit le résultat généré, généralement du HTML.",
+          "Une page dynamique adapte son contenu aux données reçues et aux traitements effectués.",
+          "Un bloc commence par <?php. Une instruction se termine généralement par un point-virgule. // et /* … */ commentent le code."
+        ],
+        "code": "$nom = \"Anna\"; // une chaîne\n$age = 20;      // un entier\n$prix = 12.5;   // un décimal\n$inscrite = true; // un booléen\necho \"Bonjour \" . $nom;"
+      },
+      {
+        "title": "Conditions et opérateurs",
+        "slides": "5–11",
+        "items": [
+          "= affecte ; == compare les valeurs ; === compare valeur et type. != teste une différence.",
+          ">= et <= incluent la borne ; > et < sont stricts.",
+          "&& exige deux conditions vraies ; || en exige au moins une ; ! inverse un booléen.",
+          "if / elseif / else : seule la première branche vraie est exécutée. Tester le seuil 16 avant le seuil 10."
+        ],
+        "code": "if ($note >= 16) {\n    echo \"Très bien\";\n} elseif ($note >= 10) {\n    echo \"Admis\";\n} else {\n    echo \"Non admis\";\n}"
+      },
+      {
+        "title": "Trois boucles à savoir écrire",
+        "slides": "12–18",
+        "items": [
+          "for gère un compteur : initialisation ; condition ; mise à jour.",
+          "while teste avant chaque tour et peut ne jamais entrer dans le bloc. Faire évoluer la condition pour éviter une boucle infinie.",
+          "foreach parcourt un tableau sans gestion manuelle des indices.",
+          "Pour cumuler, initialiser le total ou compteur avant la boucle. Exemple du cours : 12 + 8 + 15 + 20 + 5 = 60 ; trois prix > 10."
+        ],
+        "code": "$total = 0;\nforeach ($produits as $nom => $prix) {\n    echo $nom . \" : \" . $prix . \"<br>\";\n    $total += $prix;\n}"
+      },
+      {
+        "title": "Tableaux indexés et associatifs",
+        "slides": "19–24",
+        "items": [
+          "Un tableau regroupe plusieurs valeurs accessibles par indice ou clé. Les indices implicites commencent à 0.",
+          "Un tableau associatif donne un nom explicite à chaque clé ; => associe la clé et sa valeur.",
+          "Lire ou modifier avec des crochets. Les noms de clés textuelles s’écrivent entre guillemets."
+        ],
+        "code": "$fruits = [\"Pomme\", \"Banane\", \"Orange\"];\n$fruits[1] = \"Fraise\"; // remplace le deuxième\n$etudiant = [\"nom\" => \"Alex\", \"age\" => 20];\necho $etudiant[\"nom\"];"
+      },
+      {
+        "title": "Fonctions : afficher ou renvoyer",
+        "slides": "25–30",
+        "items": [
+          "Une fonction est un bloc réutilisable déclaré avec function puis exécuté lors de son appel.",
+          "Les paramètres reçoivent les arguments de l’appel. return fournit une valeur à l’appelant ; echo affiche.",
+          "readline() lit une ligne au terminal ; (float) convertit la saisie en nombre décimal. Ce n’est pas une lecture de formulaire."
+        ],
+        "code": "function calculerMoyenne($a, $b, $c) {\n    return ($a + $b + $c) / 3;\n}\n$moyenne = calculerMoyenne(12, 15, 9); // 12\necho $moyenne;"
+      },
+      {
+        "title": "Formulaires, GET et POST",
+        "slides": "33–40",
+        "items": [
+          "action désigne le fichier de traitement ; method choisit la méthode d’envoi ; name devient la clé reçue en PHP. id identifie l’élément du document.",
+          "GET : paramètres dans l’URL, adapté à une recherche ou un filtre. POST : données dans le corps HTTP, adapté aux soumissions et modifications.",
+          "POST ne chiffre pas les données : le transport chiffré repose sur HTTPS. required vérifie côté navigateur, pas toute la validité côté serveur.",
+          "isset teste existence et non-nullité, pas le caractère non vide. htmlspecialchars prépare l’affichage HTML."
+        ],
+        "code": "if (isset($_GET[\"mot\"])) {\n    $mot = htmlspecialchars($_GET[\"mot\"], ENT_QUOTES, \"UTF-8\");\n    echo \"Vous recherchez : \" . $mot;\n}"
+      },
+      {
+        "title": "Validation et récapitulatif produit",
+        "slides": "41–46",
+        "items": [
+          "trim() retire les espaces en début et fin. ?? fournit un défaut si une valeur manque ou vaut null. is_numeric() teste la numericité.",
+          "$_SERVER[\"REQUEST_METHOD\"] permet de connaître la méthode HTTP. <?= … ?> équivaut à un affichage echo.",
+          "Échapper les données saisies au moment de les afficher dans du HTML ; la validation numérique n’est pas un échappement."
+        ],
+        "code": "$nom = trim($_POST[\"nom\"] ?? \"\");\n$prix = trim($_POST[\"prix\"] ?? \"\");\n$valide = $nom != \"\" && is_numeric($prix) && $prix > 0;\nif ($valide) {\n    echo htmlspecialchars($nom, ENT_QUOTES, \"UTF-8\");\n}"
+      },
+      {
+        "title": "Pièges, extension et points évaluables",
+        "slides": "43, 47–48",
+        "items": [
+          "La diapositive 41 exige un prix > 0 ; la solution 43 accepte zéro avec < 0. Toujours appliquer la règle explicitement fixée par l’énoncé.",
+          "La diapositive 43 contient aussi des accolades et un point-virgule manquants ; les exemples PHP Lab sont corrigés.",
+          "Les guillemets typographiques des supports ne sont pas des délimiteurs de chaînes PHP valides ; saisir des guillemets droits.",
+          "L’extension utilise $_SESSION pour conserver plusieurs produits entre les requêtes d’une même navigation, puis les afficher et sommer leurs prix.",
+          "À savoir produire : conditions de seuil, boucle bornée, tableau associatif, cumul, fonction avec return, lecture GET/POST et affichage échappé."
+        ],
+        "code": null
+      }
+    ],
+    "essential": [
+      "Distinguer =, == et ===.",
+      "Écrire une boucle sans erreur de borne.",
+      "Renvoyer un calcul avec return.",
+      "Lire la bonne clé GET/POST et échapper son affichage."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Création de classes métiers",
+    "short": "Classes et objets",
+    "subtitle": "Encapsulation, constructeurs, héritage et statique",
+    "slides": 32,
+    "sections": [
+      {
+        "title": "Classe et instance",
+        "slides": "3–6",
+        "items": [
+          "Une classe décrit des propriétés et méthodes encapsulées ; un objet est une instance concrète de cette classe.",
+          "Une propriété décrit les données ; une méthode représente un comportement. Une méthode s’écrit avec function.",
+          "public : accessible depuis l’extérieur. private : accès direct limité à la classe déclarante. protected : accès interne et depuis les classes filles."
+        ],
+        "code": "class Personne {\n    private $num;\n    protected $nom;\n    public $societe;\n}"
+      },
+      {
+        "title": "Accesseurs et objet courant",
+        "slides": "7–8",
+        "items": [
+          "$this représente l’objet courant. $this->num désigne sa propriété ; $num seul est une variable locale distincte.",
+          "Un getter renvoie une propriété, un setter la modifie. Les méthodes publiques exposent un accès contrôlé aux données privées.",
+          "Appeler une méthode d’instance avec $objet->methode(). Chaque instance créée avec new possède ses propres données d’instance."
+        ],
+        "code": "public function setNum($nvNum) {\n    $this->num = $nvNum;\n}\npublic function getNum() {\n    return $this->num;\n}"
+      },
+      {
+        "title": "Initialiser un objet",
+        "slides": "9–11",
+        "items": [
+          "new Personne(...) crée une instance et appelle le constructeur défini.",
+          "Le nom moderne exact est __construct, avec deux underscores. Certaines diapositives les affichent mal.",
+          "Les paramètres doivent être affectés aux propriétés avec $this->. Une classe peut être instanciée sans constructeur explicite ; celui-ci sert ici à son initialisation."
+        ],
+        "code": "public function __construct($num, $nom, $societe) {\n    $this->num = $num;\n    $this->nom = $nom;\n    $this->societe = $societe;\n}"
+      },
+      {
+        "title": "Plusieurs formats de création",
+        "slides": "12–18",
+        "items": [
+          "On ne déclare pas deux méthodes __construct de signatures différentes dans une même classe PHP.",
+          "La technique du cours utilise func_num_args() pour compter les arguments reçus et func_get_arg($i) pour lire celui d’indice i, à partir de 0.",
+          "Dans Personne, trois arguments initialisent les trois données ; deux arguments fixent societe à \"inconnu\". break quitte le switch ; exit(1) arrête l’exécution pour un format non prévu.",
+          "Dans Voiture, le format à quatre informations fixe disponible à true. calculerPrixLocation renvoie prixJournalier × nbJours."
+        ],
+        "code": "switch (func_num_args()) {\n    case 2:\n        $this->num = func_get_arg(0);\n        $this->nom = func_get_arg(1);\n        $this->societe = \"inconnu\";\n        break;\n}"
+      },
+      {
+        "title": "Héritage et réutilisation",
+        "slides": "20–23, 29–30",
+        "items": [
+          "extends déclare une classe fille. parent:: cible un membre accessible de la mère.",
+          "Si la fille définit son constructeur, elle appelle explicitement parent::__construct(...) pour initialiser la partie mère. Le cours place cet appel au début : c’est une convention pédagogique, pas une obligation syntaxique PHP.",
+          "Une propriété private de la mère n’est pas directement accessible dans la fille ; un getter public de la mère peut la fournir.",
+          "Formateur et Apprenant partagent id, nom et email dans Utilisateur, puis ajoutent spécialité ou formation.",
+          "Exemple autonome ci-dessous : Personne reçoit seulement le nom. Ne pas mélanger ce constructeur à un seul paramètre avec l’exemple précédent à trois paramètres."
+        ],
+        "code": "class Personne {\n    protected $nom;\n    public function __construct($nom) {\n        $this->nom = $nom;\n    }\n}\nclass Etudiant extends Personne {\n    private $formation;\n    public function __construct($nom, $formation) {\n        parent::__construct($nom);\n        $this->formation = $formation;\n    }\n}"
+      },
+      {
+        "title": "Destruction et références",
+        "slides": "24–26",
+        "items": [
+          "__destruct() est appelé quand l’objet n’a plus de référence ou lors de la fin du script.",
+          "Si deux variables référencent le même objet, affecter null à une seule ne détruit pas l’objet encore référencé.",
+          "La capture Voiture affiche : création, fin du programme, puis destruction. Éviter de concaténer arbitrairement $this à un texte : la classe présentée ne définit pas de conversion en chaîne."
+        ],
+        "code": "public function __destruct() {\n    echo \"Destruction de l’objet\";\n}"
+      },
+      {
+        "title": "Portée de classe : static",
+        "slides": "27–28, 31–32",
+        "items": [
+          "Une propriété static appartient à la classe et est commune à ses instances. Elle est distincte des propriétés d’instance.",
+          "Accès interne à une propriété statique : self::$planete, avec $. Appel d’une méthode statique publique : Personne::donnePlanete().",
+          "Une méthode statique n’a pas de $this. La diapositive 27 écrit self::planete : il faut corriger en self::$planete.",
+          "Le compteur nombreUtilisateurs est incrémenté lors des constructions, pas lors de la lecture du getter. Deux formateurs et trois apprenants donnent cinq créations."
+        ],
+        "code": "private static $nombreUtilisateurs = 0;\npublic static function getNombreUtilisateurs() {\n    return self::$nombreUtilisateurs;\n}"
+      },
+      {
+        "title": "Points à savoir écrire",
+        "slides": "7–31",
+        "items": [
+          "Déclarer une classe et choisir une visibilité ; écrire getters et setters.",
+          "Initialiser les propriétés avec le bon constructeur ; lire les arguments par indice.",
+          "Créer un objet, appeler une méthode ; écrire une fille et appeler le parent.",
+          "Déclarer un compteur statique et son getter ; distinguer ->, :: et =>."
+        ],
+        "code": null
+      }
+    ],
+    "essential": [
+      "$this->propriete pour une instance.",
+      "__construct et __destruct : deux underscores.",
+      "extends puis parent::__construct.",
+      "self::$propriete et Classe::methode()."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Classes DAO et persistance",
+    "short": "DAO et PDO",
+    "subtitle": "Stockage, connexion partagée et opérations CRUD",
+    "slides": 34,
+    "sections": [
+      {
+        "title": "Pourquoi une passerelle ?",
+        "slides": "2–8",
+        "items": [
+          "Les objets en mémoire ont une durée de vie limitée à l’exécution. La persistance conserve leurs informations durablement.",
+          "Deux éléments sont nécessaires : un support permanent (base relationnelle ou XML) et une passerelle entre objets et stockage.",
+          "Un DAO, objet d’accès aux données, isole cette passerelle. Il gère lecture et mise à jour du stockage.",
+          "La création d’une table ne relie pas automatiquement l’objet métier à cette table."
+        ],
+        "code": null
+      },
+      {
+        "title": "Couches, couplage et factorisation",
+        "slides": "6–16",
+        "items": [
+          "Placer le SQL dans le métier crée un couplage avec le support. Le DAO permet de changer ce support en réécrivant principalement ses méthodes.",
+          "Parcours du cours : utilisateur, interface, classes métier, DAO, base. N couches ne veut pas nécessairement dire N machines.",
+          "Le DAO centralise et factorise le code. Un même objet DAO peut gérer plusieurs instances d’une classe métier. Pour une structure importante, le cours suggère un DAO par table.",
+          "Les schémas des diapositives 30 et 32 montrent la différence entre métier lié au DAO et application qui connaît elle-même les DAO."
+        ],
+        "code": null
+      },
+      {
+        "title": "Connexion technique et PDO",
+        "slides": "17–19",
+        "items": [
+          "PDO signifie PHP Data Objects. C’est l’API PHP présentée pour l’accès aux bases relationnelles.",
+          "GestionConnexion fournit la connexion ; les DAO l’utilisent. Le Singleton de l’exemple limite les créations et réutilise cette connexion.",
+          "Le constructeur privé empêche new GestionConnexion() depuis l’extérieur. getConnexion() est public statique et réalise une initialisation à la première demande."
+        ],
+        "code": "private static $_instance = null;\nprivate static $laConnexion;\nprivate function __construct() {\n    self::$laConnexion = new PDO(\n        \"mysql:host=localhost;dbname=nomBase\", \"login\", \"mdp\"\n    );\n}\npublic static function getConnexion() {\n    if (is_null(self::$_instance)) self::$_instance = new GestionConnexion();\n    return self::$laConnexion;\n}"
+      },
+      {
+        "title": "Deux squelettes de DAO",
+        "slides": "20–21",
+        "items": [
+          "Forme d’instance : propriété privée de connexion, initialisée dans le constructeur, puis appels sur $dao->methode().",
+          "Forme statique : méthodes public static, connexion obtenue dans ces méthodes, appels ClasseDAO::methode().",
+          "Attention à la variable locale : $_db = … ne remplit pas $this->_db. Les captures comportent cette erreur.",
+          "GestionConnexion::liberer() est la méthode du service technique qui remet ses références à null ; ce n’est pas une méthode de PDO. D’autres références PDO peuvent encore subsister."
+        ],
+        "code": "class SoireeDAO {\n    private $_db;\n    public function __construct() {\n        $this->_db = GestionConnexion::getConnexion();\n    }\n}"
+      },
+      {
+        "title": "CRUD : contrats à reconnaître",
+        "slides": "22–28",
+        "items": [
+          "Create : ajouter ; paramètres séparés ou objet métier. Le contrat peut renvoyer un booléen de succès ou l’identifiant généré.",
+          "Read : renvoyer un objet, une collection ou une donnée calculée. Un finder recherche : findById(id) cible une occurrence ; findAll() lit toute la table.",
+          "Update : modifier ; transmettre un identifiant et les nouvelles valeurs ou un objet modifié. Un retour booléen est possible, pas obligatoire.",
+          "Delete : supprimer ; transmettre un identifiant ou l’objet concerné. Ne pas confondre suppression persistante et destruction d’un objet en mémoire."
+        ],
+        "code": "$personne = $dao->findById(12);\n$personnes = $dao->findAll();"
+      },
+      {
+        "title": "Stratégie 1 : le métier connaît le DAO",
+        "slides": "29–31",
+        "items": [
+          "L’objet métier possède une référence vers son DAO. Il lui délègue sa sauvegarde.",
+          "Le programme peut simplement appeler $uneSoiree->sauvegardeToi() sans connaître le DAO.",
+          "Correction de la notation dans le support : l’accès à la référence conservée dans l’objet utilise $this->objSoireeDAO, puis ->creer($this)."
+        ],
+        "code": "public function sauvegardeToi() {\n    return $this->objSoireeDAO->creer($this);\n}"
+      },
+      {
+        "title": "Stratégie 2 : le programme appelle le DAO",
+        "slides": "32–34",
+        "items": [
+          "L’objet métier ne possède pas de référence au DAO. Le programme connaît l’objet et son DAO et orchestre la sauvegarde.",
+          "Le cours privilégie cette stratégie pour la lisibilité et l’isolation de la persistance.",
+          "Une fois les DAO en place, l’accès aux tables doit passer par leurs méthodes ; ne pas dupliquer SQL ailleurs."
+        ],
+        "code": "$uneSoiree = new Soiree(\"23/03/2021\", \"Observer La Lune\", 30);\n$dao = new SoireeDAO();\n$dao->creer($uneSoiree);"
+      },
+      {
+        "title": "Limites des exemples et points évaluables",
+        "slides": "14–15, 19–21, 31–34",
+        "items": [
+          "Le cours illustre des requêtes SQL construites par concaténation. Elles servent à comprendre la passerelle ; les exercices courts privilégient les appels DAO et ne présentent pas cette concaténation de saisies comme un modèle de validation.",
+          "À savoir écrire : initialisation de la connexion dans un attribut, appel statique de GestionConnexion, appels CRUD selon un contrat fourni, accès aux getters, correction des notations d’objet.",
+          "À savoir expliquer : persistance, couplage, factorisation, Singleton, formes de DAO et deux stratégies. Le développement d’un CRUD SQL complet n’est pas requis par nos exercices courts."
+        ],
+        "code": null
+      }
+    ],
+    "essential": [
+      "DAO = passerelle métier / stockage.",
+      "GestionConnexion fournit PDO ; le DAO l’utilise.",
+      "CRUD : créer, lire, modifier, supprimer.",
+      "Stratégie 2 : le programme appelle le DAO."
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Architecture Modèle Vue Contrôleur",
+    "short": "Architecture MVC",
+    "subtitle": "Responsabilités, navigation et catalogue de films",
+    "slides": 50,
+    "sections": [
+      {
+        "title": "Trois responsabilités",
+        "slides": "3–14",
+        "items": [
+          "Un patron de conception réutilise une solution générale à un problème récurrent d’organisation.",
+          "Modèle : logique métier liée aux données, extraction, organisation et SQL. Il peut utiliser des fonctions ou des classes.",
+          "Vue : affiche les données, principalement en HTML ; du PHP de présentation peut parcourir une liste. Pas de requêtes SQL dans la vue.",
+          "Contrôleur : reçoit la demande, coordonne le traitement, appelle le modèle puis transmet ses données à la vue. Le navigateur reçoit le HTML généré."
+        ],
+        "code": "$etudiants = obtenirLesEtudiants($pdo); // modèle\ninclude(\"vues/liste_etudiants.php\"); // présentation"
+      },
+      {
+        "title": "Lire des données puis les afficher",
+        "slides": "8–10",
+        "items": [
+          "Dans le modèle, query exécute la requête fixe de l’exemple ; fetchAll récupère ses lignes.",
+          "Dans la vue, foreach parcourt les données déjà préparées. Le cours utilise aussi la syntaxe foreach (…) : … endforeach;.",
+          "L’échappement HTML vu au chapitre 1 reste nécessaire pour les valeurs saisies."
+        ],
+        "code": "$sql = \"SELECT * FROM etudiants\";\n$resultat = $pdo->query($sql);\n$etudiants = $resultat->fetchAll();"
+      },
+      {
+        "title": "Vue externe, sous-vues et layout",
+        "slides": "15–21",
+        "items": [
+          "La vue externe est la page complète visible par l’internaute. Elle peut être composée de fragments : header, menu, contenu central et footer.",
+          "Les sous-vues communes évitent de répéter l’en-tête, le menu et le pied de page. Les sous-vues liées à la demande présentent un contenu spécifique.",
+          "layout.php représente la structure générale et assemble les parties. Les fichiers de vues sont réunis dans vues/ (certains schémas écrivent views/).",
+          "La capture de la diapositive 19 écrit layot.php : utiliser un nom cohérent tel que layout.php partout."
+        ],
+        "code": "include(\"vues/header.php\");\ninclude(\"vues/menu.php\");\ninclude(\"vues/etudiants/liste.php\");\ninclude(\"vues/footer.php\");"
+      },
+      {
+        "title": "Point d’entrée et sous-contrôleurs",
+        "slides": "22–28",
+        "items": [
+          "index.php est le contrôleur principal du cours. Il charge la connexion, traite les paramètres, oriente la navigation et prépare le layout.",
+          "Le menu vise le point d’entrée. controleur sélectionne le sous-contrôleur ; action sélectionne sa fonctionnalité.",
+          "Les sous-contrôleurs sont dans controleurs/ et contiennent exclusivement du PHP selon le support. Ils gèrent des cas d’utilisation cohérents.",
+          "$_REQUEST[\"controleur\"] est une lecture de paramètre présentée ; l’exemple final privilégie aussi $_GET."
+        ],
+        "code": "// Exemple d’URL :\n// index.php?controleur=films&action=liste\n$controleur = $_GET[\"controleur\"] ?? \"films\";\n$action = $_GET[\"action\"] ?? \"liste\";"
+      },
+      {
+        "title": "Choisir une action, préparer la bonne vue",
+        "slides": "29–31",
+        "items": [
+          "Le switch du sous-contrôleur traite chaque action ; break évite la poursuite dans les cas suivants.",
+          "modifierProduit reçoit l’identifiant, lit le produit et les catégories, puis inclut la vue de modification.",
+          "voirCategories lit les catégories puis inclut leur vue. Le modèle est le seul emplacement des requêtes SQL."
+        ],
+        "code": "switch ($action) {\n    case \"voirCategories\":\n        $lesCategories = $laConnexion->getLesCategories();\n        include(\"vues/v_categories.php\");\n        break;\n}"
+      },
+      {
+        "title": "Démarche de construction",
+        "slides": "32–40",
+        "items": [
+          "1. Définir les cas d’utilisation (consulter, ajouter, modifier, supprimer).",
+          "2. Imaginer les vues externes. 3. Construire répertoires et fichiers.",
+          "4. Écrire index.php, le contrôleur principal. 5. Coder chaque cas d’utilisation.",
+          "Le chemin de l’exemple est controleurs/ + nom + .php. file_exists vérifie l’existence, pas l’autorisation. Une application réelle doit contrôler les noms qu’elle accepte d’inclure.",
+          "include charge un fichier côté serveur. Le mot redirection dans ce passage désigne une orientation interne ; ce n’est pas une redirection HTTP."
+        ],
+        "code": "$controleur = $_GET[\"controleur\"] ?? \"etudiant\";\n$fichier = \"controleurs/\" . $controleur . \".php\";\n// Exercice du cours : tester le chemin avant de le charger.\nif (file_exists($fichier)) { include($fichier); }"
+      },
+      {
+        "title": "Exercice du catalogue de films",
+        "slides": "41–49",
+        "items": [
+          "Modèle Film : obtenirLesFilms(), obtenirUnFilm($id), obtenirFilmsParCategorie($idCategorie), ajouterFilm($donnees).",
+          "Vues : liste (titre, réalisateur, année et liens), détails (toutes les informations), formulaire d’ajout (dont catégorie issue de la base).",
+          "Actions dans c_films.php : liste, details, categorie, ajouter (formulaire), enregistrer (traitement et ajout).",
+          "Le formulaire transmet ses données au contrôleur. Après un ajout, l’exercice demande un retour vers la liste. Le contrôleur films est choisi par défaut."
+        ],
+        "code": "$films = $modele->obtenirFilmsParCategorie($idCategorie);\ninclude(\"vues/liste_films.php\");"
+      },
+      {
+        "title": "Tests et pièges à l’examen",
+        "slides": "50",
+        "items": [
+          "Tester liste puis détails, filtrage par catégorie, puis ajout et présence dans la liste actualisée.",
+          "Ne pas confondre modèle et base : le modèle est le code qui gère les données. Ne pas confondre contrôleur principal et sous-contrôleur.",
+          "Ne pas faire naviguer directement vers un fichier du modèle ou du contrôleur secondaire quand le point d’entrée est imposé.",
+          "Préparer les données avant include de la vue ; utiliser le bon identifiant (film ou catégorie) ; garder le SQL dans le modèle."
+        ],
+        "code": null
+      }
+    ],
+    "essential": [
+      "Modèle : données et SQL ; vue : affichage ; contrôleur : coordination.",
+      "index.php est le point d’entrée.",
+      "controleur choisit le sous-contrôleur ; action la fonctionnalité.",
+      "Données avant vue, puis tests des parcours."
+    ]
+  }
+]

@@ -1,0 +1,2413 @@
+[
+  {
+    "id": "c1-q001",
+    "chapter": 1,
+    "slides": [
+      3
+    ],
+    "theme": "Exécution",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Où le script PHP d’une page dynamique est-il exécuté ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Sur le serveur",
+        "explanation": "Le serveur interprète le PHP et génère la réponse."
+      },
+      {
+        "id": "1",
+        "text": "Sur le serveur, mais le code source PHP est ensuite interprété par le navigateur",
+        "explanation": "Le serveur envoie le résultat généré ; le navigateur n’interprète pas le PHP."
+      },
+      {
+        "id": "2",
+        "text": "Dans le navigateur, avant l’envoi de la requête",
+        "explanation": "Le navigateur envoie une demande ; le traitement PHP se fait au serveur."
+      },
+      {
+        "id": "3",
+        "text": "Sur le serveur uniquement lors de la création du fichier",
+        "explanation": "Le script est exécuté lors des requêtes, pas seulement lors de son écriture."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le navigateur reçoit le résultat généré, pas le code PHP.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q002",
+    "chapter": 1,
+    "slides": [
+      3
+    ],
+    "theme": "Syntaxe",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel délimiteur ouvre un bloc PHP ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "<?php",
+        "explanation": "C’est la balise ouvrante PHP utilisée dans le cours."
+      },
+      {
+        "id": "1",
+        "text": "<php>",
+        "explanation": "Cette forme ne démarre pas un bloc PHP."
+      },
+      {
+        "id": "2",
+        "text": "<? php",
+        "explanation": "L’espace coupe le marqueur ouvrant et le rend invalide."
+      },
+      {
+        "id": "3",
+        "text": "<script php>",
+        "explanation": "Une balise script n’ouvre pas un bloc PHP."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Un bloc commence par <?php et peut se terminer par ?>.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q003",
+    "chapter": 1,
+    "slides": [
+      4
+    ],
+    "theme": "Variables",
+    "difficulty": "facile",
+    "type": "multiple",
+    "prompt": "Quelles affectations sont valides ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$age = 20;",
+        "explanation": "Le nom commence par $ et la valeur est affectée avec =."
+      },
+      {
+        "id": "1",
+        "text": "$prix = 12.5;",
+        "explanation": "Le point est le séparateur décimal du littéral."
+      },
+      {
+        "id": "2",
+        "text": "age = 20;",
+        "explanation": "Le symbole $ manque."
+      },
+      {
+        "id": "3",
+        "text": "$prix == 12.5;",
+        "explanation": "Il s’agit d’une comparaison, pas d’une affectation."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "= affecte une valeur. == compare deux valeurs.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q004",
+    "chapter": 1,
+    "slides": [
+      3
+    ],
+    "theme": "Affichage",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel résultat est affiché ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Bonjour Anna",
+        "explanation": "Le point concatène la chaîne et la variable."
+      },
+      {
+        "id": "1",
+        "text": "Bonjour $nom",
+        "explanation": "La variable n’est pas à l’intérieur d’une chaîne simple."
+      },
+      {
+        "id": "2",
+        "text": "Bonjour . Anna",
+        "explanation": "Le point est un opérateur, pas du texte affiché."
+      },
+      {
+        "id": "3",
+        "text": "AnnaBonjour",
+        "explanation": "La concaténation respecte l’ordre des opérandes."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La concaténation assemble les deux chaînes dans l’ordre.",
+    "code": "$nom = \"Anna\";\necho \"Bonjour \" . $nom;",
+    "essential": true
+  },
+  {
+    "id": "c1-q005",
+    "chapter": 1,
+    "slides": [
+      4
+    ],
+    "theme": "Types",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle valeur est un booléen ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "true",
+        "explanation": "true est une valeur booléenne."
+      },
+      {
+        "id": "1",
+        "text": "\"true\"",
+        "explanation": "Les guillemets en font une chaîne."
+      },
+      {
+        "id": "2",
+        "text": "12.5",
+        "explanation": "C’est un nombre décimal."
+      },
+      {
+        "id": "3",
+        "text": "\"20\"",
+        "explanation": "C’est une chaîne contenant des chiffres."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Les booléens true et false ne sont pas entourés de guillemets.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q006",
+    "chapter": 1,
+    "slides": [
+      3
+    ],
+    "theme": "Commentaires",
+    "difficulty": "facile",
+    "type": "multiple",
+    "prompt": "Quelles écritures sont des commentaires PHP ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "// une remarque",
+        "explanation": "// commente jusqu’à la fin de la ligne."
+      },
+      {
+        "id": "1",
+        "text": "/* une remarque */",
+        "explanation": "Cette paire délimite un commentaire de bloc."
+      },
+      {
+        "id": "2",
+        "text": "<!-- une remarque -->",
+        "explanation": "C’est un commentaire HTML, pas un commentaire PHP dans un bloc."
+      },
+      {
+        "id": "3",
+        "text": "** une remarque **",
+        "explanation": "Cette syntaxe ne délimite pas un commentaire."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Le cours présente // et /* … */.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q007",
+    "chapter": 1,
+    "slides": [
+      5
+    ],
+    "theme": "Conditions",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle condition inclut exactement l’âge limite de 18 ans ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$age >= 18",
+        "explanation": "$age peut valoir 18 ou davantage."
+      },
+      {
+        "id": "1",
+        "text": "$age > 18",
+        "explanation": "18 serait exclu."
+      },
+      {
+        "id": "2",
+        "text": "$age <= 18",
+        "explanation": "Cela inclut les âges inférieurs."
+      },
+      {
+        "id": "3",
+        "text": "$age == 18",
+        "explanation": "Cela exclut tous les âges supérieurs."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Supérieur ou égal inclut la borne.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q008",
+    "chapter": 1,
+    "slides": [
+      6
+    ],
+    "theme": "Conditions",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que produit ce code ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Mineur",
+        "explanation": "16 ne vérifie pas >= 18 ; else est exécuté."
+      },
+      {
+        "id": "1",
+        "text": "Majeur",
+        "explanation": "La condition est fausse."
+      },
+      {
+        "id": "2",
+        "text": "MajeurMineur",
+        "explanation": "Un seul des deux blocs est exécuté."
+      },
+      {
+        "id": "3",
+        "text": "Rien",
+        "explanation": "Le bloc else contient bien un echo."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "if…else choisit une seule branche.",
+    "code": "$age = 16;\nif ($age >= 18) { echo \"Majeur\"; }\nelse { echo \"Mineur\"; }",
+    "essential": true
+  },
+  {
+    "id": "c1-q009",
+    "chapter": 1,
+    "slides": [
+      7
+    ],
+    "theme": "Conditions",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Avec une note de 17, que vaut l’affichage ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Très bien",
+        "explanation": "La première condition est vraie ; les suivantes ne sont pas évaluées comme branches alternatives."
+      },
+      {
+        "id": "1",
+        "text": "Admis",
+        "explanation": "La branche elseif n’est pas atteinte."
+      },
+      {
+        "id": "2",
+        "text": "Très bienAdmis",
+        "explanation": "Les branches d’un if…elseif sont exclusives."
+      },
+      {
+        "id": "3",
+        "text": "Non admis",
+        "explanation": "17 n’est pas inférieur à 10."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La première branche vraie est la seule exécutée.",
+    "code": "$note = 17;\nif ($note >= 16) { echo \"Très bien\"; }\nelseif ($note >= 10) { echo \"Admis\"; }\nelse { echo \"Non admis\"; }",
+    "essential": false
+  },
+  {
+    "id": "c1-q010",
+    "chapter": 1,
+    "slides": [
+      8
+    ],
+    "theme": "Comparaisons",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle expression est fausse ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "20 === \"20\"",
+        "explanation": "Les types entier et chaîne diffèrent."
+      },
+      {
+        "id": "1",
+        "text": "20 == \"20\"",
+        "explanation": "L’égalité en valeur est vraie ici."
+      },
+      {
+        "id": "2",
+        "text": "20 >= 20",
+        "explanation": "La borne est incluse."
+      },
+      {
+        "id": "3",
+        "text": "20 != 21",
+        "explanation": "Les valeurs sont différentes."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "=== exige la même valeur et le même type.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q011",
+    "chapter": 1,
+    "slides": [
+      8
+    ],
+    "theme": "Comparaisons",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Vrai ou faux : = et == sont interchangeables dans une condition.",
+    "options": [
+      {
+        "id": "0",
+        "text": "Faux",
+        "explanation": "= affecte ; == compare."
+      },
+      {
+        "id": "1",
+        "text": "Vrai",
+        "explanation": "Une affectation peut modifier la variable et ne signifie pas tester une égalité."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Confondre affectation et comparaison change le programme.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q012",
+    "chapter": 1,
+    "slides": [
+      9
+    ],
+    "theme": "Logique",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quand $age >= 18 && $inscrit est-il vrai ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Quand les deux conditions sont vraies",
+        "explanation": "&& est le ET logique."
+      },
+      {
+        "id": "1",
+        "text": "Dès que l’âge convient, même sans inscription",
+        "explanation": "Il manque la seconde condition."
+      },
+      {
+        "id": "2",
+        "text": "Dès que l’inscription est vraie, quel que soit l’âge",
+        "explanation": "L’âge doit aussi convenir."
+      },
+      {
+        "id": "3",
+        "text": "Quand aucune condition n’est vraie",
+        "explanation": "Cela ne satisfait pas un ET."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Les deux conditions sont nécessaires.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q013",
+    "chapter": 1,
+    "slides": [
+      9
+    ],
+    "theme": "Logique",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Quel est le résultat de false || true ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "true",
+        "explanation": "Au moins un des deux opérandes est vrai."
+      },
+      {
+        "id": "1",
+        "text": "false",
+        "explanation": "Il faudrait que les deux soient faux pour un OU faux."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "|| correspond à un OU inclusif.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q014",
+    "chapter": 1,
+    "slides": [
+      9
+    ],
+    "theme": "Logique",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "À quoi sert ! devant une condition ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Inverser sa valeur logique",
+        "explanation": "!true vaut false et !false vaut true."
+      },
+      {
+        "id": "1",
+        "text": "Affecter une valeur",
+        "explanation": "L’affectation utilise =."
+      },
+      {
+        "id": "2",
+        "text": "Concaténer deux chaînes",
+        "explanation": "La concaténation utilise le point."
+      },
+      {
+        "id": "3",
+        "text": "Tester uniquement une différence",
+        "explanation": "!= combine ! et =, mais ! seul est une négation."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "! est la négation logique ; != est un opérateur différent.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q015",
+    "chapter": 1,
+    "slides": [
+      12
+    ],
+    "theme": "Boucles",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Combien de fois ce echo est-il exécuté ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "5",
+        "explanation": "Les valeurs prises sont 1, 2, 3, 4 et 5."
+      },
+      {
+        "id": "1",
+        "text": "4",
+        "explanation": "La borne 5 est incluse par <=."
+      },
+      {
+        "id": "2",
+        "text": "6",
+        "explanation": "Le compteur commence à 1, pas à 0."
+      },
+      {
+        "id": "3",
+        "text": "Une infinité de fois",
+        "explanation": "$i++ fait progresser le compteur."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Tester les bornes évite les erreurs de comptage.",
+    "code": "for ($i = 1; $i <= 5; $i++) { echo $i; }",
+    "essential": false
+  },
+  {
+    "id": "c1-q016",
+    "chapter": 1,
+    "slides": [
+      12
+    ],
+    "theme": "Boucles",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Dans for ($i=0; $i<3; $i++), quelle partie est exécutée après chaque tour ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$i++",
+        "explanation": "La troisième partie met le compteur à jour."
+      },
+      {
+        "id": "1",
+        "text": "$i=0",
+        "explanation": "L’initialisation n’a lieu qu’au début."
+      },
+      {
+        "id": "2",
+        "text": "$i<3",
+        "explanation": "C’est le test de continuation."
+      },
+      {
+        "id": "3",
+        "text": "Les trois parties une seule fois",
+        "explanation": "Le test et la mise à jour sont répétés."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "for comporte initialisation, condition et mise à jour.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q017",
+    "chapter": 1,
+    "slides": [
+      13
+    ],
+    "theme": "Boucles",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle erreur empêche la boucle de se terminer ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Le compteur n’est jamais modifié",
+        "explanation": "La condition $i <= 5 reste vraie."
+      },
+      {
+        "id": "1",
+        "text": "Le compteur commence à 1",
+        "explanation": "C’est une initialisation correcte."
+      },
+      {
+        "id": "2",
+        "text": "echo est dans la boucle",
+        "explanation": "C’est nécessaire pour répéter l’affichage."
+      },
+      {
+        "id": "3",
+        "text": "while teste avant le bloc",
+        "explanation": "C’est son fonctionnement normal."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Il faut faire évoluer la condition, par exemple avec $i++.",
+    "code": "$i = 1;\nwhile ($i <= 5) { echo $i; }",
+    "essential": false
+  },
+  {
+    "id": "c1-q018",
+    "chapter": 1,
+    "slides": [
+      13
+    ],
+    "theme": "Boucles",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Combien d’affichages ce programme effectue-t-il ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "0",
+        "explanation": "La condition est fausse dès le premier test."
+      },
+      {
+        "id": "1",
+        "text": "1",
+        "explanation": "while ne garantit pas une première exécution."
+      },
+      {
+        "id": "2",
+        "text": "5",
+        "explanation": "La valeur initiale est déjà supérieure à la borne."
+      },
+      {
+        "id": "3",
+        "text": "6",
+        "explanation": "Le compteur n’est jamais parcouru à partir de zéro."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "while vérifie la condition avant d’exécuter le bloc.",
+    "code": "$i = 6;\nwhile ($i <= 5) { echo $i; $i++; }",
+    "essential": false
+  },
+  {
+    "id": "c1-q019",
+    "chapter": 1,
+    "slides": [
+      14
+    ],
+    "theme": "Boucles",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle boucle est directement conçue pour parcourir les valeurs d’un tableau ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "foreach",
+        "explanation": "Elle fournit chaque élément sans gérer soi-même les indices."
+      },
+      {
+        "id": "1",
+        "text": "for avec $i++ sans accéder aux éléments",
+        "explanation": "Un compteur seul ne fournit pas directement les valeurs du tableau."
+      },
+      {
+        "id": "2",
+        "text": "while avec une condition sans parcourir les valeurs",
+        "explanation": "Une boucle while peut être organisée pour parcourir, mais n’est pas directement conçue pour les tableaux."
+      },
+      {
+        "id": "3",
+        "text": "if appliqué au tableau",
+        "explanation": "if choisit une branche ; il ne parcourt pas les éléments."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "foreach est adaptée au parcours d’un tableau.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q020",
+    "chapter": 1,
+    "slides": [
+      15
+    ],
+    "theme": "Tableaux",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Dans foreach ($etudiant as $cle => $valeur), que reçoit $cle ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Le nom de chaque clé",
+        "explanation": "Pour \"nom\" => \"Anna\", $cle vaut \"nom\"."
+      },
+      {
+        "id": "1",
+        "text": "Toujours Anna",
+        "explanation": "Anna est une valeur de l’exemple."
+      },
+      {
+        "id": "2",
+        "text": "Le tableau entier",
+        "explanation": "Le tableau est $etudiant."
+      },
+      {
+        "id": "3",
+        "text": "Le nombre d’éléments",
+        "explanation": "foreach ne place pas la taille dans $cle."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La flèche => sépare la clé et sa valeur.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q021",
+    "chapter": 1,
+    "slides": [
+      20
+    ],
+    "theme": "Tableaux",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que vaut $fruits[1] ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Banane",
+        "explanation": "L’indexation implicite commence à 0."
+      },
+      {
+        "id": "1",
+        "text": "Pomme",
+        "explanation": "Pomme est à l’indice 0."
+      },
+      {
+        "id": "2",
+        "text": "Orange",
+        "explanation": "Orange est à l’indice 2."
+      },
+      {
+        "id": "3",
+        "text": "1",
+        "explanation": "Un indice sert à accéder à une valeur."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le deuxième élément porte l’indice 1.",
+    "code": "$fruits = [\"Pomme\", \"Banane\", \"Orange\"];",
+    "essential": true
+  },
+  {
+    "id": "c1-q022",
+    "chapter": 1,
+    "slides": [
+      20
+    ],
+    "theme": "Tableaux",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle instruction remplace Banane par Fraise ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$fruits[1] = \"Fraise\";",
+        "explanation": "L’indice 1 vise le deuxième élément."
+      },
+      {
+        "id": "1",
+        "text": "$fruits[0] = \"Fraise\";",
+        "explanation": "Cela remplace le premier élément."
+      },
+      {
+        "id": "2",
+        "text": "$fruits[2] = \"Fraise\";",
+        "explanation": "Cela remplace le troisième élément."
+      },
+      {
+        "id": "3",
+        "text": "$fruits == \"Fraise\";",
+        "explanation": "Cette expression compare au lieu de modifier."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "On affecte la nouvelle valeur à l’indice concerné.",
+    "code": "$fruits = [\"Pomme\", \"Banane\", \"Orange\"];",
+    "essential": true
+  },
+  {
+    "id": "c1-q023",
+    "chapter": 1,
+    "slides": [
+      21
+    ],
+    "theme": "Tableaux",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Comment lire la ville dans le tableau associatif $etudiant ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$etudiant[\"ville\"]",
+        "explanation": "La clé est la chaîne ville."
+      },
+      {
+        "id": "1",
+        "text": "$etudiant->ville",
+        "explanation": "Cette notation vise un objet."
+      },
+      {
+        "id": "2",
+        "text": "$etudiant[ville]",
+        "explanation": "Sans guillemets, ville est traité comme un nom de constante."
+      },
+      {
+        "id": "3",
+        "text": "$etudiant(\"ville\")",
+        "explanation": "Cette syntaxe est un appel, pas un accès au tableau."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une clé textuelle s’écrit entre guillemets dans cet exemple.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q024",
+    "chapter": 1,
+    "slides": [
+      21
+    ],
+    "theme": "Tableaux",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel opérateur associe une clé à une valeur dans un tableau ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "=>",
+        "explanation": "Il associe une clé à sa valeur."
+      },
+      {
+        "id": "1",
+        "text": "->",
+        "explanation": "Il accède aux membres d’un objet."
+      },
+      {
+        "id": "2",
+        "text": "===",
+        "explanation": "Il compare valeur et type."
+      },
+      {
+        "id": "3",
+        "text": "::",
+        "explanation": "Il résout une portée de classe."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Ne pas confondre les différentes flèches PHP.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q025",
+    "chapter": 1,
+    "slides": [
+      17,
+      18
+    ],
+    "theme": "Accumulation",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quel total obtient-on avec les prix 12, 8, 15, 20 et 5 ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "60",
+        "explanation": "12 + 8 + 15 + 20 + 5 = 60."
+      },
+      {
+        "id": "1",
+        "text": "55",
+        "explanation": "Le dernier prix 5 a été oublié."
+      },
+      {
+        "id": "2",
+        "text": "5",
+        "explanation": "5 est le nombre de produits, pas leur somme."
+      },
+      {
+        "id": "3",
+        "text": "44",
+        "explanation": "44 correspond à l’autre scénario de la capture."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La capture du scénario initial affiche 60 €.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q026",
+    "chapter": 1,
+    "slides": [
+      17,
+      18
+    ],
+    "theme": "Accumulation",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Pour les prix 12, 8, 15, 20 et 5, combien sont strictement supérieurs à 10 ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "3",
+        "explanation": "12, 15 et 20 satisfont > 10."
+      },
+      {
+        "id": "1",
+        "text": "2",
+        "explanation": "20 doit aussi être compté."
+      },
+      {
+        "id": "2",
+        "text": "4",
+        "explanation": "8 et 5 sont tous les deux exclus."
+      },
+      {
+        "id": "3",
+        "text": "5",
+        "explanation": "On ne compte pas tous les produits."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "On incrémente le compteur seulement lorsque le prix dépasse 10.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q027",
+    "chapter": 1,
+    "slides": [
+      25
+    ],
+    "theme": "Fonctions",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Déclarer une fonction suffit-il à exécuter son contenu ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Non, il faut l’appeler",
+        "explanation": "La déclaration définit la fonction ; l’appel exécute son corps."
+      },
+      {
+        "id": "1",
+        "text": "Oui, dès la déclaration",
+        "explanation": "Le corps n’est pas exécuté par la seule déclaration."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "direBonjour(); est un appel, distinct de function direBonjour() { … }.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q028",
+    "chapter": 1,
+    "slides": [
+      26
+    ],
+    "theme": "Fonctions",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Dans saluer(\"Alex\"), que devient le paramètre $nom de function saluer($nom) ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Il reçoit \"Alex\"",
+        "explanation": "L’argument est transmis au paramètre à l’appel."
+      },
+      {
+        "id": "1",
+        "text": "Il reçoit le texte \"$nom\"",
+        "explanation": "Le nom du paramètre n’est pas sa valeur."
+      },
+      {
+        "id": "2",
+        "text": "Il reçoit toujours Anna",
+        "explanation": "Aucune valeur fixe Anna n’est définie ici."
+      },
+      {
+        "id": "3",
+        "text": "Il devient un tableau",
+        "explanation": "L’argument fourni est une chaîne."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Paramètre : variable de la fonction ; argument : valeur fournie.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q029",
+    "chapter": 1,
+    "slides": [
+      27
+    ],
+    "theme": "Fonctions",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle différence entre echo et return est correcte ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "echo affiche ; return renvoie à l’appelant",
+        "explanation": "Le résultat renvoyé peut être affecté puis réutilisé."
+      },
+      {
+        "id": "1",
+        "text": "return affiche toujours",
+        "explanation": "Un retour n’est pas un affichage."
+      },
+      {
+        "id": "2",
+        "text": "echo termine toujours la fonction",
+        "explanation": "echo poursuit normalement l’exécution."
+      },
+      {
+        "id": "3",
+        "text": "Ils créent tous deux une fonction",
+        "explanation": "Le mot-clé de déclaration est function."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une fonction de calcul doit renvoyer sa valeur avec return.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q030",
+    "chapter": 1,
+    "slides": [
+      27
+    ],
+    "theme": "Fonctions",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Que produit l’appel à additionner suivi de echo $r ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "8",
+        "explanation": "additionner renvoie 5 + 3, ensuite echo affiche 8."
+      },
+      {
+        "id": "1",
+        "text": "53",
+        "explanation": "+ additionne les nombres ; le point concatène."
+      },
+      {
+        "id": "2",
+        "text": "Rien",
+        "explanation": "echo $r affiche bien le résultat."
+      },
+      {
+        "id": "3",
+        "text": "5 3",
+        "explanation": "Il n’y a aucun affichage séparé des paramètres."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le retour d’une fonction est une valeur utilisable.",
+    "code": "function additionner($a, $b) { return $a + $b; }\n$r = additionner(5, 3);\necho $r;",
+    "essential": false
+  },
+  {
+    "id": "c1-q031",
+    "chapter": 1,
+    "slides": [
+      28,
+      29
+    ],
+    "theme": "Fonctions",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle moyenne obtient-on pour 12, 15 et 9 ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "12",
+        "explanation": "(12 + 15 + 9) / 3 = 12."
+      },
+      {
+        "id": "1",
+        "text": "36",
+        "explanation": "36 est la somme avant division."
+      },
+      {
+        "id": "2",
+        "text": "9",
+        "explanation": "9 est seulement la troisième note."
+      },
+      {
+        "id": "3",
+        "text": "18",
+        "explanation": "La somme doit être divisée par trois, pas par deux."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La capture du cours confirme une moyenne de 12 et le statut Admis.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q032",
+    "chapter": 1,
+    "slides": [
+      30
+    ],
+    "theme": "Saisie terminal",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "À quoi correspond (float) readline(\"Note : \") ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Une saisie au terminal convertie en nombre décimal",
+        "explanation": "readline lit une ligne et (float) effectue la conversion."
+      },
+      {
+        "id": "1",
+        "text": "Une lecture du champ POST Note convertie en décimal",
+        "explanation": "readline lit le terminal, pas les champs HTTP."
+      },
+      {
+        "id": "2",
+        "text": "Une saisie au terminal automatiquement arrondie à un entier",
+        "explanation": "float permet les décimales ; ce n’est pas un arrondi à l’entier."
+      },
+      {
+        "id": "3",
+        "text": "Une chaîne affichée sans attente de saisie",
+        "explanation": "readline attend une ligne ; le transtypage convertit le résultat."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Cet exemple s’utilise en ligne de commande.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q033",
+    "chapter": 1,
+    "slides": [
+      33
+    ],
+    "theme": "Formulaires",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel attribut permet à PHP d’identifier la donnée envoyée par un champ ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "name",
+        "explanation": "Le nom du paramètre provient de name."
+      },
+      {
+        "id": "1",
+        "text": "id",
+        "explanation": "id identifie un élément dans le document ; name définit la clé envoyée."
+      },
+      {
+        "id": "2",
+        "text": "value",
+        "explanation": "value fournit la valeur du champ, pas le nom de la clé reçue."
+      },
+      {
+        "id": "3",
+        "text": "action",
+        "explanation": "action est la destination de l’envoi du formulaire."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "id et name peuvent être égaux mais ont des rôles distincts.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q034",
+    "chapter": 1,
+    "slides": [
+      33
+    ],
+    "theme": "Formulaires",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel est le rôle de action=\"traitement.php\" ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Indiquer le destinataire de l’envoi",
+        "explanation": "Le serveur reçoit le formulaire à cette adresse."
+      },
+      {
+        "id": "1",
+        "text": "Définir si le formulaire utilise GET ou POST",
+        "explanation": "Ce choix appartient à method."
+      },
+      {
+        "id": "2",
+        "text": "Indiquer le nom de la variable reçue en PHP",
+        "explanation": "Les clés des champs viennent de name."
+      },
+      {
+        "id": "3",
+        "text": "Définir la valeur initiale du champ",
+        "explanation": "C’est value qui porte la valeur initiale."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "action désigne la ressource qui traite le formulaire.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q035",
+    "chapter": 1,
+    "slides": [
+      34,
+      35
+    ],
+    "theme": "GET",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle URL correspond au formulaire GET de recherche du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "recherche.php?mot=PHP",
+        "explanation": "Le champ name=\"mot\" devient un paramètre de l’URL."
+      },
+      {
+        "id": "1",
+        "text": "recherche.php?nom=PHP",
+        "explanation": "Le paramètre s’appelle mot, pas nom."
+      },
+      {
+        "id": "2",
+        "text": "recherche.php/mot/PHP",
+        "explanation": "Ce n’est pas la forme montrée pour ce formulaire GET."
+      },
+      {
+        "id": "3",
+        "text": "recherche.php?mot",
+        "explanation": "La valeur PHP est absente."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Un couple nom=valeur est ajouté après le point d’interrogation.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q036",
+    "chapter": 1,
+    "slides": [
+      36
+    ],
+    "theme": "GET",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quelles affirmations sur $_GET sont exactes ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "C’est une superglobale PHP",
+        "explanation": "Elle donne accès aux paramètres de l’URL."
+      },
+      {
+        "id": "1",
+        "text": "$_GET[\"mot\"] lit le paramètre mot",
+        "explanation": "Le nom entre crochets désigne la clé."
+      },
+      {
+        "id": "2",
+        "text": "Elle lit exclusivement le corps POST",
+        "explanation": "C’est le rôle de $_POST pour le formulaire présenté."
+      },
+      {
+        "id": "3",
+        "text": "Elle masque les paramètres de la barre d’adresse",
+        "explanation": "GET place les paramètres dans l’URL."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Les paramètres GET sont adaptés notamment aux recherches et filtres.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q037",
+    "chapter": 1,
+    "slides": [
+      38
+    ],
+    "theme": "POST",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "POST chiffre-t-il les données pendant leur transmission ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Non",
+        "explanation": "HTTPS est nécessaire pour chiffrer le transport."
+      },
+      {
+        "id": "1",
+        "text": "Oui",
+        "explanation": "L’absence des données dans l’URL ne signifie pas chiffrement."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours distingue explicitement POST et HTTPS.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q038",
+    "chapter": 1,
+    "slides": [
+      38
+    ],
+    "theme": "POST",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Où sont envoyées les données d’un formulaire POST ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Dans le corps de la requête HTTP",
+        "explanation": "Elles sont accessibles via $_POST pour le formulaire décrit."
+      },
+      {
+        "id": "1",
+        "text": "Dans l’URL, exactement comme GET",
+        "explanation": "Le cours distingue le corps de POST et les paramètres GET."
+      },
+      {
+        "id": "2",
+        "text": "Dans une nouvelle session PHP automatiquement créée",
+        "explanation": "POST et session sont deux mécanismes distincts."
+      },
+      {
+        "id": "3",
+        "text": "Dans $_GET, car le navigateur envoie une requête",
+        "explanation": "Les champs POST du formulaire sont lus dans $_POST."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "POST transmet les champs dans le corps HTTP.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q039",
+    "chapter": 1,
+    "slides": [
+      38
+    ],
+    "theme": "Vérification",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Que vérifie isset($_POST[\"nom\"]) ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Que la clé existe et que sa valeur n’est pas null",
+        "explanation": "Une chaîne vide satisfait néanmoins isset."
+      },
+      {
+        "id": "1",
+        "text": "Que le nom contient une lettre",
+        "explanation": "isset ne valide pas le contenu."
+      },
+      {
+        "id": "2",
+        "text": "Que le nom est non vide",
+        "explanation": "Une chaîne vide n’est pas null."
+      },
+      {
+        "id": "3",
+        "text": "Que la valeur est échappée pour HTML",
+        "explanation": "Il faut utiliser htmlspecialchars pour cet usage."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Existence et validation du contenu sont deux vérifications distinctes.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q040",
+    "chapter": 1,
+    "slides": [
+      36,
+      38
+    ],
+    "theme": "Échappement",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que fait htmlspecialchars avant l’affichage HTML ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Transforme les caractères spéciaux en entités HTML",
+        "explanation": "Le contenu saisi ne doit pas devenir des balises exécutées comme du HTML."
+      },
+      {
+        "id": "1",
+        "text": "Vérifie que le prix est numérique",
+        "explanation": "C’est is_numeric."
+      },
+      {
+        "id": "2",
+        "text": "Chiffre les données du formulaire",
+        "explanation": "L’échappement n’est pas du chiffrement."
+      },
+      {
+        "id": "3",
+        "text": "Enregistre automatiquement dans la base",
+        "explanation": "Il n’y a aucune persistance dans cette fonction."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "L’échappement protège le contexte d’affichage HTML.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q041",
+    "chapter": 1,
+    "slides": [
+      42
+    ],
+    "theme": "Validation",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Que vaut $nom après ces instructions ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Anna",
+        "explanation": "trim enlève les espaces situés aux extrémités."
+      },
+      {
+        "id": "1",
+        "text": "  Anna  ",
+        "explanation": "Les espaces de début et de fin sont retirés."
+      },
+      {
+        "id": "2",
+        "text": "A n n a",
+        "explanation": "trim n’insère pas d’espaces."
+      },
+      {
+        "id": "3",
+        "text": "Une chaîne vide",
+        "explanation": "Le texte central est conservé."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "trim ne supprime pas les lettres ni les espaces internes.",
+    "code": "$_POST[\"nom\"] = \"  Anna  \";\n$nom = trim($_POST[\"nom\"] ?? \"\");",
+    "essential": false
+  },
+  {
+    "id": "c1-q042",
+    "chapter": 1,
+    "slides": [
+      42
+    ],
+    "theme": "Valeur par défaut",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Si la clé prix est absente, que vaut $prix ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Une chaîne vide",
+        "explanation": "?? utilise la valeur de droite si la gauche est absente ou null."
+      },
+      {
+        "id": "1",
+        "text": "0",
+        "explanation": "Le défaut fourni est \"\", pas 0."
+      },
+      {
+        "id": "2",
+        "text": "true",
+        "explanation": "Il n’y a aucune expression booléenne ici."
+      },
+      {
+        "id": "3",
+        "text": "Le texte prix",
+        "explanation": "Le nom de clé n’est pas une valeur de remplacement."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le coalescent ?? permet de prévoir un défaut.",
+    "code": "$prix = $_POST[\"prix\"] ?? \"\";",
+    "essential": false
+  },
+  {
+    "id": "c1-q043",
+    "chapter": 1,
+    "slides": [
+      43
+    ],
+    "theme": "Validation",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle fonction du cours teste si une valeur est numérique ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "is_numeric($prix)",
+        "explanation": "Elle vérifie le caractère numérique de la valeur."
+      },
+      {
+        "id": "1",
+        "text": "isset($prix)",
+        "explanation": "L’existence ne garantit pas une valeur numérique."
+      },
+      {
+        "id": "2",
+        "text": "trim($prix)",
+        "explanation": "Retirer les espaces ne constitue pas une validation numérique."
+      },
+      {
+        "id": "3",
+        "text": "(float) $prix",
+        "explanation": "Une conversion n’est pas un test de validité numérique."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Chaque fonction a une responsabilité différente.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q044",
+    "chapter": 1,
+    "slides": [
+      41,
+      43
+    ],
+    "theme": "Validation",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "L’énoncé exige un prix strictement positif. Quelle condition rejette un prix invalide après le test is_numeric ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$prix <= 0",
+        "explanation": "Zéro et les nombres négatifs sont rejetés."
+      },
+      {
+        "id": "1",
+        "text": "$prix < 0",
+        "explanation": "Zéro serait accepté, contrairement à cet énoncé."
+      },
+      {
+        "id": "2",
+        "text": "$prix > 0",
+        "explanation": "Cela rejette les prix valides."
+      },
+      {
+        "id": "3",
+        "text": "$prix == 0",
+        "explanation": "Les nombres négatifs ne seraient pas rejetés."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La diapositive 41 exige > 0 ; la solution 43 tolère zéro. Cet énoncé fixe explicitement la règle.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q045",
+    "chapter": 1,
+    "slides": [
+      45
+    ],
+    "theme": "Requête HTTP",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle expression permet de vérifier la méthode de la requête ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$_SERVER[\"REQUEST_METHOD\"] == \"POST\"",
+        "explanation": "Elle lit la méthode HTTP reçue."
+      },
+      {
+        "id": "1",
+        "text": "$_POST[\"REQUEST_METHOD\"] == \"POST\"",
+        "explanation": "Un champ du formulaire ne décrit pas la méthode réelle."
+      },
+      {
+        "id": "2",
+        "text": "$_GET[\"method\"] == \"POST\"",
+        "explanation": "Un paramètre arbitraire n’est pas la méthode HTTP."
+      },
+      {
+        "id": "3",
+        "text": "htmlspecialchars(\"POST\")",
+        "explanation": "Cela échappe seulement une chaîne."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La superglobale $_SERVER fournit ici la méthode.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q046",
+    "chapter": 1,
+    "slides": [
+      45
+    ],
+    "theme": "Affichage",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "À quoi équivaut <?= $nom ?> dans une vue ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "<?php echo $nom; ?>",
+        "explanation": "<?= est la syntaxe courte d’affichage."
+      },
+      {
+        "id": "1",
+        "text": "<?php return $nom; ?>",
+        "explanation": "return renvoie une valeur sans l’afficher."
+      },
+      {
+        "id": "2",
+        "text": "<?php $nom = true; ?>",
+        "explanation": "La syntaxe courte n’affecte pas une valeur."
+      },
+      {
+        "id": "3",
+        "text": "<?php isset($nom); ?>",
+        "explanation": "isset teste sans afficher."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Pour une donnée saisie, on applique aussi htmlspecialchars.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c1-q047",
+    "chapter": 1,
+    "slides": [
+      47
+    ],
+    "theme": "Sessions",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Pourquoi utiliser $_SESSION dans l’extension de gestion des produits ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Conserver les produits entre plusieurs requêtes de la même session",
+        "explanation": "Une simple variable locale est recréée à chaque exécution."
+      },
+      {
+        "id": "1",
+        "text": "Conserver automatiquement les produits de tous les utilisateurs sans limite de durée",
+        "explanation": "La session concerne une navigation et n’est pas une archive permanente universelle."
+      },
+      {
+        "id": "2",
+        "text": "Rendre les propriétés des produits statiques entre deux requêtes",
+        "explanation": "La portée statique ne réalise pas ce stockage de session."
+      },
+      {
+        "id": "3",
+        "text": "Échapper automatiquement les noms avant leur affichage",
+        "explanation": "Le contenu de session doit encore être échappé pour le HTML."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours utilise la session pour ne pas perdre les ajouts précédents.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q048",
+    "chapter": 1,
+    "slides": [
+      17,
+      23
+    ],
+    "theme": "Accumulation",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quelles initialisations faut-il placer avant un parcours calculant somme et compteur ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$total = 0;",
+        "explanation": "La somme doit partir de zéro."
+      },
+      {
+        "id": "1",
+        "text": "$nombre = 0;",
+        "explanation": "Le compteur doit partir de zéro."
+      },
+      {
+        "id": "2",
+        "text": "$total = 0; à chaque tour",
+        "explanation": "Cela effacerait la somme des tours précédents."
+      },
+      {
+        "id": "3",
+        "text": "$nombre = 1; à chaque tour",
+        "explanation": "Cela empêcherait un comptage cumulatif."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Les accumulateurs s’initialisent avant la boucle.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c1-q049",
+    "chapter": 1,
+    "slides": [
+      27
+    ],
+    "theme": "Fonctions",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Quel correctif permet d’utiliser le résultat dans $r ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Remplacer echo par return dans la fonction",
+        "explanation": "La somme sera renvoyée à l’appelant."
+      },
+      {
+        "id": "1",
+        "text": "Ajouter un echo devant $a",
+        "explanation": "Cela ajoute un affichage sans renvoyer la somme."
+      },
+      {
+        "id": "2",
+        "text": "Supprimer l’appel de la fonction",
+        "explanation": "Aucun calcul ne sera alors effectué."
+      },
+      {
+        "id": "3",
+        "text": "Remplacer + par .",
+        "explanation": "Cela concatène et ne règle pas le retour manquant."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une fonction sans return explicite ne renvoie pas la somme affichée.",
+    "code": "function additionner($a, $b) { echo $a + $b; }\n$r = additionner(5, 3);",
+    "essential": false
+  },
+  {
+    "id": "c1-q050",
+    "chapter": 1,
+    "slides": [
+      12
+    ],
+    "theme": "Bornes",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle sortie est produite, sans espace ajouté ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "012",
+        "explanation": "Les indices parcourus sont 0, 1, 2."
+      },
+      {
+        "id": "1",
+        "text": "123",
+        "explanation": "L’initialisation vaut 0."
+      },
+      {
+        "id": "2",
+        "text": "0123",
+        "explanation": "La condition exclut 3."
+      },
+      {
+        "id": "3",
+        "text": "01",
+        "explanation": "Le tour où $i vaut 2 est bien exécuté."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le test < est strict.",
+    "code": "for ($i = 0; $i < 3; $i++) { echo $i; }",
+    "essential": false
+  },
+  {
+    "id": "c1-e001",
+    "chapter": 1,
+    "slides": [
+      4
+    ],
+    "theme": "Variables",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Déclare $nom avec la chaîne \"Anna\" et $age avec l’entier 20.",
+    "answer": "$nom = \"Anna\";\n$age = 20;",
+    "explanation": "Ligne 1 : affecte la chaîne Anna à $nom. Ligne 2 : affecte l’entier 20 à $age.",
+    "lineExplanation": [
+      "Ligne 1 : affecte la chaîne Anna à $nom.",
+      "Ligne 2 : affecte l’entier 20 à $age."
+    ],
+    "hint": "Une variable commence par $.",
+    "commonErrors": [
+      "Oublier $ ou le point-virgule.",
+      "Écrire \"20\" au lieu d’un entier."
+    ],
+    "rubric": [
+      "$nom contient Anna.",
+      "$age contient l’entier 20.",
+      "Les deux affectations sont valides."
+    ],
+    "alternatives": [
+      "$nom = 'Anna';\n$age = 20;"
+    ],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e002",
+    "chapter": 1,
+    "slides": [
+      3
+    ],
+    "theme": "Affichage",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "$nom est déjà défini. Affiche « Bonjour » suivi d’un espace et de sa valeur.",
+    "answer": "echo \"Bonjour \" . $nom;",
+    "explanation": "Ligne 1 : concatène le texte, son espace final et $nom, puis les affiche.",
+    "lineExplanation": [
+      "Ligne 1 : concatène le texte, son espace final et $nom, puis les affiche."
+    ],
+    "hint": "Le point assemble deux chaînes.",
+    "commonErrors": [
+      "Oublier l’espace.",
+      "Mettre $nom entre apostrophes dans la chaîne."
+    ],
+    "rubric": [
+      "Bonjour est affiché.",
+      "La valeur de $nom est affichée.",
+      "Un espace sépare les deux."
+    ],
+    "alternatives": [
+      "echo \"Bonjour $nom\";"
+    ],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e003",
+    "chapter": 1,
+    "slides": [
+      5,
+      6
+    ],
+    "theme": "Conditions",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "À partir de $age déjà défini, affiche \"Majeur\" si $age >= 18, sinon \"Mineur\".",
+    "answer": "if ($age >= 18) {\n    echo \"Majeur\";\n} else {\n    echo \"Mineur\";\n}",
+    "explanation": "Ligne 1 : teste la borne de 18 ans incluse. Ligne 2 : affiche Majeur si le test est vrai. Lignes 3–5 : la branche else affiche Mineur sinon.",
+    "lineExplanation": [
+      "Ligne 1 : teste la borne de 18 ans incluse.",
+      "Ligne 2 : affiche Majeur si le test est vrai.",
+      "Lignes 3–5 : la branche else affiche Mineur sinon."
+    ],
+    "hint": "Deux branches exclusives : if et else.",
+    "commonErrors": [
+      "Écrire > au lieu de >=.",
+      "Utiliser = au lieu d’une comparaison."
+    ],
+    "rubric": [
+      "18 est classé majeur.",
+      "Les âges inférieurs sont classés mineurs.",
+      "Une seule branche s’affiche."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e004",
+    "chapter": 1,
+    "slides": [
+      7,
+      10
+    ],
+    "theme": "Conditions",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Avec $note déjà définie, affiche \"Très bien\" à partir de 16, \"Admis\" de 10 à moins de 16, sinon \"Non admis\".",
+    "answer": "if ($note >= 16) {\n    echo \"Très bien\";\n} elseif ($note >= 10) {\n    echo \"Admis\";\n} else {\n    echo \"Non admis\";\n}",
+    "explanation": "Lignes 1–2 : traite les notes >= 16. Lignes 3–4 : traite les notes >= 10 restantes. Lignes 5–7 : traite les notes < 10.",
+    "lineExplanation": [
+      "Lignes 1–2 : traite les notes >= 16.",
+      "Lignes 3–4 : traite les notes >= 10 restantes.",
+      "Lignes 5–7 : traite les notes < 10."
+    ],
+    "hint": "Teste d’abord le seuil le plus élevé.",
+    "commonErrors": [
+      "Tester >= 10 avant >= 16 dans la même chaîne.",
+      "Oublier la borne 10 ou 16."
+    ],
+    "rubric": [
+      "16 et plus donnent Très bien.",
+      "10 à moins de 16 donnent Admis.",
+      "Moins de 10 donne Non admis."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e005",
+    "chapter": 1,
+    "slides": [
+      12
+    ],
+    "theme": "Boucles",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Affiche les entiers de 1 à 5, chacun suivi de <br>, avec une boucle for.",
+    "answer": "for ($i = 1; $i <= 5; $i++) {\n    echo $i . \"<br>\";\n}",
+    "explanation": "Ligne 1 : initialise, teste puis incrémente le compteur. Ligne 2 : affiche le nombre suivi du saut HTML. Ligne 3 : ferme le bloc.",
+    "lineExplanation": [
+      "Ligne 1 : initialise, teste puis incrémente le compteur.",
+      "Ligne 2 : affiche le nombre suivi du saut HTML.",
+      "Ligne 3 : ferme le bloc."
+    ],
+    "hint": "La borne supérieure doit être incluse.",
+    "commonErrors": [
+      "Commencer à 0.",
+      "Oublier l’incrémentation."
+    ],
+    "rubric": [
+      "La boucle est un for.",
+      "Les valeurs sont 1, 2, 3, 4, 5.",
+      "Chaque valeur est suivie de <br>."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e006",
+    "chapter": 1,
+    "slides": [
+      13
+    ],
+    "theme": "Boucles",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Écris une boucle while affichant de 1 à 3, sans séparateur. Initialise toi-même le compteur.",
+    "answer": "$i = 1;\nwhile ($i <= 3) {\n    echo $i;\n    $i++;\n}",
+    "explanation": "Ligne 1 : initialise à 1. Ligne 2 : teste la borne incluse. Ligne 3 : affiche. Ligne 4 : fait progresser le compteur. Ligne 5 : termine le bloc.",
+    "lineExplanation": [
+      "Ligne 1 : initialise à 1.",
+      "Ligne 2 : teste la borne incluse.",
+      "Ligne 3 : affiche.",
+      "Ligne 4 : fait progresser le compteur.",
+      "Ligne 5 : termine le bloc."
+    ],
+    "hint": "Le compteur doit évoluer dans la boucle.",
+    "commonErrors": [
+      "Boucle infinie sans $i++.",
+      "Borne < 3 au lieu de <= 3."
+    ],
+    "rubric": [
+      "Le compteur commence à 1.",
+      "La sortie est 123.",
+      "La boucle se termine."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e007",
+    "chapter": 1,
+    "slides": [
+      20
+    ],
+    "theme": "Tableaux",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Crée $fruits contenant \"Pomme\", \"Banane\", \"Orange\", puis remplace le deuxième fruit par \"Fraise\".",
+    "answer": "$fruits = [\"Pomme\", \"Banane\", \"Orange\"];\n$fruits[1] = \"Fraise\";",
+    "explanation": "Ligne 1 : crée le tableau indexé. Ligne 2 : remplace l’élément d’indice 1.",
+    "lineExplanation": [
+      "Ligne 1 : crée le tableau indexé.",
+      "Ligne 2 : remplace l’élément d’indice 1."
+    ],
+    "hint": "Le premier indice implicite vaut 0.",
+    "commonErrors": [
+      "Remplacer l’indice 2.",
+      "Recréer le tableau avec un seul fruit."
+    ],
+    "rubric": [
+      "Le tableau possède trois éléments.",
+      "Pomme et Orange sont conservés.",
+      "Le deuxième élément devient Fraise."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e008",
+    "chapter": 1,
+    "slides": [
+      21,
+      23
+    ],
+    "theme": "Tableaux",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Crée $produits associant \"Clavier\" à 25 et \"Souris\" à 15, puis affiche le prix du clavier.",
+    "answer": "$produits = [\"Clavier\" => 25, \"Souris\" => 15];\necho $produits[\"Clavier\"];",
+    "explanation": "Ligne 1 : associe chaque clé textuelle à son prix. Ligne 2 : lit et affiche la valeur liée à Clavier.",
+    "lineExplanation": [
+      "Ligne 1 : associe chaque clé textuelle à son prix.",
+      "Ligne 2 : lit et affiche la valeur liée à Clavier."
+    ],
+    "hint": "Utilise => pour associer clé et valeur.",
+    "commonErrors": [
+      "Utiliser -> dans le tableau.",
+      "Changer la casse de la clé lors de l’accès."
+    ],
+    "rubric": [
+      "Les deux clés sont correctes.",
+      "Leurs valeurs numériques sont 25 et 15.",
+      "Le prix 25 est affiché."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e009",
+    "chapter": 1,
+    "slides": [
+      15
+    ],
+    "theme": "Boucles",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "$produits est un tableau associatif nom => prix. Affiche chaque nom puis \" : \" puis son prix suivi de <br>.",
+    "answer": "foreach ($produits as $nom => $prix) {\n    echo $nom . \" : \" . $prix . \"<br>\";\n}",
+    "explanation": "Ligne 1 : récupère clé et valeur à chaque tour. Ligne 2 : assemble l’affichage demandé. Ligne 3 : ferme le parcours.",
+    "lineExplanation": [
+      "Ligne 1 : récupère clé et valeur à chaque tour.",
+      "Ligne 2 : assemble l’affichage demandé.",
+      "Ligne 3 : ferme le parcours."
+    ],
+    "hint": "foreach peut recevoir la clé et la valeur.",
+    "commonErrors": [
+      "Inverser $nom et $prix.",
+      "Ne récupérer que la valeur."
+    ],
+    "rubric": [
+      "Toutes les entrées sont parcourues.",
+      "Nom et prix sont affichés dans cet ordre.",
+      "Le séparateur et <br> sont présents."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e010",
+    "chapter": 1,
+    "slides": [
+      17,
+      23
+    ],
+    "theme": "Accumulation",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "$produits contient des prix numériques. Calcule leur somme dans $total sans fonction de somme prédéfinie.",
+    "answer": "$total = 0;\nforeach ($produits as $prix) {\n    $total = $total + $prix;\n}",
+    "explanation": "Ligne 1 : initialise l’accumulateur avant la boucle. Ligne 2 : parcourt les prix. Ligne 3 : ajoute le prix courant au total. Ligne 4 : ferme le parcours.",
+    "lineExplanation": [
+      "Ligne 1 : initialise l’accumulateur avant la boucle.",
+      "Ligne 2 : parcourt les prix.",
+      "Ligne 3 : ajoute le prix courant au total.",
+      "Ligne 4 : ferme le parcours."
+    ],
+    "hint": "Il faut conserver le total des tours précédents.",
+    "commonErrors": [
+      "Réinitialiser $total dans la boucle.",
+      "Affecter seulement $prix à $total."
+    ],
+    "rubric": [
+      "Le total est initialisé à zéro.",
+      "Chaque prix est ajouté une fois.",
+      "$total contient la somme finale."
+    ],
+    "alternatives": [
+      "$total = 0;\nforeach ($produits as $prix) { $total += $prix; }"
+    ],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e011",
+    "chapter": 1,
+    "slides": [
+      27
+    ],
+    "theme": "Fonctions",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Crée additionner($a, $b) qui renvoie leur somme sans l’afficher.",
+    "answer": "function additionner($a, $b) {\n    return $a + $b;\n}",
+    "explanation": "Ligne 1 : déclare les deux paramètres. Ligne 2 : renvoie la somme à l’appelant. Ligne 3 : ferme la fonction.",
+    "lineExplanation": [
+      "Ligne 1 : déclare les deux paramètres.",
+      "Ligne 2 : renvoie la somme à l’appelant.",
+      "Ligne 3 : ferme la fonction."
+    ],
+    "hint": "Le résultat doit être réutilisable par l’appelant.",
+    "commonErrors": [
+      "Utiliser echo au lieu de return.",
+      "Concaténer au lieu d’additionner."
+    ],
+    "rubric": [
+      "La fonction porte le nom demandé.",
+      "Elle accepte deux paramètres.",
+      "Elle renvoie leur somme sans affichage."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e012",
+    "chapter": 1,
+    "slides": [
+      28
+    ],
+    "theme": "Fonctions",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Crée calculerMoyenne($a, $b, $c), puis stocke la moyenne de 12, 15 et 9 dans $moyenne.",
+    "answer": "function calculerMoyenne($a, $b, $c) {\n    return ($a + $b + $c) / 3;\n}\n$moyenne = calculerMoyenne(12, 15, 9);",
+    "explanation": "Ligne 1 : déclare les paramètres. Ligne 2 : divise la somme complète par 3. Ligne 3 : ferme la fonction. Ligne 4 : récupère le résultat, 12.",
+    "lineExplanation": [
+      "Ligne 1 : déclare les paramètres.",
+      "Ligne 2 : divise la somme complète par 3.",
+      "Ligne 3 : ferme la fonction.",
+      "Ligne 4 : récupère le résultat, 12."
+    ],
+    "hint": "Les parenthèses portent sur la somme des trois notes.",
+    "commonErrors": [
+      "Diviser seulement la troisième note.",
+      "Afficher la moyenne sans la renvoyer."
+    ],
+    "rubric": [
+      "Trois paramètres sont utilisés.",
+      "La somme complète est divisée par trois.",
+      "$moyenne reçoit 12."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e013",
+    "chapter": 1,
+    "slides": [
+      36
+    ],
+    "theme": "GET",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Si le paramètre GET \"mot\" existe et n’est pas null, affiche sa valeur échappée pour le HTML avec ENT_QUOTES et UTF-8.",
+    "answer": "if (isset($_GET[\"mot\"])) {\n    echo htmlspecialchars($_GET[\"mot\"], ENT_QUOTES, \"UTF-8\");\n}",
+    "explanation": "Ligne 1 : vérifie l’existence et la non-nullité. Ligne 2 : échappe puis affiche la valeur. Ligne 3 : ferme le test.",
+    "lineExplanation": [
+      "Ligne 1 : vérifie l’existence et la non-nullité.",
+      "Ligne 2 : échappe puis affiche la valeur.",
+      "Ligne 3 : ferme le test."
+    ],
+    "hint": "Combine isset et htmlspecialchars.",
+    "commonErrors": [
+      "Utiliser $_POST au lieu de $_GET.",
+      "Afficher la saisie brute."
+    ],
+    "rubric": [
+      "La bonne superglobale et la clé mot sont utilisées.",
+      "L’existence est vérifiée.",
+      "L’échappement ENT_QUOTES / UTF-8 précède l’affichage."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e014",
+    "chapter": 1,
+    "slides": [
+      42,
+      43
+    ],
+    "theme": "Validation",
+    "difficulty": "difficile",
+    "type": "code",
+    "prompt": "Récupère $prix depuis POST (défaut chaîne vide), retire ses espaces extérieurs puis affecte à $valide un booléen vrai uniquement pour un nombre strictement positif.",
+    "answer": "$prix = trim($_POST[\"prix\"] ?? \"\");\n$valide = is_numeric($prix) && $prix > 0;",
+    "explanation": "Ligne 1 : récupère et nettoie une valeur avec défaut. Ligne 2 : exige un nombre et une valeur > 0.",
+    "lineExplanation": [
+      "Ligne 1 : récupère et nettoie une valeur avec défaut.",
+      "Ligne 2 : exige un nombre et une valeur > 0."
+    ],
+    "hint": "Le prix nul doit être rejeté dans cet énoncé.",
+    "commonErrors": [
+      "Tester seulement isset.",
+      "Accepter zéro avec >= 0."
+    ],
+    "rubric": [
+      "L’absence de champ est prévue.",
+      "Les espaces extérieurs sont retirés.",
+      "La validation combine numericité et stricte positivité."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c1-e015",
+    "chapter": 1,
+    "slides": [
+      38
+    ],
+    "theme": "POST",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Si les deux champs POST nom et email existent et sont non null, stocke leurs valeurs échappées pour HTML dans $nom et $email.",
+    "answer": "if (isset($_POST[\"nom\"]) && isset($_POST[\"email\"])) {\n    $nom = htmlspecialchars($_POST[\"nom\"], ENT_QUOTES, \"UTF-8\");\n    $email = htmlspecialchars($_POST[\"email\"], ENT_QUOTES, \"UTF-8\");\n}",
+    "explanation": "Ligne 1 : exige les deux champs avec &&. Ligne 2 : prépare nom pour le HTML. Ligne 3 : prépare email pour le HTML. Ligne 4 : ferme le test.",
+    "lineExplanation": [
+      "Ligne 1 : exige les deux champs avec &&.",
+      "Ligne 2 : prépare nom pour le HTML.",
+      "Ligne 3 : prépare email pour le HTML.",
+      "Ligne 4 : ferme le test."
+    ],
+    "hint": "Les deux clés doivent être testées.",
+    "commonErrors": [
+      "Utiliser || au lieu de &&.",
+      "Croire que POST réalise l’échappement."
+    ],
+    "rubric": [
+      "Les deux clés sont vérifiées.",
+      "Les deux valeurs POST sont lues.",
+      "Les deux valeurs sont échappées."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  }
+]

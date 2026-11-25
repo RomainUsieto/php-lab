@@ -1,0 +1,2425 @@
+[
+  {
+    "id": "c4-q001",
+    "chapter": 4,
+    "slides": [
+      6
+    ],
+    "theme": "MVC",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que signifie MVC ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Modèle Vue Contrôleur",
+        "explanation": "Les trois parties organisent données, affichage et coordination."
+      },
+      {
+        "id": "1",
+        "text": "Modèle Vue Connexion",
+        "explanation": "La connexion peut être utilisée par le modèle, mais C signifie contrôleur."
+      },
+      {
+        "id": "2",
+        "text": "Modèle Validation Contrôleur",
+        "explanation": "La validation est un traitement, pas le V du sigle."
+      },
+      {
+        "id": "3",
+        "text": "Méthode Vue Classe",
+        "explanation": "Les méthodes et classes sont des constructions PHP, pas ces trois responsabilités."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "MVC sépare les responsabilités de l’application.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q002",
+    "chapter": 4,
+    "slides": [
+      5
+    ],
+    "theme": "Conception",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Qu’est-ce qu’un patron de conception ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Une solution générale réutilisable à un problème récurrent",
+        "explanation": "Il capitalise l’expérience de conception."
+      },
+      {
+        "id": "1",
+        "text": "Un algorithme complet identique à recopier dans toute application",
+        "explanation": "Un patron est une solution générale à adapter, pas un programme figé."
+      },
+      {
+        "id": "2",
+        "text": "Une règle imposant un seul fichier pour toute l’application",
+        "explanation": "MVC organise au contraire plusieurs responsabilités."
+      },
+      {
+        "id": "3",
+        "text": "Une bibliothèque qui doit obligatoirement être installée",
+        "explanation": "Le patron décrit une organisation ; sa mise en œuvre n’exige pas cette bibliothèque."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours présente MVC comme une organisation issue de cette expérience.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q003",
+    "chapter": 4,
+    "slides": [
+      4
+    ],
+    "theme": "Conception",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quels problèmes relèvent de la conception décrite ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Organiser les fichiers",
+        "explanation": "C’est une question d’architecture."
+      },
+      {
+        "id": "1",
+        "text": "Séparer PHP et HTML selon leurs responsabilités",
+        "explanation": "Le cours l’identifie comme un enjeu d’organisation."
+      },
+      {
+        "id": "2",
+        "text": "Choisir uniquement le montant d’un produit à saisir",
+        "explanation": "Il s’agit de données ; l’exemple vise la structure des traitements."
+      },
+      {
+        "id": "3",
+        "text": "Changer uniquement la valeur d’une note dans un exercice",
+        "explanation": "Cela ne résout pas l’organisation de l’application."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "La conception traite notamment de l’organisation du code.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q004",
+    "chapter": 4,
+    "slides": [
+      7
+    ],
+    "theme": "Modèle",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Où se trouvent les requêtes SQL dans l’architecture du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Dans le modèle",
+        "explanation": "Le modèle accède aux données."
+      },
+      {
+        "id": "1",
+        "text": "Dans le contrôleur pour éviter tout modèle",
+        "explanation": "Le contrôleur coordonne ; le modèle porte le SQL."
+      },
+      {
+        "id": "2",
+        "text": "Dans chaque vue de liste",
+        "explanation": "Cela mélange accès aux données et présentation."
+      },
+      {
+        "id": "3",
+        "text": "Dans le layout pour les rendre disponibles partout",
+        "explanation": "Le layout est une structure d’affichage, pas le modèle."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le SQL appartient à la partie modèle.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q005",
+    "chapter": 4,
+    "slides": [
+      7
+    ],
+    "theme": "Modèle",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Le modèle peut-il être construit avec des fonctions ou avec des classes ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Oui",
+        "explanation": "Le cours cite les deux formes."
+      },
+      {
+        "id": "1",
+        "text": "Non, uniquement avec du HTML",
+        "explanation": "Le modèle contient les traitements de données, pas seulement l’affichage."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "MVC ne nécessite pas exclusivement une implémentation orientée objet.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q006",
+    "chapter": 4,
+    "slides": [
+      8
+    ],
+    "theme": "Modèle",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quel rôle joue ce fragment ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Lire les données pour le modèle",
+        "explanation": "Il interroge la base puis récupère les lignes."
+      },
+      {
+        "id": "1",
+        "text": "Afficher la liste des étudiants",
+        "explanation": "Ce fragment récupère les données sans générer le HTML de liste."
+      },
+      {
+        "id": "2",
+        "text": "Choisir le sous-contrôleur à exécuter",
+        "explanation": "Aucun choix de contrôleur n’apparaît ici."
+      },
+      {
+        "id": "3",
+        "text": "Insérer de nouveaux étudiants",
+        "explanation": "SELECT lit ; aucune insertion n’est effectuée."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le support utilise query et fetchAll pour obtenir les étudiants.",
+    "code": "$sql = \"SELECT * FROM etudiants\";\n$resultat = $pdo->query($sql);\n$etudiants = $resultat->fetchAll();",
+    "essential": false
+  },
+  {
+    "id": "c4-q007",
+    "chapter": 4,
+    "slides": [
+      9
+    ],
+    "theme": "Vue",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle responsabilité correspond à la vue ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Présenter les données à l’utilisateur",
+        "explanation": "Elle contient principalement le HTML."
+      },
+      {
+        "id": "1",
+        "text": "Récupérer directement les lignes avec son propre SQL",
+        "explanation": "L’accès aux données est confié au modèle."
+      },
+      {
+        "id": "2",
+        "text": "Déterminer toutes les actions possibles de l’application",
+        "explanation": "Le contrôleur traite ces actions."
+      },
+      {
+        "id": "3",
+        "text": "Créer une connexion à la base pour chaque élément affiché",
+        "explanation": "La vue reçoit les informations préparées."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La vue réalise l’affichage.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q008",
+    "chapter": 4,
+    "slides": [
+      10
+    ],
+    "theme": "Vue",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Pourquoi une boucle foreach peut-elle apparaître dans une vue ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Pour afficher les données déjà fournies",
+        "explanation": "Le PHP de présentation peut parcourir la liste."
+      },
+      {
+        "id": "1",
+        "text": "Pour rechercher elle-même les étudiants dans la base à chaque tour",
+        "explanation": "La vue parcourt des données déjà fournies."
+      },
+      {
+        "id": "2",
+        "text": "Pour choisir l’action du sous-contrôleur avant toute requête",
+        "explanation": "Le choix d’action précède l’appel de la vue."
+      },
+      {
+        "id": "3",
+        "text": "Parce que toute vue doit être une classe avec un itérateur",
+        "explanation": "La vue du cours est un fichier PHP/HTML, sans cette obligation."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une vue peut contenir du PHP destiné à la présentation.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q009",
+    "chapter": 4,
+    "slides": [
+      10
+    ],
+    "theme": "Vue",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel mot-clé termine le foreach écrit avec la syntaxe alternative « : » ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "endforeach;",
+        "explanation": "Il ferme ce bloc dans une vue."
+      },
+      {
+        "id": "1",
+        "text": "endclass;",
+        "explanation": "Ce n’est pas la fermeture de foreach."
+      },
+      {
+        "id": "2",
+        "text": "return;",
+        "explanation": "Cela quitte une fonction ou un fichier selon le contexte."
+      },
+      {
+        "id": "3",
+        "text": "elseif;",
+        "explanation": "C’est une branche conditionnelle, pas une fermeture de boucle."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours utilise foreach (…) : puis endforeach;.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q010",
+    "chapter": 4,
+    "slides": [
+      11
+    ],
+    "theme": "Contrôleur",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle responsabilité revient au contrôleur ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Coordonner les traitements et prendre les décisions",
+        "explanation": "Il gère la logique applicative."
+      },
+      {
+        "id": "1",
+        "text": "Écrire toute la présentation HTML dans les requêtes SQL",
+        "explanation": "La vue présente les résultats."
+      },
+      {
+        "id": "2",
+        "text": "Conserver durablement les enregistrements dans sa variable action",
+        "explanation": "Le stockage relève du modèle et de la base."
+      },
+      {
+        "id": "3",
+        "text": "Remplacer le modèle lors des opérations de lecture",
+        "explanation": "Il demande au modèle les informations nécessaires."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le contrôleur organise l’exécution de l’application.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q011",
+    "chapter": 4,
+    "slides": [
+      12
+    ],
+    "theme": "Cycle MVC",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle séquence correspond à une demande de liste ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Demande, appel du modèle, résultat, appel de la vue",
+        "explanation": "C’est la coordination montrée."
+      },
+      {
+        "id": "1",
+        "text": "Demande, appel de la vue, requêtes SQL placées dans la vue",
+        "explanation": "Le cours sépare accès aux données et affichage."
+      },
+      {
+        "id": "2",
+        "text": "Demande directement au modèle, HTML dans le modèle, contrôleur ignoré",
+        "explanation": "Ce n’est pas le parcours coordonné décrit."
+      },
+      {
+        "id": "3",
+        "text": "Demande, affichage de la liste, puis récupération des étudiants",
+        "explanation": "Les données doivent être obtenues avant leur affichage."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le contrôleur transmet à la vue les données obtenues.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q012",
+    "chapter": 4,
+    "slides": [
+      12
+    ],
+    "theme": "Contrôleur",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Pourquoi inclure la vue après obtenirLesEtudiants($pdo) ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "La variable $etudiants est préparée avant son affichage",
+        "explanation": "La vue peut parcourir les données."
+      },
+      {
+        "id": "1",
+        "text": "Pour que include recherche automatiquement les étudiants dans la base",
+        "explanation": "La fonction du modèle effectue la récupération."
+      },
+      {
+        "id": "2",
+        "text": "Parce que le modèle doit imprimer le HTML avant de renvoyer",
+        "explanation": "Le modèle fournit les données ; la vue affiche."
+      },
+      {
+        "id": "3",
+        "text": "Parce que la vue doit renvoyer la connexion PDO au modèle",
+        "explanation": "Le parcours décrit va des données vers l’affichage."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La préparation des données précède l’appel de la vue.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q013",
+    "chapter": 4,
+    "slides": [
+      14
+    ],
+    "theme": "Cycle MVC",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que reçoit finalement l’utilisateur dans le schéma ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Du code HTML généré",
+        "explanation": "Le navigateur affiche la réponse."
+      },
+      {
+        "id": "1",
+        "text": "Le code source PHP du modèle à exécuter localement",
+        "explanation": "Le PHP a déjà été exécuté côté serveur."
+      },
+      {
+        "id": "2",
+        "text": "La requête SQL seule à transmettre depuis le navigateur à la base",
+        "explanation": "L’application serveur réalise l’accès au stockage."
+      },
+      {
+        "id": "3",
+        "text": "Les objets PDO à utiliser directement dans son navigateur",
+        "explanation": "PDO est un objet du traitement côté serveur."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cycle se conclut par une réponse destinée au navigateur.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q014",
+    "chapter": 4,
+    "slides": [
+      15
+    ],
+    "theme": "Sous-vues",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Qu’est-ce qu’une vue externe dans le cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "La page complète vue par l’internaute",
+        "explanation": "Elle peut être composée de plusieurs sous-vues."
+      },
+      {
+        "id": "1",
+        "text": "Le fichier du modèle qui renvoie les données",
+        "explanation": "La vue externe désigne la page complète affichée."
+      },
+      {
+        "id": "2",
+        "text": "Seulement la sous-vue de contenu central",
+        "explanation": "La page externe comprend aussi ses autres parties."
+      },
+      {
+        "id": "3",
+        "text": "Le sous-contrôleur appelé depuis un autre fichier",
+        "explanation": "La vue externe est une notion de présentation."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Il faut distinguer la page affichée et ses fragments.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q015",
+    "chapter": 4,
+    "slides": [
+      16
+    ],
+    "theme": "Sous-vues",
+    "difficulty": "facile",
+    "type": "multiple",
+    "prompt": "Quelles parties sont naturellement communes à plusieurs pages ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Header et menu",
+        "explanation": "Elles se répètent d’une page à l’autre."
+      },
+      {
+        "id": "1",
+        "text": "Footer",
+        "explanation": "Le pied de page est aussi une partie commune."
+      },
+      {
+        "id": "2",
+        "text": "Les détails du film sélectionné",
+        "explanation": "Ce contenu change selon la demande."
+      },
+      {
+        "id": "3",
+        "text": "Les données propres à un étudiant précis",
+        "explanation": "Ce contenu est spécifique."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Les sous-vues communes évitent la duplication.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q016",
+    "chapter": 4,
+    "slides": [
+      17
+    ],
+    "theme": "Layout",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel est le rôle de layout.php ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Assembler la structure générale de la page",
+        "explanation": "Il positionne les sous-vues et la zone centrale."
+      },
+      {
+        "id": "1",
+        "text": "Exécuter toutes les requêtes SQL partagées",
+        "explanation": "Le modèle porte cet accès aux données."
+      },
+      {
+        "id": "2",
+        "text": "Sélectionner tous les sous-contrôleurs à la place de index.php",
+        "explanation": "Le layout structure l’affichage."
+      },
+      {
+        "id": "3",
+        "text": "Contenir uniquement les données spécifiques du film sélectionné",
+        "explanation": "Le détail est une sous-vue ; le layout assemble la page."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le layout compose une page cohérente.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q017",
+    "chapter": 4,
+    "slides": [
+      18
+    ],
+    "theme": "Sous-vues",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle différence sépare sous-vue commune et sous-vue liée à la demande ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "La seconde présente le contenu spécifique à l’action",
+        "explanation": "La commune réutilise les parties partagées."
+      },
+      {
+        "id": "1",
+        "text": "La commune ne peut pas être réutilisée par plusieurs pages",
+        "explanation": "La réutilisation est justement sa fonction."
+      },
+      {
+        "id": "2",
+        "text": "La vue liée à la demande doit contenir toutes les requêtes SQL",
+        "explanation": "Elle présente les données spécifiques sans porter le SQL."
+      },
+      {
+        "id": "3",
+        "text": "Les deux désignent toujours exactement la page complète",
+        "explanation": "Le cours distingue fragments et vue externe complète."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La séparation limite la répétition et isole le contenu variable.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q018",
+    "chapter": 4,
+    "slides": [
+      18
+    ],
+    "theme": "Organisation",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Où le cours regroupe-t-il les vues ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Dans le répertoire vues à la racine",
+        "explanation": "Les exemples utilisent aussi le nom views dans une arborescence."
+      },
+      {
+        "id": "1",
+        "text": "Dans controleurs avec les actions",
+        "explanation": "Le cours sépare répertoire de contrôleurs et répertoire de vues."
+      },
+      {
+        "id": "2",
+        "text": "Dans modeles avec les requêtes SQL",
+        "explanation": "Le modèle et les fichiers d’affichage ont des responsabilités distinctes."
+      },
+      {
+        "id": "3",
+        "text": "Toutes dans index.php sans aucun fragment",
+        "explanation": "Le support propose justement des sous-vues organisées."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le nom du dossier doit être cohérent avec les chemins du projet.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q019",
+    "chapter": 4,
+    "slides": [
+      20
+    ],
+    "theme": "Navigation",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Après mise en place du contrôleur principal, comment organiser les liens du menu ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Viser index.php avec les paramètres de navigation",
+        "explanation": "Le point d’entrée oriente vers l’action."
+      },
+      {
+        "id": "1",
+        "text": "Viser directement le fichier du sous-contrôleur",
+        "explanation": "Le point d’entrée central doit recevoir les demandes."
+      },
+      {
+        "id": "2",
+        "text": "Viser directement chaque fichier du modèle",
+        "explanation": "Le modèle ne représente pas la page de navigation."
+      },
+      {
+        "id": "3",
+        "text": "Viser uniquement layout.php sans paramètre",
+        "explanation": "La demande doit être traitée et orientée avant l’affichage."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours centralise ensuite les demandes via le contrôleur principal.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q020",
+    "chapter": 4,
+    "slides": [
+      22
+    ],
+    "theme": "Point d’entrée",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel fichier joue généralement le rôle de contrôleur principal ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "index.php",
+        "explanation": "Le cours en fait le point d’entrée."
+      },
+      {
+        "id": "1",
+        "text": "layout.php",
+        "explanation": "Ce fichier assemble la présentation."
+      },
+      {
+        "id": "2",
+        "text": "c_films.php appelé directement par le menu",
+        "explanation": "C’est le sous-contrôleur ; le menu passe par le contrôleur principal."
+      },
+      {
+        "id": "3",
+        "text": "film.php du modèle",
+        "explanation": "Ce fichier gère les données."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le point d’entrée reçoit les requêtes.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q021",
+    "chapter": 4,
+    "slides": [
+      22
+    ],
+    "theme": "Point d’entrée",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quelles tâches sont attribuées au contrôleur principal dans ce cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Traiter les paramètres de requête",
+        "explanation": "Il oriente selon GET, POST ou REQUEST."
+      },
+      {
+        "id": "1",
+        "text": "Orienter vers le sous-contrôleur adapté",
+        "explanation": "Il centralise la navigation."
+      },
+      {
+        "id": "2",
+        "text": "Placer les requêtes SQL de liste directement dans chaque vue",
+        "explanation": "Le SQL appartient au modèle."
+      },
+      {
+        "id": "3",
+        "text": "Remplacer toutes les vues par des méthodes du DAO",
+        "explanation": "Le DAO est la passerelle de persistance, pas la présentation."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Le cours lui attribue aussi le chargement de la connexion et du layout.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q022",
+    "chapter": 4,
+    "slides": [
+      23
+    ],
+    "theme": "Routage",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que désigne le paramètre controleur dans l’URL du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Le sous-contrôleur à appeler",
+        "explanation": "Le point d’entrée interprète ce choix."
+      },
+      {
+        "id": "1",
+        "text": "Le nom de la vue à inclure sans passer par un sous-contrôleur",
+        "explanation": "Le paramètre désigne le sous-contrôleur dans cette convention."
+      },
+      {
+        "id": "2",
+        "text": "Le nom de la table SQL à interroger directement",
+        "explanation": "Le contrôleur sélectionne un traitement, pas une table directe."
+      },
+      {
+        "id": "3",
+        "text": "La fonctionnalité précise comme voirCategories",
+        "explanation": "Cette fonctionnalité est portée par action."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "index.php reste le fichier demandé.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q023",
+    "chapter": 4,
+    "slides": [
+      24
+    ],
+    "theme": "Sous-contrôleurs",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Que peut faire un sous-contrôleur ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Recevoir les paramètres nécessaires",
+        "explanation": "Ils décrivent l’action demandée."
+      },
+      {
+        "id": "1",
+        "text": "Appeler le modèle et transmettre ses données à la vue",
+        "explanation": "Il coordonne le cas d’utilisation."
+      },
+      {
+        "id": "2",
+        "text": "Contenir lui-même tout le HTML de la vue",
+        "explanation": "Le cours réserve le sous-contrôleur au PHP de traitement et la présentation aux vues."
+      },
+      {
+        "id": "3",
+        "text": "Rédiger le SQL directement dans le fichier de vue choisi",
+        "explanation": "La requête reste dans le modèle."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Le sous-contrôleur gère un ensemble cohérent de fonctionnalités.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q024",
+    "chapter": 4,
+    "slides": [
+      25
+    ],
+    "theme": "Sous-contrôleurs",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel regroupement correspond aux exemples du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "etudiant.php pour les opérations sur les étudiants",
+        "explanation": "Le sous-contrôleur porte un cas d’utilisation cohérent."
+      },
+      {
+        "id": "1",
+        "text": "etudiant.php pour la mise en page commune de toutes les pages",
+        "explanation": "Le layout et les sous-vues communes ont ce rôle."
+      },
+      {
+        "id": "2",
+        "text": "authentification.php pour toutes les opérations métier de formations",
+        "explanation": "Le cours distingue les cas d’utilisation."
+      },
+      {
+        "id": "3",
+        "text": "formation.php pour stocker uniquement les paramètres de connexion",
+        "explanation": "Ce sous-contrôleur gère les formations ; la connexion est technique."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Les sous-contrôleurs sont regroupés dans controleurs.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q025",
+    "chapter": 4,
+    "slides": [
+      26
+    ],
+    "theme": "Paramètres",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle expression récupère controleur via la superglobale employée sur la diapositive 26 ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$_REQUEST[\"controleur\"]",
+        "explanation": "C’est l’expression explicitement présentée."
+      },
+      {
+        "id": "1",
+        "text": "$_REQUEST->controleur",
+        "explanation": "La superglobale est utilisée comme un tableau."
+      },
+      {
+        "id": "2",
+        "text": "REQUEST(\"controleur\")",
+        "explanation": "Ce n’est pas une fonction de lecture."
+      },
+      {
+        "id": "3",
+        "text": "$this->controleur automatiquement",
+        "explanation": "Ce serait une propriété d’objet, pas la donnée reçue."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Les exemples ultérieurs utilisent aussi $_GET.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q026",
+    "chapter": 4,
+    "slides": [
+      28
+    ],
+    "theme": "Actions",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Dans controleur=gererProduits&action=voirCategories, que désigne action ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "La fonctionnalité à exécuter",
+        "explanation": "Le sous-contrôleur choisit ce traitement."
+      },
+      {
+        "id": "1",
+        "text": "Le fichier principal index.php lui-même",
+        "explanation": "L’action désigne une fonctionnalité dans un sous-contrôleur."
+      },
+      {
+        "id": "2",
+        "text": "Le sous-contrôleur gererProduits",
+        "explanation": "C’est le rôle du paramètre controleur."
+      },
+      {
+        "id": "3",
+        "text": "La catégorie sélectionnée dans la base",
+        "explanation": "Le nom voirCategories est une action, pas l’identifiant d’une catégorie."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le contrôleur et son action sont deux niveaux de sélection.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q027",
+    "chapter": 4,
+    "slides": [
+      29
+    ],
+    "theme": "Actions",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quel traitement correspond à voirCategories ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Lire les catégories puis inclure v_categories.php",
+        "explanation": "C’est le cas montré dans le switch."
+      },
+      {
+        "id": "1",
+        "text": "Inclure la vue puis y demander les catégories",
+        "explanation": "Les données sont préparées dans le contrôleur via le modèle."
+      },
+      {
+        "id": "2",
+        "text": "Récupérer un produit et inclure v_modif_produit.php",
+        "explanation": "C’est modifierProduit, une autre action."
+      },
+      {
+        "id": "3",
+        "text": "Récupérer les catégories sans jamais choisir la vue",
+        "explanation": "Le cas présenté inclut la vue correspondante."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Chaque case prépare les données utiles à sa vue.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q028",
+    "chapter": 4,
+    "slides": [
+      29
+    ],
+    "theme": "Actions",
+    "difficulty": "difficile",
+    "type": "multiple",
+    "prompt": "Quelles données sont préparées avant v_modif_produit.php ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Le produit demandé",
+        "explanation": "Son identifiant est récupéré dans les paramètres."
+      },
+      {
+        "id": "1",
+        "text": "La liste des catégories",
+        "explanation": "Elle est aussi lue avant la vue."
+      },
+      {
+        "id": "2",
+        "text": "Tous les produits sans cibler celui demandé",
+        "explanation": "Le formulaire de modification doit recevoir le produit identifié."
+      },
+      {
+        "id": "3",
+        "text": "Uniquement l’identifiant sans les données du produit",
+        "explanation": "La vue a besoin des informations à présenter et modifier."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Le formulaire de modification a besoin du produit et des catégories.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q029",
+    "chapter": 4,
+    "slides": [
+      29
+    ],
+    "theme": "Switch",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Pourquoi placer break après une action dans le switch ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Pour éviter de poursuivre dans les actions suivantes",
+        "explanation": "Une branche terminée quitte le switch."
+      },
+      {
+        "id": "1",
+        "text": "Pour interrompre automatiquement toute l’application",
+        "explanation": "break quitte ici le switch ; il ne termine pas tout le script."
+      },
+      {
+        "id": "2",
+        "text": "Pour déclencher une redirection HTTP vers la vue",
+        "explanation": "break ne produit pas de réponse de redirection."
+      },
+      {
+        "id": "3",
+        "text": "Pour annuler la récupération des données du modèle",
+        "explanation": "Les données déjà récupérées restent disponibles."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le principe du switch du chapitre 2 se retrouve dans les actions.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q030",
+    "chapter": 4,
+    "slides": [
+      30
+    ],
+    "theme": "Cycle MVC",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Dans le schéma étudiants, qui appelle le modèle avant la vue ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Le sous-contrôleur",
+        "explanation": "Il obtient les données avant de choisir l’affichage."
+      },
+      {
+        "id": "1",
+        "text": "La vue liste.php elle-même",
+        "explanation": "Le sous-contrôleur la charge après la récupération."
+      },
+      {
+        "id": "2",
+        "text": "Le menu au moment où il affiche le lien",
+        "explanation": "Le clic déclenche une requête vers le point d’entrée."
+      },
+      {
+        "id": "3",
+        "text": "Le layout à la place de tout sous-contrôleur",
+        "explanation": "Le schéma place le sous-contrôleur en amont du modèle."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le schéma relie point d’entrée, sous-contrôleur, modèle puis présentation.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q031",
+    "chapter": 4,
+    "slides": [
+      31
+    ],
+    "theme": "Modèle",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Le modèle transmet-il ses données préparées au contrôleur ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Oui",
+        "explanation": "Le contrôleur les fournit ensuite à la vue dans le parcours décrit."
+      },
+      {
+        "id": "1",
+        "text": "Non, il doit toujours afficher tout le HTML",
+        "explanation": "Le cours sépare données et affichage."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le modèle recherche et organise les informations.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q032",
+    "chapter": 4,
+    "slides": [
+      32
+    ],
+    "theme": "Démarche",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle est la première étape de la démarche ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Définir les cas d’utilisation",
+        "explanation": "On commence par les fonctionnalités attendues."
+      },
+      {
+        "id": "1",
+        "text": "Coder immédiatement toutes les vues sans définir les besoins",
+        "explanation": "Les cas d’utilisation sont identifiés en premier."
+      },
+      {
+        "id": "2",
+        "text": "Écrire index.php avant d’identifier les fonctionnalités",
+        "explanation": "Le contrôleur principal est la quatrième étape."
+      },
+      {
+        "id": "3",
+        "text": "Écrire chaque requête SQL avant d’imaginer les écrans",
+        "explanation": "La démarche commence par les cas puis les vues."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La démarche commence par les besoins de l’application.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q033",
+    "chapter": 4,
+    "slides": [
+      32,
+      34
+    ],
+    "theme": "Démarche",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Que fait-on après avoir défini les cas d’utilisation ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Imaginer les vues externes",
+        "explanation": "C’est la deuxième étape."
+      },
+      {
+        "id": "1",
+        "text": "Écrire tous les cas d’utilisation avant d’imaginer les vues",
+        "explanation": "L’implémentation détaillée est la cinquième étape."
+      },
+      {
+        "id": "2",
+        "text": "Écrire le contrôleur principal avant les vues externes",
+        "explanation": "Il vient après l’architecture."
+      },
+      {
+        "id": "3",
+        "text": "Construire les répertoires sans déterminer les pages attendues",
+        "explanation": "Les vues externes constituent l’étape 2 avant cette architecture."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Besoins puis écrans, puis architecture et code.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q034",
+    "chapter": 4,
+    "slides": [
+      32,
+      35,
+      36
+    ],
+    "theme": "Démarche",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Quel ordre respecte les étapes centrales du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Architecture, contrôleur principal, cas d’utilisation codés",
+        "explanation": "Ce sont les étapes 3, 4 et 5."
+      },
+      {
+        "id": "1",
+        "text": "Contrôleur principal, cas d’utilisation codés, architecture",
+        "explanation": "L’architecture est prévue avant ces deux étapes."
+      },
+      {
+        "id": "2",
+        "text": "Cas d’utilisation codés, architecture, contrôleur principal",
+        "explanation": "L’implémentation détaillée est la dernière des trois."
+      },
+      {
+        "id": "3",
+        "text": "Architecture, cas d’utilisation codés, contrôleur principal",
+        "explanation": "Le contrôleur principal vient avant le détail des cas."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La structure précède l’implémentation détaillée.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q035",
+    "chapter": 4,
+    "slides": [
+      33
+    ],
+    "theme": "Cas d’utilisation",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel élément constitue un cas d’utilisation de gestion des étudiants ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Ajouter un étudiant",
+        "explanation": "C’est une fonctionnalité attendue par l’utilisateur."
+      },
+      {
+        "id": "1",
+        "text": "Choisir le nom de la variable $fichier",
+        "explanation": "C’est un détail technique, pas une fonctionnalité utilisateur."
+      },
+      {
+        "id": "2",
+        "text": "Écrire un include vers header.php",
+        "explanation": "C’est une instruction de présentation, pas un cas de gestion."
+      },
+      {
+        "id": "3",
+        "text": "Déclarer la connexion privée dans une classe",
+        "explanation": "C’est une décision technique de construction."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Consulter, ajouter, modifier et supprimer sont les exemples cités.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q036",
+    "chapter": 4,
+    "slides": [
+      37
+    ],
+    "theme": "Valeur par défaut",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Sans paramètre controleur, quelle valeur est choisie ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "etudiant",
+        "explanation": "C’est la valeur de droite du coalescent."
+      },
+      {
+        "id": "1",
+        "text": "controleur",
+        "explanation": "C’est le nom de la clé, pas le défaut."
+      },
+      {
+        "id": "2",
+        "text": "null",
+        "explanation": "Le défaut empêche justement ce résultat ici."
+      },
+      {
+        "id": "3",
+        "text": "index.php",
+        "explanation": "C’est le fichier exécuté, pas la valeur de la variable."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "?? fournit une valeur de repli.",
+    "code": "$controleur = $_GET[\"controleur\"] ?? \"etudiant\";",
+    "essential": false
+  },
+  {
+    "id": "c4-q037",
+    "chapter": 4,
+    "slides": [
+      37
+    ],
+    "theme": "Chemin",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Avec $controleur = \"etudiant\", quel chemin est construit ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "controleurs/etudiant.php",
+        "explanation": "Les trois chaînes sont concaténées."
+      },
+      {
+        "id": "1",
+        "text": "vues/etudiant.php",
+        "explanation": "Le dossier indiqué est controleurs."
+      },
+      {
+        "id": "2",
+        "text": "controleurs/$controleur.php au sens littéral",
+        "explanation": "La variable est utilisée hors d’une chaîne simple."
+      },
+      {
+        "id": "3",
+        "text": "etudiant/controleurs.php",
+        "explanation": "L’ordre de concaténation n’est pas inversé."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le point concatène dossier, nom et extension.",
+    "code": "$fichier = \"controleurs/\" . $controleur . \".php\";",
+    "essential": false
+  },
+  {
+    "id": "c4-q038",
+    "chapter": 4,
+    "slides": [
+      37
+    ],
+    "theme": "Fichiers",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Que teste file_exists($fichier) ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "L’existence du chemin",
+        "explanation": "La fonction ne valide pas à elle seule le choix du contrôleur."
+      },
+      {
+        "id": "1",
+        "text": "La présence du contrôleur dans une liste de noms autorisés",
+        "explanation": "file_exists teste seulement l’existence du chemin."
+      },
+      {
+        "id": "2",
+        "text": "La validité syntaxique du code PHP contenu",
+        "explanation": "L’existence ne garantit pas l’absence d’erreur de syntaxe."
+      },
+      {
+        "id": "3",
+        "text": "Le droit de l’utilisateur à appeler le contrôleur",
+        "explanation": "Le test d’existence n’est pas un contrôle d’accès."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours l’emploie avant include ; existence et autorisation ne sont pas synonymes.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q039",
+    "chapter": 4,
+    "slides": [
+      37
+    ],
+    "theme": "Fichiers",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Que fait include($fichier) ici ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Charge et exécute le fichier PHP ciblé",
+        "explanation": "Le sous-contrôleur prend alors le relais."
+      },
+      {
+        "id": "1",
+        "text": "Effectue nécessairement une redirection HTTP",
+        "explanation": "include charge un fichier côté serveur."
+      },
+      {
+        "id": "2",
+        "text": "Télécharge automatiquement le fichier sur le poste",
+        "explanation": "Ce n’est pas son rôle."
+      },
+      {
+        "id": "3",
+        "text": "Compare deux chemins sans exécution",
+        "explanation": "Le test est fait par file_exists."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le mot « redirection » du cours désigne ici une orientation interne, pas un en-tête HTTP.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q040",
+    "chapter": 4,
+    "slides": [
+      38
+    ],
+    "theme": "Navigation",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle URL respecte le point d’entrée du cours ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "index.php?controleur=etudiant",
+        "explanation": "La demande passe par le contrôleur principal."
+      },
+      {
+        "id": "1",
+        "text": "controleurs/etudiant.php directement",
+        "explanation": "Cela contourne le point d’entrée prévu."
+      },
+      {
+        "id": "2",
+        "text": "modeles/etudiant.php directement",
+        "explanation": "Le modèle n’est pas une page de navigation."
+      },
+      {
+        "id": "3",
+        "text": "vues/layout.php comme unique traitement",
+        "explanation": "Cela contourne la coordination prévue."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le navigateur appelle index.php avec un choix de contrôleur.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q041",
+    "chapter": 4,
+    "slides": [
+      39
+    ],
+    "theme": "Ajout",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Pour ajouter un étudiant, qui réalise l’insertion dans la base ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Le modèle",
+        "explanation": "Le contrôleur lui transmet les informations."
+      },
+      {
+        "id": "1",
+        "text": "Le contrôleur en écrivant tout le SQL dans la vue",
+        "explanation": "Le contrôleur transmet la demande au modèle."
+      },
+      {
+        "id": "2",
+        "text": "La vue en envoyant directement INSERT à PDO",
+        "explanation": "La vue affiche et ne porte pas le SQL."
+      },
+      {
+        "id": "3",
+        "text": "Le layout commun à chaque page",
+        "explanation": "Il structure l’affichage ; il n’effectue pas l’insertion métier."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Contrôleur : recevoir ; modèle : insérer ; vue : afficher.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q042",
+    "chapter": 4,
+    "slides": [
+      41
+    ],
+    "theme": "Films",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quelles fonctionnalités sont demandées pour le catalogue de films ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Consulter un film et filtrer par catégorie",
+        "explanation": "Ces deux consultations sont demandées."
+      },
+      {
+        "id": "1",
+        "text": "Ajouter un film",
+        "explanation": "Cette fonctionnalité est explicitement demandée."
+      },
+      {
+        "id": "2",
+        "text": "Modifier la durée d’une location de film",
+        "explanation": "L’exercice porte sur un catalogue sans locations."
+      },
+      {
+        "id": "3",
+        "text": "Gérer les réservations de places à une projection",
+        "explanation": "Ce n’est pas une fonctionnalité du catalogue demandé."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "La banque reste centrée sur le catalogue de données.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q043",
+    "chapter": 4,
+    "slides": [
+      43
+    ],
+    "theme": "Modèle films",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle méthode du modèle sélectionne un seul film ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "obtenirUnFilm($id)",
+        "explanation": "Elle recherche par identifiant."
+      },
+      {
+        "id": "1",
+        "text": "obtenirLesFilms()",
+        "explanation": "Elle récupère tous les films."
+      },
+      {
+        "id": "2",
+        "text": "ajouterFilm($donnees)",
+        "explanation": "Elle insère un nouveau film."
+      },
+      {
+        "id": "3",
+        "text": "obtenirFilmsParCategorie($idCategorie)",
+        "explanation": "Elle filtre plusieurs films par catégorie."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Les noms expriment les opérations de données.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q044",
+    "chapter": 4,
+    "slides": [
+      43
+    ],
+    "theme": "Modèle films",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle méthode choisir pour le filtre de catégorie ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "obtenirFilmsParCategorie($idCategorie)",
+        "explanation": "La catégorie est le critère reçu."
+      },
+      {
+        "id": "1",
+        "text": "obtenirUnFilm($idCategorie)",
+        "explanation": "Cette méthode attend l’identifiant d’un film."
+      },
+      {
+        "id": "2",
+        "text": "ajouterFilm($idCategorie)",
+        "explanation": "Le filtre ne doit pas créer un film."
+      },
+      {
+        "id": "3",
+        "text": "obtenirLesFilms() sans filtrage",
+        "explanation": "La liste entière ne réalise pas le filtre demandé."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Identifiant de film et identifiant de catégorie ne sont pas interchangeables.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q045",
+    "chapter": 4,
+    "slides": [
+      44
+    ],
+    "theme": "Vues films",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Dans quelle sous-vue placer le titre commun « Catalogue de films » ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "header.php",
+        "explanation": "L’énoncé y place le titre commun."
+      },
+      {
+        "id": "1",
+        "text": "menu.php",
+        "explanation": "L’énoncé y place les liens de navigation."
+      },
+      {
+        "id": "2",
+        "text": "footer.php",
+        "explanation": "L’énoncé y place le pied de page."
+      },
+      {
+        "id": "3",
+        "text": "details_film.php",
+        "explanation": "Cette vue affiche les détails d’un film spécifique."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "L’exercice répartit header, menu et footer.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q046",
+    "chapter": 4,
+    "slides": [
+      45
+    ],
+    "theme": "Vues films",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelles informations sont demandées dans liste_films.php ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Titre, réalisateur et année",
+        "explanation": "Ce sont les colonnes citées pour la liste."
+      },
+      {
+        "id": "1",
+        "text": "Le titre et uniquement la description longue",
+        "explanation": "L’énoncé de liste demande aussi réalisateur et année."
+      },
+      {
+        "id": "2",
+        "text": "Les informations complètes du film sans liste",
+        "explanation": "Cela décrit plutôt details_film.php."
+      },
+      {
+        "id": "3",
+        "text": "Uniquement les catégories sans les films",
+        "explanation": "La vue est une liste de films avec leurs informations."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La vue de liste fournit aussi un lien vers les détails.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q047",
+    "chapter": 4,
+    "slides": [
+      47
+    ],
+    "theme": "Formulaire films",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "D’où proviennent les choix de la liste déroulante Catégorie ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "De la base, via le modèle et le contrôleur",
+        "explanation": "L’énoncé demande une liste alimentée par les données."
+      },
+      {
+        "id": "1",
+        "text": "Du titre du film en cours de saisie",
+        "explanation": "La catégorie est sélectionnée parmi les données de la base."
+      },
+      {
+        "id": "2",
+        "text": "D’une valeur différente créée automatiquement à chaque affichage",
+        "explanation": "Les catégories sont celles déjà proposées par le stockage."
+      },
+      {
+        "id": "3",
+        "text": "Uniquement du paramètre controleur de l’URL",
+        "explanation": "Ce paramètre choisit le sous-contrôleur, pas la liste des catégories."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le contrôleur doit préparer les catégories avant la vue.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q048",
+    "chapter": 4,
+    "slides": [
+      47
+    ],
+    "theme": "Formulaire films",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "À qui le formulaire doit-il transmettre les données pour traitement ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Au contrôleur",
+        "explanation": "Il reçoit la demande puis sollicite le modèle."
+      },
+      {
+        "id": "1",
+        "text": "Directement à film.php pour que le modèle affiche la réponse",
+        "explanation": "Le contrôleur reçoit et coordonne la soumission."
+      },
+      {
+        "id": "2",
+        "text": "Directement à liste_films.php pour y effectuer INSERT",
+        "explanation": "La vue ne traite pas l’écriture SQL."
+      },
+      {
+        "id": "3",
+        "text": "À layout.php pour que le menu valide les données",
+        "explanation": "La validation et la coordination relèvent du traitement."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le parcours d’ajout respecte la coordination MVC.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c4-q049",
+    "chapter": 4,
+    "slides": [
+      48
+    ],
+    "theme": "Actions films",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle différence existe entre ajouter et enregistrer ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "ajouter affiche le formulaire ; enregistrer traite les données",
+        "explanation": "Le switch distingue la préparation et la soumission."
+      },
+      {
+        "id": "1",
+        "text": "ajouter insère immédiatement ; enregistrer affiche le formulaire",
+        "explanation": "Ces rôles sont inversés."
+      },
+      {
+        "id": "2",
+        "text": "Les deux affichent le formulaire sans jamais appeler le modèle",
+        "explanation": "enregistrer doit réaliser l’ajout."
+      },
+      {
+        "id": "3",
+        "text": "enregistrer affiche les détails du film sans insertion",
+        "explanation": "Ce traitement ne correspond pas à l’action d’enregistrement."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Après enregistrement, l’exercice demande un retour vers la liste.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-q050",
+    "chapter": 4,
+    "slides": [
+      49,
+      50
+    ],
+    "theme": "Tests",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quels scénarios de vérification sont demandés pour le catalogue ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Consultation de liste et détails",
+        "explanation": "C’est le premier scénario."
+      },
+      {
+        "id": "1",
+        "text": "Filtre par catégorie et ajout",
+        "explanation": "Ce sont les deux autres scénarios."
+      },
+      {
+        "id": "2",
+        "text": "Vérifier uniquement que les trois fichiers de vues existent",
+        "explanation": "L’existence ne teste pas le fonctionnement des parcours."
+      },
+      {
+        "id": "3",
+        "text": "Vérifier seulement que le menu affiche les liens",
+        "explanation": "Les scénarios demandent aussi les bonnes données et leur actualisation."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Les tests couvrent les trois parcours décrits.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c4-e001",
+    "chapter": 4,
+    "slides": [
+      37
+    ],
+    "theme": "Routage",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Lis le paramètre GET controleur dans $controleur ; choisis \"etudiant\" s’il est absent ou null.",
+    "answer": "$controleur = $_GET[\"controleur\"] ?? \"etudiant\";",
+    "explanation": "Ligne 1 : lit la clé avec un défaut explicite.",
+    "lineExplanation": [
+      "Ligne 1 : lit la clé avec un défaut explicite."
+    ],
+    "hint": "Le coalescent est ??.",
+    "commonErrors": [
+      "Utiliser action comme clé.",
+      "Oublier le défaut."
+    ],
+    "rubric": [
+      "La clé controleur est lue dans GET.",
+      "Le défaut est etudiant.",
+      "La valeur est stockée."
+    ],
+    "alternatives": [
+      "$controleur = isset($_GET['controleur']) ? $_GET['controleur'] : 'etudiant';"
+    ],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e002",
+    "chapter": 4,
+    "slides": [
+      37
+    ],
+    "theme": "Chemin",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "$controleur est déjà défini. Construis $fichier au format controleurs/NOM.php avec concaténation.",
+    "answer": "$fichier = \"controleurs/\" . $controleur . \".php\";",
+    "explanation": "Ligne 1 : assemble dossier, nom et extension.",
+    "lineExplanation": [
+      "Ligne 1 : assemble dossier, nom et extension."
+    ],
+    "hint": "La concaténation PHP utilise le point.",
+    "commonErrors": [
+      "Oublier le slash.",
+      "Utiliser + pour concaténer."
+    ],
+    "rubric": [
+      "Le dossier est controleurs/.",
+      "La valeur de la variable est insérée.",
+      "Le suffixe est .php."
+    ],
+    "alternatives": [],
+    "context": "Exercice de concaténation du cours ; le choix du nom de contrôleur doit être contrôlé par l’application réelle.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e003",
+    "chapter": 4,
+    "slides": [
+      37
+    ],
+    "theme": "Fichiers",
+    "difficulty": "difficile",
+    "type": "code",
+    "prompt": "$fichier désigne un chemin déjà choisi. S’il existe, inclus-le, sinon affiche \"Contrôleur introuvable.\".",
+    "answer": "if (file_exists($fichier)) {\n    include($fichier);\n} else {\n    echo \"Contrôleur introuvable.\";\n}",
+    "explanation": "Ligne 1 : teste le chemin. Ligne 2 : charge le fichier existant. Lignes 3–5 : prévoient le cas manquant.",
+    "lineExplanation": [
+      "Ligne 1 : teste le chemin.",
+      "Ligne 2 : charge le fichier existant.",
+      "Lignes 3–5 : prévoient le cas manquant."
+    ],
+    "hint": "file_exists teste ; include charge.",
+    "commonErrors": [
+      "Confondre include et redirection HTTP.",
+      "Croire que l’existence vaut autorisation d’accès."
+    ],
+    "rubric": [
+      "L’existence est testée.",
+      "Le bon fichier est inclus.",
+      "Le cas absent affiche le message."
+    ],
+    "alternatives": [],
+    "context": "Le chemin est déjà sélectionné parmi les contrôleurs de l’application.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e004",
+    "chapter": 4,
+    "slides": [
+      12
+    ],
+    "theme": "Contrôleur",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Dans le contrôleur, récupère les étudiants avec obtenirLesEtudiants($pdo) dans $etudiants puis inclus vues/liste_etudiants.php.",
+    "answer": "$etudiants = obtenirLesEtudiants($pdo);\ninclude(\"vues/liste_etudiants.php\");",
+    "explanation": "Ligne 1 : obtient les données du modèle. Ligne 2 : appelle la présentation une fois les données prêtes.",
+    "lineExplanation": [
+      "Ligne 1 : obtient les données du modèle.",
+      "Ligne 2 : appelle la présentation une fois les données prêtes."
+    ],
+    "hint": "Le modèle est appelé avant la vue.",
+    "commonErrors": [
+      "Inclure la vue avant d’avoir les données.",
+      "Mettre SELECT dans la vue."
+    ],
+    "rubric": [
+      "La fonction modèle reçoit $pdo.",
+      "Son retour est affecté à $etudiants.",
+      "La vue demandée est incluse ensuite."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e005",
+    "chapter": 4,
+    "slides": [
+      8
+    ],
+    "theme": "Modèle",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans le modèle, lis toutes les lignes de etudiants avec query puis fetchAll, et conserve-les dans $etudiants. $pdo est connecté.",
+    "answer": "$sql = \"SELECT * FROM etudiants\";\n$resultat = $pdo->query($sql);\n$etudiants = $resultat->fetchAll();",
+    "explanation": "Ligne 1 : définit la lecture SQL fixe. Ligne 2 : exécute cette lecture via PDO. Ligne 3 : récupère les lignes.",
+    "lineExplanation": [
+      "Ligne 1 : définit la lecture SQL fixe.",
+      "Ligne 2 : exécute cette lecture via PDO.",
+      "Ligne 3 : récupère les lignes."
+    ],
+    "hint": "La requête et sa récupération appartiennent au modèle.",
+    "commonErrors": [
+      "Appeler fetchAll sur la chaîne SQL.",
+      "Intervertir query et fetchAll."
+    ],
+    "rubric": [
+      "La table etudiants est lue.",
+      "query est appelée sur PDO.",
+      "fetchAll est appelée sur le résultat."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e006",
+    "chapter": 4,
+    "slides": [
+      10
+    ],
+    "theme": "Vue",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans une vue PHP, parcours $etudiants et affiche chaque nom échappé avec htmlspecialchars, suivi de <br>. Utilise la syntaxe à accolades.",
+    "answer": "foreach ($etudiants as $etudiant) {\n    echo htmlspecialchars($etudiant[\"nom\"], ENT_QUOTES, \"UTF-8\") . \"<br>\";\n}",
+    "explanation": "Ligne 1 : parcourt les lignes fournies. Ligne 2 : échappe et affiche le nom, suivi du saut HTML. Ligne 3 : ferme la boucle.",
+    "lineExplanation": [
+      "Ligne 1 : parcourt les lignes fournies.",
+      "Ligne 2 : échappe et affiche le nom, suivi du saut HTML.",
+      "Ligne 3 : ferme la boucle."
+    ],
+    "hint": "Combine le parcours MVC et l’échappement du chapitre 1.",
+    "commonErrors": [
+      "Placer une requête SQL dans la boucle de la vue.",
+      "Afficher le nom brut."
+    ],
+    "rubric": [
+      "Tous les étudiants sont parcourus.",
+      "La clé nom est affichée.",
+      "L’échappement précède l’affichage."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e007",
+    "chapter": 4,
+    "slides": [
+      17,
+      19
+    ],
+    "theme": "Layout",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Dans layout.php, inclus dans l’ordre vues/header.php, vues/menu.php, vues/etudiants/liste.php, vues/footer.php.",
+    "answer": "include(\"vues/header.php\");\ninclude(\"vues/menu.php\");\ninclude(\"vues/etudiants/liste.php\");\ninclude(\"vues/footer.php\");",
+    "explanation": "Ligne 1 : affiche l’en-tête. Ligne 2 : insère la navigation. Ligne 3 : place la liste au centre. Ligne 4 : termine par le pied de page.",
+    "lineExplanation": [
+      "Ligne 1 : affiche l’en-tête.",
+      "Ligne 2 : insère la navigation.",
+      "Ligne 3 : place la liste au centre.",
+      "Ligne 4 : termine par le pied de page."
+    ],
+    "hint": "L’ordre des inclusions suit celui de la page.",
+    "commonErrors": [
+      "Placer le footer avant le contenu.",
+      "Confondre controleurs et vues."
+    ],
+    "rubric": [
+      "Les quatre sous-vues sont incluses.",
+      "Les chemins sont cohérents.",
+      "L’ordre demandé est respecté."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e008",
+    "chapter": 4,
+    "slides": [
+      28
+    ],
+    "theme": "Paramètres",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Récupère le paramètre REQUEST action dans $action ; utilise \"liste\" par défaut.",
+    "answer": "$action = $_REQUEST[\"action\"] ?? \"liste\";",
+    "explanation": "Ligne 1 : récupère la fonctionnalité demandée avec un repli.",
+    "lineExplanation": [
+      "Ligne 1 : récupère la fonctionnalité demandée avec un repli."
+    ],
+    "hint": "Il s’agit de l’action, pas du nom du contrôleur.",
+    "commonErrors": [
+      "Lire controleur à la place.",
+      "Traiter REQUEST comme une fonction."
+    ],
+    "rubric": [
+      "La superglobale est REQUEST.",
+      "La clé est action.",
+      "Le défaut est liste."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e009",
+    "chapter": 4,
+    "slides": [
+      29
+    ],
+    "theme": "Actions",
+    "difficulty": "difficile",
+    "type": "code",
+    "prompt": "Écris un switch sur $action : pour voirCategories, appelle $laConnexion->getLesCategories() dans $lesCategories, inclus vues/v_categories.php puis sors du switch.",
+    "answer": "switch ($action) {\n    case \"voirCategories\":\n        $lesCategories = $laConnexion->getLesCategories();\n        include(\"vues/v_categories.php\");\n        break;\n}",
+    "explanation": "Ligne 1 : sélectionne l’action. Ligne 2 : reconnaît voirCategories. Ligne 3 : prépare les données. Ligne 4 : charge la vue. Ligne 5 : termine le cas. Ligne 6 : ferme le switch.",
+    "lineExplanation": [
+      "Ligne 1 : sélectionne l’action.",
+      "Ligne 2 : reconnaît voirCategories.",
+      "Ligne 3 : prépare les données.",
+      "Ligne 4 : charge la vue.",
+      "Ligne 5 : termine le cas.",
+      "Ligne 6 : ferme le switch."
+    ],
+    "hint": "La vue doit recevoir les catégories avant d’être chargée.",
+    "commonErrors": [
+      "Oublier break.",
+      "Appeler la vue avant le modèle."
+    ],
+    "rubric": [
+      "Le bon cas est sélectionné.",
+      "Les données sont stockées.",
+      "La vue est chargée puis break quitte le cas."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e010",
+    "chapter": 4,
+    "slides": [
+      29
+    ],
+    "theme": "Modification",
+    "difficulty": "difficile",
+    "type": "code",
+    "prompt": "Dans une action de modification, lis REQUEST produit dans $idProduit, récupère le produit et les catégories via $laConnexion puis inclus vues/v_modif_produit.php.",
+    "answer": "$idProduit = $_REQUEST[\"produit\"];\n$leProduit = $laConnexion->getLeProduit($idProduit);\n$lesCategories = $laConnexion->getLesCategories();\ninclude(\"vues/v_modif_produit.php\");",
+    "explanation": "Ligne 1 : identifie le produit reçu. Ligne 2 : récupère ses informations. Ligne 3 : prépare les catégories du formulaire. Ligne 4 : appelle la vue de modification.",
+    "lineExplanation": [
+      "Ligne 1 : identifie le produit reçu.",
+      "Ligne 2 : récupère ses informations.",
+      "Ligne 3 : prépare les catégories du formulaire.",
+      "Ligne 4 : appelle la vue de modification."
+    ],
+    "hint": "Deux jeux de données sont nécessaires à cette vue.",
+    "commonErrors": [
+      "Passer une catégorie à getLeProduit.",
+      "Oublier la liste des catégories."
+    ],
+    "rubric": [
+      "L’identifiant provient de produit.",
+      "Produit et catégories sont récupérés.",
+      "La vue de modification est appelée ensuite."
+    ],
+    "alternatives": [],
+    "context": "Le paramètre produit est présent ; $laConnexion expose les méthodes du cours.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e011",
+    "chapter": 4,
+    "slides": [
+      43,
+      48
+    ],
+    "theme": "Films",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Le modèle est dans $modele. Pour l’action de liste, conserve obtenirLesFilms() dans $films puis inclus vues/liste_films.php.",
+    "answer": "$films = $modele->obtenirLesFilms();\ninclude(\"vues/liste_films.php\");",
+    "explanation": "Ligne 1 : demande la collection au modèle. Ligne 2 : présente la liste.",
+    "lineExplanation": [
+      "Ligne 1 : demande la collection au modèle.",
+      "Ligne 2 : présente la liste."
+    ],
+    "hint": "L’appel du modèle précède l’inclusion.",
+    "commonErrors": [
+      "Utiliser obtenirUnFilm sans identifiant.",
+      "Insérer du SQL dans la vue."
+    ],
+    "rubric": [
+      "La méthode de liste est utilisée.",
+      "Les films sont stockés dans $films.",
+      "La vue liste_films est incluse."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e012",
+    "chapter": 4,
+    "slides": [
+      43,
+      46,
+      48
+    ],
+    "theme": "Films",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "L’id du film est déjà dans $id. Récupère le film avec $modele->obtenirUnFilm($id) dans $film puis inclus vues/details_film.php.",
+    "answer": "$film = $modele->obtenirUnFilm($id);\ninclude(\"vues/details_film.php\");",
+    "explanation": "Ligne 1 : lit l’occurrence sélectionnée. Ligne 2 : affiche sa vue de détail.",
+    "lineExplanation": [
+      "Ligne 1 : lit l’occurrence sélectionnée.",
+      "Ligne 2 : affiche sa vue de détail."
+    ],
+    "hint": "La lecture cible un identifiant de film.",
+    "commonErrors": [
+      "Utiliser la liste complète à la place du film.",
+      "Oublier de transmettre l’id."
+    ],
+    "rubric": [
+      "Le bon id est transmis.",
+      "Le résultat est dans $film.",
+      "La vue de détail est incluse."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e013",
+    "chapter": 4,
+    "slides": [
+      43,
+      48
+    ],
+    "theme": "Films",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "$idCategorie est défini. Lis les films de cette catégorie dans $films avec $modele puis inclus vues/liste_films.php.",
+    "answer": "$films = $modele->obtenirFilmsParCategorie($idCategorie);\ninclude(\"vues/liste_films.php\");",
+    "explanation": "Ligne 1 : filtre les données via le modèle. Ligne 2 : réutilise la vue de liste.",
+    "lineExplanation": [
+      "Ligne 1 : filtre les données via le modèle.",
+      "Ligne 2 : réutilise la vue de liste."
+    ],
+    "hint": "Une même vue peut afficher une liste filtrée.",
+    "commonErrors": [
+      "Passer l’id à obtenirUnFilm.",
+      "Filtrer uniquement visuellement sans demander la bonne collection."
+    ],
+    "rubric": [
+      "Le filtre utilise la méthode par catégorie.",
+      "L’idCategorie est transmis.",
+      "La liste filtrée est fournie à la vue."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e014",
+    "chapter": 4,
+    "slides": [
+      47,
+      48
+    ],
+    "theme": "Ajout films",
+    "difficulty": "difficile",
+    "type": "code",
+    "prompt": "Les données sont déjà récupérées et validées dans $donnees. Appelle ajouterFilm sur $modele puis récupère la nouvelle liste dans $films et inclus sa vue. Pas de redirection HTTP demandée.",
+    "answer": "$modele->ajouterFilm($donnees);\n$films = $modele->obtenirLesFilms();\ninclude(\"vues/liste_films.php\");",
+    "explanation": "Ligne 1 : demande l’insertion au modèle. Ligne 2 : recharge les données après cet ajout. Ligne 3 : présente la liste actualisée.",
+    "lineExplanation": [
+      "Ligne 1 : demande l’insertion au modèle.",
+      "Ligne 2 : recharge les données après cet ajout.",
+      "Ligne 3 : présente la liste actualisée."
+    ],
+    "hint": "Il faut relire la collection après l’insertion.",
+    "commonErrors": [
+      "Afficher une ancienne liste non actualisée.",
+      "Réaliser INSERT dans la vue."
+    ],
+    "rubric": [
+      "Le modèle reçoit les données validées.",
+      "La collection est relue après l’ajout.",
+      "La vue affiche cette nouvelle collection."
+    ],
+    "alternatives": [],
+    "context": "Variante courte du parcours d’enregistrement ; le support demande aussi un retour vers la liste.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c4-e015",
+    "chapter": 4,
+    "slides": [
+      49
+    ],
+    "theme": "Point d’entrée",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Dans le catalogue, récupère GET controleur dans $controleur avec défaut \"films\", puis GET action dans $action avec défaut \"liste\".",
+    "answer": "$controleur = $_GET[\"controleur\"] ?? \"films\";\n$action = $_GET[\"action\"] ?? \"liste\";",
+    "explanation": "Ligne 1 : choisit le sous-contrôleur avec défaut. Ligne 2 : choisit sa fonctionnalité avec défaut.",
+    "lineExplanation": [
+      "Ligne 1 : choisit le sous-contrôleur avec défaut.",
+      "Ligne 2 : choisit sa fonctionnalité avec défaut."
+    ],
+    "hint": "Les deux paramètres ont des rôles distincts.",
+    "commonErrors": [
+      "Inverser films et liste.",
+      "Lire seulement l’action sans prévoir de défaut."
+    ],
+    "rubric": [
+      "controleur est récupéré.",
+      "action est récupérée.",
+      "Les défauts sont films et liste."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  }
+]

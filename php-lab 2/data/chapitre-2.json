@@ -1,0 +1,2396 @@
+[
+  {
+    "id": "c2-q001",
+    "chapter": 2,
+    "slides": [
+      4
+    ],
+    "theme": "POO",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle relation lie une classe et un objet ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Un objet est une instance concrète d’une classe",
+        "explanation": "La classe décrit les propriétés et méthodes ; l’objet en est un exemplaire."
+      },
+      {
+        "id": "1",
+        "text": "Une classe est une instance particulière d’un objet",
+        "explanation": "La relation est inversée : l’objet est l’instance de la classe."
+      },
+      {
+        "id": "2",
+        "text": "Créer une classe crée automatiquement une seule instance partagée",
+        "explanation": "La déclaration et les instanciations sont distinctes ; plusieurs objets sont possibles."
+      },
+      {
+        "id": "3",
+        "text": "La classe contient les valeurs propres d’une seule personne",
+        "explanation": "La classe décrit la structure ; chaque instance porte ses valeurs."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La distinction classe/instance est fondamentale.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q002",
+    "chapter": 2,
+    "slides": [
+      3
+    ],
+    "theme": "POO",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que regroupe généralement un objet ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Des données et des actions",
+        "explanation": "Les données sont ses propriétés ; les actions ses méthodes."
+      },
+      {
+        "id": "1",
+        "text": "Des données uniquement, les fonctions doivent rester extérieures",
+        "explanation": "Les méthodes peuvent être définies dans la classe."
+      },
+      {
+        "id": "2",
+        "text": "Des fonctions uniquement, sans état propre",
+        "explanation": "Les propriétés représentent les données de l’objet."
+      },
+      {
+        "id": "3",
+        "text": "Des données forcément partagées entre toutes les instances",
+        "explanation": "Seules les propriétés statiques sont à portée de classe."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La POO organise des données avec les traitements qui leur sont associés.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q003",
+    "chapter": 2,
+    "slides": [
+      5
+    ],
+    "theme": "Visibilité",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel membre est accessible depuis un programme extérieur à la classe ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "public $societe;",
+        "explanation": "public autorise cet accès."
+      },
+      {
+        "id": "1",
+        "text": "private $num;",
+        "explanation": "private limite l’accès à la classe qui déclare le membre."
+      },
+      {
+        "id": "2",
+        "text": "protected $nom;",
+        "explanation": "protected ne rend pas le membre public."
+      },
+      {
+        "id": "3",
+        "text": "Aucun membre ne peut être accessible",
+        "explanation": "public est précisément prévu pour cet accès."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La visibilité contrôle l’accès aux membres.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q004",
+    "chapter": 2,
+    "slides": [
+      5
+    ],
+    "theme": "Visibilité",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Vrai ou faux : private donne directement accès à l’attribut dans une classe fille.",
+    "options": [
+      {
+        "id": "0",
+        "text": "Faux",
+        "explanation": "L’accès direct private est réservé à la classe déclarante."
+      },
+      {
+        "id": "1",
+        "text": "Vrai",
+        "explanation": "Pour un accès direct depuis une fille, on utilise protected dans les exemples du cours."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une méthode publique de la mère peut fournir un accès contrôlé.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q005",
+    "chapter": 2,
+    "slides": [
+      5
+    ],
+    "theme": "Visibilité",
+    "difficulty": "facile",
+    "type": "multiple",
+    "prompt": "Quelles zones peuvent accéder directement à une propriété protected ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "La classe qui la déclare",
+        "explanation": "L’accès interne est autorisé."
+      },
+      {
+        "id": "1",
+        "text": "Ses classes filles",
+        "explanation": "protected permet l’accès dans les classes dérivées."
+      },
+      {
+        "id": "2",
+        "text": "Tout script ayant créé l’objet avec new",
+        "explanation": "new ne contourne pas la visibilité protected."
+      },
+      {
+        "id": "3",
+        "text": "Uniquement la classe déclarante, sans ses filles",
+        "explanation": "Cette limitation correspond à private, pas à protected."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "protected ouvre l’accès à la hiérarchie, pas au code extérieur.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q006",
+    "chapter": 2,
+    "slides": [
+      7
+    ],
+    "theme": "Encapsulation",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel est le rôle de setNum($nvNum) ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Modifier le numéro de l’objet",
+        "explanation": "Le setter affecte le paramètre à $this->num."
+      },
+      {
+        "id": "1",
+        "text": "Renvoyer le numéro sans le modifier",
+        "explanation": "C’est le rôle de getNum."
+      },
+      {
+        "id": "2",
+        "text": "Initialiser uniquement une variable locale $num",
+        "explanation": "Le setter doit modifier la propriété de l’instance."
+      },
+      {
+        "id": "3",
+        "text": "Modifier le numéro de toutes les Personne par défaut",
+        "explanation": "num est une donnée d’instance dans cet exemple."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Un setter est une méthode de modification.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q007",
+    "chapter": 2,
+    "slides": [
+      7
+    ],
+    "theme": "Encapsulation",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel corps convient à getNum() ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "return $this->num;",
+        "explanation": "Il renvoie la propriété de l’instance courante."
+      },
+      {
+        "id": "1",
+        "text": "return $num;",
+        "explanation": "$num serait une variable locale distincte."
+      },
+      {
+        "id": "2",
+        "text": "echo $this->num;",
+        "explanation": "Cela affiche au lieu de renvoyer."
+      },
+      {
+        "id": "3",
+        "text": "$this->num = 0;",
+        "explanation": "Cela modifie la propriété sans la retourner."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Un getter renvoie la valeur de l’attribut.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q008",
+    "chapter": 2,
+    "slides": [
+      8
+    ],
+    "theme": "Instance",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que représente $this dans une méthode d’instance ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "L’objet courant",
+        "explanation": "Il donne accès aux membres de cette instance."
+      },
+      {
+        "id": "1",
+        "text": "La classe elle-même sans instance",
+        "explanation": "self sert notamment aux accès de classe ; $this représente l’instance."
+      },
+      {
+        "id": "2",
+        "text": "La dernière instance créée, quel que soit l’appel",
+        "explanation": "Il s’agit de l’objet sur lequel la méthode est appelée."
+      },
+      {
+        "id": "3",
+        "text": "Le paramètre reçu par le constructeur",
+        "explanation": "Le paramètre et l’objet courant sont distincts."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "$this->num désigne le numéro de cet objet.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q009",
+    "chapter": 2,
+    "slides": [
+      8
+    ],
+    "theme": "Instance",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle notation appelle une méthode d’instance ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$personne->getNum()",
+        "explanation": "-> accède à un membre de l’objet."
+      },
+      {
+        "id": "1",
+        "text": "Personne::getNum() sans objet",
+        "explanation": "Le getter présenté utilise $this ; ce n’est pas une méthode statique."
+      },
+      {
+        "id": "2",
+        "text": "$personne.getNum()",
+        "explanation": "Le point est un opérateur de concaténation."
+      },
+      {
+        "id": "3",
+        "text": "$personne[\"getNum\"]",
+        "explanation": "Cette syntaxe est un accès de type tableau."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Pour l’objet : ->. Pour une méthode statique : ::.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q010",
+    "chapter": 2,
+    "slides": [
+      9
+    ],
+    "theme": "Constructeur",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quand __construct est-il appelé ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Lors d’une instanciation avec new",
+        "explanation": "PHP appelle automatiquement le constructeur défini."
+      },
+      {
+        "id": "1",
+        "text": "À chaque appel d’une méthode de l’objet",
+        "explanation": "Les méthodes ordinaires ne relancent pas le constructeur."
+      },
+      {
+        "id": "2",
+        "text": "Seulement lors du premier objet de toute la classe",
+        "explanation": "Chaque instanciation appelle le constructeur défini."
+      },
+      {
+        "id": "3",
+        "text": "Lors du premier appel à un getter",
+        "explanation": "L’initialisation se fait avec new, pas à la première lecture."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le constructeur initialise la nouvelle instance.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q011",
+    "chapter": 2,
+    "slides": [
+      10,
+      21
+    ],
+    "theme": "Constructeur",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel est le nom exact du constructeur moderne en PHP ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "__construct",
+        "explanation": "Deux underscores précèdent construct."
+      },
+      {
+        "id": "1",
+        "text": "construct",
+        "explanation": "Cette méthode ordinaire ne devient pas le constructeur."
+      },
+      {
+        "id": "2",
+        "text": "_construct",
+        "explanation": "Il manque un underscore."
+      },
+      {
+        "id": "3",
+        "text": "__constructor",
+        "explanation": "Ce nom n’est pas le constructeur magique PHP."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Certaines diapositives masquent les underscores ; la syntaxe exécutable est __construct.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q012",
+    "chapter": 2,
+    "slides": [
+      11
+    ],
+    "theme": "Constructeur",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle ligne initialise correctement la propriété nom ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$this->nom = $leNom;",
+        "explanation": "La propriété de l’objet reçoit le paramètre."
+      },
+      {
+        "id": "1",
+        "text": "$nom = $leNom;",
+        "explanation": "Cela crée ou modifie une variable locale."
+      },
+      {
+        "id": "2",
+        "text": "$this->$leNom = nom;",
+        "explanation": "Cela n’affecte pas la propriété nom visée."
+      },
+      {
+        "id": "3",
+        "text": "self::nom = $leNom;",
+        "explanation": "Cette syntaxe ne désigne pas la propriété d’instance."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Un paramètre et une propriété ne se confondent pas.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q013",
+    "chapter": 2,
+    "slides": [
+      12
+    ],
+    "theme": "Constructeur",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Peut-on définir plusieurs méthodes __construct de signatures différentes dans une même classe PHP ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Non",
+        "explanation": "On ne redéfinit pas plusieurs fois une méthode de même nom dans la classe."
+      },
+      {
+        "id": "1",
+        "text": "Oui, comme plusieurs surcharges distinctes",
+        "explanation": "Le cours présente une simulation dans un seul constructeur."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours choisit le comportement avec func_num_args et func_get_arg.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q014",
+    "chapter": 2,
+    "slides": [
+      12
+    ],
+    "theme": "Arguments",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que renvoie func_num_args() dans une fonction ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Le nombre d’arguments effectivement reçus",
+        "explanation": "Il permet de choisir un cas dans le constructeur du cours."
+      },
+      {
+        "id": "1",
+        "text": "Le premier argument reçu",
+        "explanation": "Ce serait func_get_arg(0)."
+      },
+      {
+        "id": "2",
+        "text": "Le nombre d’arguments déclarés dans la signature seulement",
+        "explanation": "func_num_args compte ceux effectivement reçus à l’appel."
+      },
+      {
+        "id": "3",
+        "text": "L’indice du dernier argument reçu",
+        "explanation": "Trois arguments ont pour dernier indice 2, mais leur nombre vaut 3."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Cette fonction compte les arguments de l’appel courant.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q015",
+    "chapter": 2,
+    "slides": [
+      13
+    ],
+    "theme": "Arguments",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Pour new Personne(12, \"Dupont\", \"TechNova\"), que renvoie func_get_arg(1) dans le constructeur ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Dupont",
+        "explanation": "Le premier argument est à l’indice 0, le deuxième à 1."
+      },
+      {
+        "id": "1",
+        "text": "12",
+        "explanation": "12 correspond à l’indice 0."
+      },
+      {
+        "id": "2",
+        "text": "TechNova",
+        "explanation": "TechNova correspond à l’indice 2."
+      },
+      {
+        "id": "3",
+        "text": "3",
+        "explanation": "3 est le nombre d’arguments."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Les positions commencent à zéro.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q016",
+    "chapter": 2,
+    "slides": [
+      14
+    ],
+    "theme": "Arguments",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Dans le constructeur du cours, quel cas traite deux arguments ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "case 2",
+        "explanation": "Le switch porte sur le nombre d’arguments."
+      },
+      {
+        "id": "1",
+        "text": "case 1",
+        "explanation": "L’indexation de func_get_arg commence à zéro, mais le nombre reste 2."
+      },
+      {
+        "id": "2",
+        "text": "case 3",
+        "explanation": "Ce cas traite les trois informations."
+      },
+      {
+        "id": "3",
+        "text": "default uniquement",
+        "explanation": "Le cas 2 est explicitement prévu."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Ne pas confondre un nombre d’arguments avec un indice.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q017",
+    "chapter": 2,
+    "slides": [
+      14,
+      15
+    ],
+    "theme": "Arguments",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle société reçoit new Personne(13, \"Martin\") dans l’exemple de surcharge ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "inconnu",
+        "explanation": "Le cas 2 affecte cette valeur par défaut."
+      },
+      {
+        "id": "1",
+        "text": "TechNova",
+        "explanation": "C’est la société passée dans l’autre appel à trois arguments."
+      },
+      {
+        "id": "2",
+        "text": "Une chaîne vide",
+        "explanation": "Le défaut du cas à deux arguments est explicitement inconnu."
+      },
+      {
+        "id": "3",
+        "text": "null",
+        "explanation": "Le code du cours affecte une chaîne, pas null."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le comportement dépend du nombre d’arguments reçu.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q018",
+    "chapter": 2,
+    "slides": [
+      14
+    ],
+    "theme": "Contrôle",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "À quoi sert break après un case dans le switch du constructeur ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Sortir du switch",
+        "explanation": "Cela empêche de poursuivre dans les cas suivants."
+      },
+      {
+        "id": "1",
+        "text": "Quitter obligatoirement le constructeur et tout le script",
+        "explanation": "break quitte ici le switch, pas tout le programme."
+      },
+      {
+        "id": "2",
+        "text": "Passer au case suivant pour compléter les propriétés",
+        "explanation": "break empêche justement cette poursuite."
+      },
+      {
+        "id": "3",
+        "text": "Renvoyer le résultat au code appelant",
+        "explanation": "Un retour explicite utiliserait return."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Sans break, l’exécution peut se poursuivre dans les branches suivantes.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q019",
+    "chapter": 2,
+    "slides": [
+      14
+    ],
+    "theme": "Contrôle",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Que signifie default: exit(1); dans l’exemple ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Arrêter le programme pour un nombre d’arguments non prévu",
+        "explanation": "Le défaut n’accepte pas d’autres formats."
+      },
+      {
+        "id": "1",
+        "text": "Créer un objet avec un argument par défaut",
+        "explanation": "exit ne fournit pas de valeur de constructeur."
+      },
+      {
+        "id": "2",
+        "text": "Passer automatiquement au cas 1",
+        "explanation": "Aucun case 1 n’est présent."
+      },
+      {
+        "id": "3",
+        "text": "Afficher le chiffre 1",
+        "explanation": "Le paramètre entier est un statut de sortie."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "L’exemple rejette les formats différents de deux ou trois arguments.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q020",
+    "chapter": 2,
+    "slides": [
+      16
+    ],
+    "theme": "Encapsulation",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Pourquoi rendre les attributs de Voiture privés et exposer des méthodes ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Contrôler leur lecture et modification",
+        "explanation": "Les getters et setters organisent l’accès aux données."
+      },
+      {
+        "id": "1",
+        "text": "Garantir qu’aucune méthode ne puisse modifier les attributs",
+        "explanation": "Les méthodes de la classe peuvent y accéder."
+      },
+      {
+        "id": "2",
+        "text": "Partager les attributs entre toutes les voitures",
+        "explanation": "Cela nécessiterait static ; private ne définit pas la portée."
+      },
+      {
+        "id": "3",
+        "text": "Permettre l’accès direct depuis les classes filles uniquement",
+        "explanation": "Cette visibilité serait protected ; l’encapsulation utilise ici des accesseurs."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "L’encapsulation protège la représentation interne.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q021",
+    "chapter": 2,
+    "slides": [
+      18
+    ],
+    "theme": "Méthodes",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Que doit renvoyer calculerPrixLocation($nbJours) ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$this->prixJournalier * $nbJours",
+        "explanation": "Le coût est le prix par jour multiplié par la durée."
+      },
+      {
+        "id": "1",
+        "text": "$this->prixJournalier + $nbJours",
+        "explanation": "Le coût est multiplicatif, pas additif."
+      },
+      {
+        "id": "2",
+        "text": "$this->prixJournalier / $nbJours",
+        "explanation": "Une division ne calcule pas le prix de plusieurs jours."
+      },
+      {
+        "id": "3",
+        "text": "$prixJournalier * $nbJours sans autre définition",
+        "explanation": "Le tarif est un attribut ; $prixJournalier seul est une variable locale."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La méthode utilise une donnée de l’instance et un paramètre.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q022",
+    "chapter": 2,
+    "slides": [
+      18
+    ],
+    "theme": "Constructeur",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Pour une Voiture créée avec quatre informations, quelle disponibilité est prévue ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "true",
+        "explanation": "Le format à quatre arguments fixe disponible à true."
+      },
+      {
+        "id": "1",
+        "text": "false",
+        "explanation": "Le défaut demandé est true."
+      },
+      {
+        "id": "2",
+        "text": "La valeur du quatrième argument comme disponibilité",
+        "explanation": "Le quatrième argument est le tarif, pas la disponibilité."
+      },
+      {
+        "id": "3",
+        "text": "Une disponibilité non initialisée",
+        "explanation": "L’énoncé exige un défaut explicite."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "L’énoncé précise le défaut à appliquer.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q023",
+    "chapter": 2,
+    "slides": [
+      20,
+      21
+    ],
+    "theme": "Héritage",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel mot-clé déclare une classe fille ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "extends",
+        "explanation": "class Etudiant extends Personne établit l’héritage."
+      },
+      {
+        "id": "1",
+        "text": "parent",
+        "explanation": "parent désigne la mère dans un accès de portée."
+      },
+      {
+        "id": "2",
+        "text": "static",
+        "explanation": "static définit un membre à portée de classe."
+      },
+      {
+        "id": "3",
+        "text": "new",
+        "explanation": "new instancie une classe."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "extends relie la classe fille à la classe mère.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q024",
+    "chapter": 2,
+    "slides": [
+      21
+    ],
+    "theme": "Héritage",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quelle instruction appelle le constructeur de la mère ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "parent::__construct($nom);",
+        "explanation": "La portée parent cible le constructeur de la mère."
+      },
+      {
+        "id": "1",
+        "text": "$this->__construct($nom);",
+        "explanation": "Cela rappellerait le constructeur courant."
+      },
+      {
+        "id": "2",
+        "text": "parent->construct($nom);",
+        "explanation": "parent se combine avec :: et le nom magique exact."
+      },
+      {
+        "id": "3",
+        "text": "new parent($nom);",
+        "explanation": "Créer un autre objet n’initialise pas la partie mère de l’objet courant."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "L’exemple appelle explicitement le constructeur parent.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q025",
+    "chapter": 2,
+    "slides": [
+      21
+    ],
+    "theme": "Héritage",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Dans l’exemple Etudiant, quel attribut est propre à la classe fille ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "formation",
+        "explanation": "Etudiant ajoute cet attribut privé."
+      },
+      {
+        "id": "1",
+        "text": "nom",
+        "explanation": "nom est déclaré dans Personne."
+      },
+      {
+        "id": "2",
+        "text": "societe",
+        "explanation": "Ce n’est pas l’attribut ajouté dans l’exemple Etudiant."
+      },
+      {
+        "id": "3",
+        "text": "Le constructeur parent",
+        "explanation": "Le constructeur est une méthode, pas l’attribut propre ajouté."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La fille ajoute sa donnée en plus de la partie Personne.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q026",
+    "chapter": 2,
+    "slides": [
+      20,
+      21
+    ],
+    "theme": "Héritage",
+    "difficulty": "difficile",
+    "type": "vrai-faux",
+    "prompt": "Une fille définit son propre constructeur. L’initialisation de la mère s’exécute-t-elle automatiquement en plus ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Non, l’exemple l’appelle explicitement",
+        "explanation": "parent::__construct transmet les paramètres nécessaires."
+      },
+      {
+        "id": "1",
+        "text": "Oui, avec tous les arguments automatiquement",
+        "explanation": "Le constructeur redéfini ne provoque pas cet appel implicite supplémentaire."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours demande de placer l’appel parent au début ; ce placement est sa convention pédagogique, pas une obligation syntaxique PHP.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q027",
+    "chapter": 2,
+    "slides": [
+      23
+    ],
+    "theme": "Héritage",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Une propriété num est private dans Personne. Comment Utilisateur peut-il obtenir sa valeur ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Par une méthode publique héritée getNum()",
+        "explanation": "Le getter de Personne peut accéder à son propre attribut privé."
+      },
+      {
+        "id": "1",
+        "text": "$this->num directement dans la fille",
+        "explanation": "private interdit cet accès direct à la propriété déclarée dans la mère."
+      },
+      {
+        "id": "2",
+        "text": "parent::$num",
+        "explanation": "La propriété num n’est pas statique et reste privée."
+      },
+      {
+        "id": "3",
+        "text": "Une copie locale $num automatiquement créée par extends",
+        "explanation": "extends ne crée pas de variable locale contenant cet attribut."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La visibilité des méthodes permet un accès contrôlé aux données privées.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q028",
+    "chapter": 2,
+    "slides": [
+      24,
+      25
+    ],
+    "theme": "Destructeur",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Quel est le nom de la méthode spéciale appelée à la destruction ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "__destruct",
+        "explanation": "C’est le nom magique du destructeur."
+      },
+      {
+        "id": "1",
+        "text": "__destroy",
+        "explanation": "Ce n’est pas le nom PHP prévu."
+      },
+      {
+        "id": "2",
+        "text": "destruct seulement",
+        "explanation": "Sans les deux underscores, il s’agit d’une méthode ordinaire."
+      },
+      {
+        "id": "3",
+        "text": "__construct",
+        "explanation": "C’est le constructeur."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le nom exact comporte deux underscores.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q029",
+    "chapter": 2,
+    "slides": [
+      25,
+      26
+    ],
+    "theme": "Destructeur",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Dans l’exemple avec une seule Voiture, quel ordre de messages est attendu ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Création, Fin du programme, Destruction",
+        "explanation": "L’objet est créé puis le script atteint echo avant la destruction de fin."
+      },
+      {
+        "id": "1",
+        "text": "Destruction, Création, Fin du programme",
+        "explanation": "La destruction n’a pas lieu avant la création."
+      },
+      {
+        "id": "2",
+        "text": "Création, Destruction, Fin du programme",
+        "explanation": "La référence existe encore au moment de l’echo final."
+      },
+      {
+        "id": "3",
+        "text": "Fin du programme seulement",
+        "explanation": "Constructeur et destructeur contiennent aussi des echo."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La capture du support confirme cet ordre.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q030",
+    "chapter": 2,
+    "slides": [
+      24
+    ],
+    "theme": "Références",
+    "difficulty": "difficile",
+    "type": "vrai-faux",
+    "prompt": "Deux variables référencent le même objet. Si une seule reçoit null, est-il nécessairement détruit immédiatement ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Non",
+        "explanation": "L’autre référence maintient l’objet en vie."
+      },
+      {
+        "id": "1",
+        "text": "Oui",
+        "explanation": "Affecter null à une référence ne supprime pas les autres références."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La destruction dépend de l’absence de références, pas du seul nom d’une variable.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q031",
+    "chapter": 2,
+    "slides": [
+      27
+    ],
+    "theme": "Statique",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "À qui appartient une propriété static ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "À la classe",
+        "explanation": "Elle est commune aux instances de cette classe."
+      },
+      {
+        "id": "1",
+        "text": "À chaque instance séparément",
+        "explanation": "C’est la portée d’une propriété non statique."
+      },
+      {
+        "id": "2",
+        "text": "Au seul objet sur lequel la méthode est appelée",
+        "explanation": "Une propriété statique appartient à la classe."
+      },
+      {
+        "id": "3",
+        "text": "À une variable locale recréée à chaque méthode",
+        "explanation": "La propriété de classe est conservée au-delà d’un appel de méthode."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une donnée statique a une portée de classe.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q032",
+    "chapter": 2,
+    "slides": [
+      27,
+      28
+    ],
+    "theme": "Statique",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Comment appeler la méthode statique publique donnePlanete de Personne ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Personne::donnePlanete()",
+        "explanation": ":: appelle la méthode de classe."
+      },
+      {
+        "id": "1",
+        "text": "Personne->donnePlanete()",
+        "explanation": "-> nécessite une expression d’objet."
+      },
+      {
+        "id": "2",
+        "text": "Personne.donnePlanete()",
+        "explanation": "Le point est une concaténation."
+      },
+      {
+        "id": "3",
+        "text": "new donnePlanete()",
+        "explanation": "Ce n’est pas un nom de classe à instancier."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours distingue NomClasse::methode et $objet->methode.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q033",
+    "chapter": 2,
+    "slides": [
+      27
+    ],
+    "theme": "Statique",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelle expression lit la propriété statique privée $planete depuis sa classe ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "self::$planete",
+        "explanation": "Le dollar est requis pour une propriété statique."
+      },
+      {
+        "id": "1",
+        "text": "self::planete",
+        "explanation": "Sans $, on désigne une constante de classe."
+      },
+      {
+        "id": "2",
+        "text": "$this->planete",
+        "explanation": "Ce serait un accès à une propriété d’instance."
+      },
+      {
+        "id": "3",
+        "text": "self->planete",
+        "explanation": "self utilise la résolution de portée ::."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La diapositive contient une coquille : self::$planete est la syntaxe correcte.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q034",
+    "chapter": 2,
+    "slides": [
+      27
+    ],
+    "theme": "Statique",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quelles écritures correspondent à une méthode statique renvoyant la planète ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "public static function donnePlanete() { return self::$planete; }",
+        "explanation": "Déclaration statique et accès à la propriété statique cohérents."
+      },
+      {
+        "id": "1",
+        "text": "public function donnePlanete() { return $this->planete; }",
+        "explanation": "C’est une méthode d’instance et un accès d’instance."
+      },
+      {
+        "id": "2",
+        "text": "public static function donnePlanete() { return $this->planete; }",
+        "explanation": "$this n’est pas disponible dans une méthode statique."
+      },
+      {
+        "id": "3",
+        "text": "public static donnePlanete() { return self::$planete; }",
+        "explanation": "Le mot-clé function manque."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une méthode statique ne possède pas d’objet courant.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q035",
+    "chapter": 2,
+    "slides": [
+      31
+    ],
+    "theme": "Compteur",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Où incrémenter le compteur statique pour compter chaque nouvel utilisateur créé ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Dans le constructeur Utilisateur",
+        "explanation": "L’initialisation commune peut compter chaque construction."
+      },
+      {
+        "id": "1",
+        "text": "Seulement dans afficherInfos",
+        "explanation": "Plusieurs affichages compteraient plusieurs fois."
+      },
+      {
+        "id": "2",
+        "text": "Seulement dans getNombreUtilisateurs",
+        "explanation": "Lire le compteur ne doit pas modifier le total."
+      },
+      {
+        "id": "3",
+        "text": "Dans le destructeur pour compter les créations",
+        "explanation": "Le destructeur se produit à la fin de vie, pas à la création."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le cours demande une incrémentation à chaque création.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q036",
+    "chapter": 2,
+    "slides": [
+      31,
+      32
+    ],
+    "theme": "Compteur",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Deux formateurs et trois apprenants sont créés, et chacun appelle une fois le constructeur Utilisateur. Quel compteur commun est attendu ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "5",
+        "explanation": "2 + 3 créations passent dans le constructeur commun."
+      },
+      {
+        "id": "1",
+        "text": "2",
+        "explanation": "Les apprenants doivent aussi être comptés."
+      },
+      {
+        "id": "2",
+        "text": "3",
+        "explanation": "Les formateurs doivent aussi être comptés."
+      },
+      {
+        "id": "3",
+        "text": "6",
+        "explanation": "Aucune sixième création n’est décrite."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La capture affiche un total de cinq utilisateurs.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q037",
+    "chapter": 2,
+    "slides": [
+      7
+    ],
+    "theme": "Instance",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Personne est instanciable sans argument et possède les accesseurs du cours. Qu’affiche ce programme ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "12",
+        "explanation": "Le numéro de $a reste indépendant de celui de $b."
+      },
+      {
+        "id": "1",
+        "text": "13",
+        "explanation": "$b est une autre instance."
+      },
+      {
+        "id": "2",
+        "text": "1213",
+        "explanation": "Un seul appel echo est présent."
+      },
+      {
+        "id": "3",
+        "text": "0",
+        "explanation": "setNum a bien affecté la valeur."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Les propriétés d’instance appartiennent à chaque objet.",
+    "code": "$a = new Personne(); $b = new Personne();\n$a->setNum(12); $b->setNum(13);\necho $a->getNum();",
+    "essential": false
+  },
+  {
+    "id": "c2-q038",
+    "chapter": 2,
+    "slides": [
+      7
+    ],
+    "theme": "Instance",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Quel est le problème de ce setter ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Il modifie une variable locale et non l’attribut",
+        "explanation": "Il faut écrire $this->num = $nvNum."
+      },
+      {
+        "id": "1",
+        "text": "Il faudrait rendre le paramètre static pour modifier la propriété",
+        "explanation": "La portée du paramètre ne remplace pas $this->num."
+      },
+      {
+        "id": "2",
+        "text": "Le getter doit être appelé avant toute affectation locale",
+        "explanation": "Un getter ne relie pas une variable locale à la propriété."
+      },
+      {
+        "id": "3",
+        "text": "L’affectation devrait être une comparaison ==",
+        "explanation": "Il faut une affectation sur la bonne cible, pas une comparaison."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La propriété nécessite $this->.",
+    "code": "public function setNum($nvNum) { $num = $nvNum; }",
+    "essential": false
+  },
+  {
+    "id": "c2-q039",
+    "chapter": 2,
+    "slides": [
+      5
+    ],
+    "theme": "Visibilité",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Un script fait echo $p->num alors que num est private. Que se passe-t-il ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "L’accès est interdit",
+        "explanation": "Il faut passer par une méthode autorisée, comme getNum."
+      },
+      {
+        "id": "1",
+        "text": "La valeur est lue mais ne peut pas être modifiée",
+        "explanation": "private interdit aussi cette lecture extérieure."
+      },
+      {
+        "id": "2",
+        "text": "La valeur null est automatiquement renvoyée sans erreur",
+        "explanation": "L’accès direct à une propriété privée existante est interdit."
+      },
+      {
+        "id": "3",
+        "text": "PHP cherche automatiquement et appelle getNum",
+        "explanation": "Il n’y a pas cette délégation automatique dans la classe présentée."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "private interdit l’accès direct depuis l’extérieur.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q040",
+    "chapter": 2,
+    "slides": [
+      6
+    ],
+    "theme": "Méthodes",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Dans la terminologie du cours, une méthode de type procédure…",
+    "options": [
+      {
+        "id": "0",
+        "text": "Réalise une action sans renvoyer de résultat explicite",
+        "explanation": "Le cours oppose l’action à la fonction qui renvoie une valeur."
+      },
+      {
+        "id": "1",
+        "text": "Devient automatiquement une méthode statique",
+        "explanation": "L’absence de return ne change pas la portée."
+      },
+      {
+        "id": "2",
+        "text": "Doit être déclarée avec procedure au lieu de function",
+        "explanation": "PHP utilise function pour les méthodes décrites."
+      },
+      {
+        "id": "3",
+        "text": "Ne peut pas recevoir de paramètres",
+        "explanation": "Une méthode sans retour explicite peut recevoir des paramètres."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "« Procédure » décrit ici le rôle, pas un mot-clé PHP.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q041",
+    "chapter": 2,
+    "slides": [
+      11
+    ],
+    "theme": "Constructeur",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Que manque-t-il dans ce code pour initialiser correctement le nom ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$this-> devant nom",
+        "explanation": "Il faut affecter la propriété, pas la variable locale."
+      },
+      {
+        "id": "1",
+        "text": "static devant function",
+        "explanation": "Le constructeur doit initialiser une instance."
+      },
+      {
+        "id": "2",
+        "text": "Un echo avant $nom",
+        "explanation": "Afficher ne stocke pas dans l’objet."
+      },
+      {
+        "id": "3",
+        "text": "Un second constructeur",
+        "explanation": "Le même nom de méthode ne peut pas être déclaré deux fois."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le paramètre et la propriété sont deux emplacements différents.",
+    "code": "class Personne {\n private $nom;\n public function __construct($nom) { $nom = $nom; }\n}",
+    "essential": false
+  },
+  {
+    "id": "c2-q042",
+    "chapter": 2,
+    "slides": [
+      22
+    ],
+    "theme": "Héritage",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "À quoi sert parent:: dans une classe fille ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Désigner un membre de la classe mère accessible dans ce contexte",
+        "explanation": "Par exemple parent::__construct(...)."
+      },
+      {
+        "id": "1",
+        "text": "Créer automatiquement un nouvel objet de la mère",
+        "explanation": "Un accès parent:: ne crée pas un objet distinct."
+      },
+      {
+        "id": "2",
+        "text": "Accéder directement à toute propriété private de la mère",
+        "explanation": "Les restrictions de visibilité restent en vigueur."
+      },
+      {
+        "id": "3",
+        "text": "Accéder à l’objet courant comme $this-> dans tous les cas",
+        "explanation": "parent:: choisit une implémentation de la mère ; ce n’est pas un remplacement général de $this."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "parent désigne la classe parente.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q043",
+    "chapter": 2,
+    "slides": [
+      30
+    ],
+    "theme": "Héritage",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Comment éviter de réécrire l’affichage commun dans Formateur::afficherInfos() ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "Appeler parent::afficherInfos(), puis afficher la spécialité",
+        "explanation": "On réutilise la méthode accessible de la mère."
+      },
+      {
+        "id": "1",
+        "text": "Appeler $this->afficherInfos() au début de la même méthode",
+        "explanation": "Cela rappelle la même méthode et peut boucler récursivement."
+      },
+      {
+        "id": "2",
+        "text": "Supprimer la méthode de la mère",
+        "explanation": "La duplication ne sera pas résolue pour les autres filles."
+      },
+      {
+        "id": "3",
+        "text": "Utiliser func_num_args pour afficher le nom",
+        "explanation": "Cela compte les arguments, sans réutiliser l’affichage commun."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "L’héritage permet la réutilisation des comportements communs.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q044",
+    "chapter": 2,
+    "slides": [
+      31
+    ],
+    "theme": "Compteur",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quel corps convient à getNombreUtilisateurs() dans Utilisateur ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "return self::$nombreUtilisateurs;",
+        "explanation": "La méthode renvoie la donnée à portée de classe."
+      },
+      {
+        "id": "1",
+        "text": "return $this->nombreUtilisateurs;",
+        "explanation": "Le getter statique ne possède pas $this."
+      },
+      {
+        "id": "2",
+        "text": "self::$nombreUtilisateurs++;",
+        "explanation": "Cela modifie le compteur au lieu de seulement le renvoyer."
+      },
+      {
+        "id": "3",
+        "text": "return $nombreUtilisateurs;",
+        "explanation": "Cette variable locale n’est pas la propriété statique."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le getter ne doit pas incrémenter le compteur.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q045",
+    "chapter": 2,
+    "slides": [
+      8
+    ],
+    "theme": "Encapsulation",
+    "difficulty": "intermediaire",
+    "type": "multiple",
+    "prompt": "Quelles opérations respectent une propriété num privée et ses accesseurs publics ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "$p->setNum(123);",
+        "explanation": "L’accès passe par le setter."
+      },
+      {
+        "id": "1",
+        "text": "echo $p->getNum();",
+        "explanation": "L’accès passe par le getter."
+      },
+      {
+        "id": "2",
+        "text": "$p->num = 123;",
+        "explanation": "L’écriture directe depuis l’extérieur est interdite."
+      },
+      {
+        "id": "3",
+        "text": "echo $p->num;",
+        "explanation": "La lecture directe depuis l’extérieur est interdite."
+      }
+    ],
+    "answer": [
+      "0",
+      "1"
+    ],
+    "explanation": "Les méthodes publiques forment l’interface d’accès.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q046",
+    "chapter": 2,
+    "slides": [
+      13
+    ],
+    "theme": "Arguments",
+    "difficulty": "intermediaire",
+    "type": "unique",
+    "prompt": "Quel accès fournit la société lors d’un appel à trois arguments dans l’ordre numéro, nom, société ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "func_get_arg(2)",
+        "explanation": "La société est la troisième valeur, donc à l’indice 2."
+      },
+      {
+        "id": "1",
+        "text": "func_get_arg(3)",
+        "explanation": "L’indice 3 serait la quatrième valeur."
+      },
+      {
+        "id": "2",
+        "text": "func_num_args(2)",
+        "explanation": "Cette fonction compte les arguments ; elle n’en extrait pas un."
+      },
+      {
+        "id": "3",
+        "text": "func_get_arg(0)",
+        "explanation": "L’indice 0 fournit le numéro."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "L’indexation est zéro, un, deux.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q047",
+    "chapter": 2,
+    "slides": [
+      18
+    ],
+    "theme": "Méthodes",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Un tarif journalier vaut 45 et la durée vaut 3. Que doit renvoyer calculerPrixLocation ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "135",
+        "explanation": "45 × 3 = 135."
+      },
+      {
+        "id": "1",
+        "text": "48",
+        "explanation": "C’est la somme, pas le produit."
+      },
+      {
+        "id": "2",
+        "text": "15",
+        "explanation": "C’est la division, pas le coût de trois jours."
+      },
+      {
+        "id": "3",
+        "text": "45",
+        "explanation": "La durée a été ignorée."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Une méthode de calcul renvoie le produit tarif × durée.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q048",
+    "chapter": 2,
+    "slides": [
+      27
+    ],
+    "theme": "Statique",
+    "difficulty": "difficile",
+    "type": "unique",
+    "prompt": "Quel ensemble est cohérent pour déclarer une planète commune puis la renvoyer ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "private static $planete = \"Terre\"; et return self::$planete;",
+        "explanation": "La déclaration et l’accès ont la même portée de classe."
+      },
+      {
+        "id": "1",
+        "text": "private $planete = \"Terre\"; et return self::$planete;",
+        "explanation": "La déclaration est d’instance mais l’accès est statique."
+      },
+      {
+        "id": "2",
+        "text": "private static $planete = \"Terre\"; et return $planete;",
+        "explanation": "La variable locale n’est pas la propriété statique."
+      },
+      {
+        "id": "3",
+        "text": "private static $planete = \"Terre\"; et return self::planete;",
+        "explanation": "Il manque le dollar pour lire la propriété."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Le mot static et la syntaxe self::$… doivent correspondre.",
+    "code": null,
+    "essential": false
+  },
+  {
+    "id": "c2-q049",
+    "chapter": 2,
+    "slides": [
+      30
+    ],
+    "theme": "Héritage",
+    "difficulty": "facile",
+    "type": "unique",
+    "prompt": "Formateur et Apprenant héritent d’Utilisateur. Quelles données faut-il regrouper dans la mère selon l’exercice ?",
+    "options": [
+      {
+        "id": "0",
+        "text": "id, nom et email",
+        "explanation": "Ces informations sont communes aux deux catégories."
+      },
+      {
+        "id": "1",
+        "text": "id et nom seulement, email dans chaque fille",
+        "explanation": "email est aussi une donnée commune du cahier des charges."
+      },
+      {
+        "id": "2",
+        "text": "nom et spécialité",
+        "explanation": "spécialité est propre au Formateur."
+      },
+      {
+        "id": "3",
+        "text": "nom et formation",
+        "explanation": "formation est propre à l’Apprenant."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "La mère concentre les attributs communs.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-q050",
+    "chapter": 2,
+    "slides": [
+      27
+    ],
+    "theme": "Portée",
+    "difficulty": "facile",
+    "type": "vrai-faux",
+    "prompt": "Vrai ou faux : changer une propriété d’instance de $a modifie automatiquement celle de $b, un autre objet créé avec new.",
+    "options": [
+      {
+        "id": "0",
+        "text": "Faux",
+        "explanation": "Deux instances distinctes possèdent leurs propres valeurs d’instance."
+      },
+      {
+        "id": "1",
+        "text": "Vrai",
+        "explanation": "La propriété commune aux instances serait une propriété statique."
+      }
+    ],
+    "answer": [
+      "0"
+    ],
+    "explanation": "Ne pas confondre propriété d’instance et propriété de classe.",
+    "code": null,
+    "essential": true
+  },
+  {
+    "id": "c2-e001",
+    "chapter": 2,
+    "slides": [
+      5
+    ],
+    "theme": "Visibilité",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Déclare une classe Personne avec num privé, nom protégé et societe public.",
+    "answer": "class Personne {\n    private $num;\n    protected $nom;\n    public $societe;\n}",
+    "explanation": "Ligne 1 : déclare la classe. Ligne 2 : limite num à la classe. Ligne 3 : permet l’accès à nom dans la hiérarchie. Ligne 4 : expose societe. Ligne 5 : ferme la classe.",
+    "lineExplanation": [
+      "Ligne 1 : déclare la classe.",
+      "Ligne 2 : limite num à la classe.",
+      "Ligne 3 : permet l’accès à nom dans la hiérarchie.",
+      "Ligne 4 : expose societe.",
+      "Ligne 5 : ferme la classe."
+    ],
+    "hint": "Associe chaque attribut à la visibilité demandée.",
+    "commonErrors": [
+      "Inverser private et protected.",
+      "Oublier $ dans la déclaration."
+    ],
+    "rubric": [
+      "La classe porte le bon nom.",
+      "Les trois attributs existent.",
+      "Chaque visibilité correspond à l’énoncé."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e002",
+    "chapter": 2,
+    "slides": [
+      7
+    ],
+    "theme": "Encapsulation",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Dans Personne, écris le getter public getNum() pour l’attribut privé num.",
+    "answer": "public function getNum() {\n    return $this->num;\n}",
+    "explanation": "Ligne 1 : déclare la méthode publique. Ligne 2 : renvoie l’attribut de l’objet. Ligne 3 : ferme la méthode.",
+    "lineExplanation": [
+      "Ligne 1 : déclare la méthode publique.",
+      "Ligne 2 : renvoie l’attribut de l’objet.",
+      "Ligne 3 : ferme la méthode."
+    ],
+    "hint": "Le getter renvoie au lieu d’afficher.",
+    "commonErrors": [
+      "Oublier $this->.",
+      "Utiliser echo."
+    ],
+    "rubric": [
+      "Le nom getNum est exact.",
+      "La méthode est publique.",
+      "Elle renvoie $this->num."
+    ],
+    "alternatives": [],
+    "context": "À placer à l’intérieur de la classe Personne.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e003",
+    "chapter": 2,
+    "slides": [
+      7
+    ],
+    "theme": "Encapsulation",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Dans Personne, écris setNum($nvNum) qui modifie le numéro de l’objet.",
+    "answer": "public function setNum($nvNum) {\n    $this->num = $nvNum;\n}",
+    "explanation": "Ligne 1 : reçoit la nouvelle valeur. Ligne 2 : modifie la propriété de l’instance. Ligne 3 : ferme la méthode.",
+    "lineExplanation": [
+      "Ligne 1 : reçoit la nouvelle valeur.",
+      "Ligne 2 : modifie la propriété de l’instance.",
+      "Ligne 3 : ferme la méthode."
+    ],
+    "hint": "La propriété est distincte du paramètre.",
+    "commonErrors": [
+      "Modifier uniquement $num local.",
+      "Écrire == au lieu de =."
+    ],
+    "rubric": [
+      "Le paramètre est reçu.",
+      "La propriété num est affectée.",
+      "Le setter est public."
+    ],
+    "alternatives": [],
+    "context": "À placer à l’intérieur de Personne.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e004",
+    "chapter": 2,
+    "slides": [
+      8
+    ],
+    "theme": "Instance",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Instancie Personne sans argument dans $p, donne-lui le numéro 123 avec setNum puis affiche getNum.",
+    "answer": "$p = new Personne();\n$p->setNum(123);\necho $p->getNum();",
+    "explanation": "Ligne 1 : crée l’instance. Ligne 2 : appelle le setter. Ligne 3 : affiche la valeur renvoyée.",
+    "lineExplanation": [
+      "Ligne 1 : crée l’instance.",
+      "Ligne 2 : appelle le setter.",
+      "Ligne 3 : affiche la valeur renvoyée."
+    ],
+    "hint": "Les méthodes d’objet utilisent ->.",
+    "commonErrors": [
+      "Lire directement un attribut privé.",
+      "Utiliser le point pour appeler une méthode."
+    ],
+    "rubric": [
+      "$p est une nouvelle Personne.",
+      "setNum reçoit 123.",
+      "Le résultat de getNum est affiché."
+    ],
+    "alternatives": [],
+    "context": "La classe Personne avec constructeur sans argument et accesseurs existe déjà.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e005",
+    "chapter": 2,
+    "slides": [
+      11
+    ],
+    "theme": "Constructeur",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans Personne, écris un constructeur recevant $num, $nom, $societe et initialisant les trois propriétés correspondantes.",
+    "answer": "public function __construct($num, $nom, $societe) {\n    $this->num = $num;\n    $this->nom = $nom;\n    $this->societe = $societe;\n}",
+    "explanation": "Ligne 1 : nom magique exact et trois paramètres. Lignes 2–4 : affectent chaque paramètre à sa propriété. Ligne 5 : ferme le constructeur.",
+    "lineExplanation": [
+      "Ligne 1 : nom magique exact et trois paramètres.",
+      "Lignes 2–4 : affectent chaque paramètre à sa propriété.",
+      "Ligne 5 : ferme le constructeur."
+    ],
+    "hint": "Deux underscores précèdent construct.",
+    "commonErrors": [
+      "Nommer la méthode construct.",
+      "N’affecter que les variables locales."
+    ],
+    "rubric": [
+      "Le constructeur est correctement nommé.",
+      "Les trois paramètres sont reçus.",
+      "Les trois propriétés sont initialisées."
+    ],
+    "alternatives": [],
+    "context": "Fragment interne de Personne, propriétés déjà déclarées.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e006",
+    "chapter": 2,
+    "slides": [
+      13
+    ],
+    "theme": "Arguments",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans un constructeur appelé avec numéro, nom, société, récupère le nombre d’arguments dans $n et la société dans $societe.",
+    "answer": "$n = func_num_args();\n$societe = func_get_arg(2);",
+    "explanation": "Ligne 1 : compte les arguments reçus. Ligne 2 : lit le troisième argument à l’indice 2.",
+    "lineExplanation": [
+      "Ligne 1 : compte les arguments reçus.",
+      "Ligne 2 : lit le troisième argument à l’indice 2."
+    ],
+    "hint": "Le premier argument a l’indice zéro.",
+    "commonErrors": [
+      "Utiliser l’indice 3.",
+      "Confondre count et extraction."
+    ],
+    "rubric": [
+      "func_num_args est appelé dans le constructeur.",
+      "Le nombre est stocké dans $n.",
+      "L’argument d’indice 2 est stocké dans $societe."
+    ],
+    "alternatives": [],
+    "context": "Ces lignes se placent dans le corps du constructeur.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e007",
+    "chapter": 2,
+    "slides": [
+      14
+    ],
+    "theme": "Arguments",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Complète un fragment de constructeur : si deux arguments sont reçus, initialise num et nom depuis ces arguments et societe à \"inconnu\".",
+    "answer": "if (func_num_args() == 2) {\n    $this->num = func_get_arg(0);\n    $this->nom = func_get_arg(1);\n    $this->societe = \"inconnu\";\n}",
+    "explanation": "Ligne 1 : sélectionne le format à deux arguments. Lignes 2–3 : lisent les arguments aux bons indices. Ligne 4 : fixe le défaut. Ligne 5 : ferme le test.",
+    "lineExplanation": [
+      "Ligne 1 : sélectionne le format à deux arguments.",
+      "Lignes 2–3 : lisent les arguments aux bons indices.",
+      "Ligne 4 : fixe le défaut.",
+      "Ligne 5 : ferme le test."
+    ],
+    "hint": "Tu peux traiter uniquement le cas demandé avec if.",
+    "commonErrors": [
+      "Utiliser 1 et 2 comme indices.",
+      "Chercher un troisième argument inexistant."
+    ],
+    "rubric": [
+      "Le format deux arguments est testé.",
+      "num et nom utilisent 0 et 1.",
+      "societe reçoit inconnu."
+    ],
+    "alternatives": [],
+    "context": "Fragment du corps de __construct().",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e008",
+    "chapter": 2,
+    "slides": [
+      18
+    ],
+    "theme": "Méthodes",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Dans Voiture, écris calculerPrixLocation($nbJours) qui renvoie prixJournalier multiplié par la durée.",
+    "answer": "public function calculerPrixLocation($nbJours) {\n    return $this->prixJournalier * $nbJours;\n}",
+    "explanation": "Ligne 1 : reçoit le nombre de jours. Ligne 2 : renvoie le coût total. Ligne 3 : ferme la méthode.",
+    "lineExplanation": [
+      "Ligne 1 : reçoit le nombre de jours.",
+      "Ligne 2 : renvoie le coût total.",
+      "Ligne 3 : ferme la méthode."
+    ],
+    "hint": "Le tarif appartient à l’objet courant.",
+    "commonErrors": [
+      "Additionner tarif et durée.",
+      "Afficher sans retourner."
+    ],
+    "rubric": [
+      "La durée est un paramètre.",
+      "Le tarif vient de $this->prixJournalier.",
+      "Le produit est renvoyé."
+    ],
+    "alternatives": [],
+    "context": "À placer dans Voiture ; prixJournalier existe déjà.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e009",
+    "chapter": 2,
+    "slides": [
+      22
+    ],
+    "theme": "Héritage",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Déclare Etudiant héritant de Personne et ajoute formation comme propriété privée.",
+    "answer": "class Etudiant extends Personne {\n    private $formation;\n}",
+    "explanation": "Ligne 1 : déclare l’héritage avec extends. Ligne 2 : ajoute la donnée propre à Etudiant. Ligne 3 : ferme la classe.",
+    "lineExplanation": [
+      "Ligne 1 : déclare l’héritage avec extends.",
+      "Ligne 2 : ajoute la donnée propre à Etudiant.",
+      "Ligne 3 : ferme la classe."
+    ],
+    "hint": "Le mot-clé est extends.",
+    "commonErrors": [
+      "Utiliser parent à la place de extends.",
+      "Oublier la visibilité demandée."
+    ],
+    "rubric": [
+      "La classe est Etudiant.",
+      "Elle étend Personne.",
+      "formation est privé."
+    ],
+    "alternatives": [],
+    "context": "Personne existe déjà.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e010",
+    "chapter": 2,
+    "slides": [
+      21
+    ],
+    "theme": "Héritage",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans Etudiant, écris le constructeur ($nom, $formation), appelle celui de Personne avec $nom puis initialise formation.",
+    "answer": "public function __construct($nom, $formation) {\n    parent::__construct($nom);\n    $this->formation = $formation;\n}",
+    "explanation": "Ligne 1 : reçoit les deux informations. Ligne 2 : initialise la partie Personne. Ligne 3 : initialise l’attribut de la fille. Ligne 4 : ferme le constructeur.",
+    "lineExplanation": [
+      "Ligne 1 : reçoit les deux informations.",
+      "Ligne 2 : initialise la partie Personne.",
+      "Ligne 3 : initialise l’attribut de la fille.",
+      "Ligne 4 : ferme le constructeur."
+    ],
+    "hint": "L’appel parent utilise ::.",
+    "commonErrors": [
+      "Rappeler $this->__construct.",
+      "Omettre la partie mère."
+    ],
+    "rubric": [
+      "Les deux paramètres sont reçus.",
+      "parent::__construct reçoit $nom.",
+      "formation est affecté sur l’objet."
+    ],
+    "alternatives": [],
+    "context": "Fragment dans class Etudiant extends Personne ; formation existe déjà.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e011",
+    "chapter": 2,
+    "slides": [
+      30
+    ],
+    "theme": "Héritage",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans Formateur::afficherInfos, appelle l’affichage hérité puis affiche la spécialité de l’objet.",
+    "answer": "public function afficherInfos() {\n    parent::afficherInfos();\n    echo $this->specialite;\n}",
+    "explanation": "Ligne 1 : redéfinit l’affichage. Ligne 2 : réutilise l’affichage de la mère. Ligne 3 : ajoute l’information spécifique. Ligne 4 : ferme la méthode.",
+    "lineExplanation": [
+      "Ligne 1 : redéfinit l’affichage.",
+      "Ligne 2 : réutilise l’affichage de la mère.",
+      "Ligne 3 : ajoute l’information spécifique.",
+      "Ligne 4 : ferme la méthode."
+    ],
+    "hint": "Utilise parent pour la version héritée.",
+    "commonErrors": [
+      "Appeler récursivement $this->afficherInfos().",
+      "Utiliser une variable locale specialite."
+    ],
+    "rubric": [
+      "La méthode est publique.",
+      "La méthode parent est appelée.",
+      "La spécialité de l’instance est affichée."
+    ],
+    "alternatives": [],
+    "context": "Dans class Formateur extends Utilisateur ; specialite et la méthode parent existent.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e012",
+    "chapter": 2,
+    "slides": [
+      24
+    ],
+    "theme": "Destructeur",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Dans une classe, écris un destructeur affichant \"Destruction de l’objet\".",
+    "answer": "public function __destruct() {\n    echo \"Destruction de l’objet\";\n}",
+    "explanation": "Ligne 1 : déclare le destructeur magique. Ligne 2 : affiche le message. Ligne 3 : ferme la méthode.",
+    "lineExplanation": [
+      "Ligne 1 : déclare le destructeur magique.",
+      "Ligne 2 : affiche le message.",
+      "Ligne 3 : ferme la méthode."
+    ],
+    "hint": "Le nom magique commence par deux underscores.",
+    "commonErrors": [
+      "Écrire __destroy.",
+      "Ajouter des arguments obligatoires au destructeur."
+    ],
+    "rubric": [
+      "Le nom est __destruct.",
+      "Aucun paramètre n’est imposé.",
+      "Le message est affiché."
+    ],
+    "alternatives": [],
+    "context": "Fragment à placer à l’intérieur d’une classe.",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e013",
+    "chapter": 2,
+    "slides": [
+      27
+    ],
+    "theme": "Statique",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans Personne, déclare la planète commune privée \"Terre\" et une méthode statique publique donnePlanete qui la renvoie.",
+    "answer": "private static $planete = \"Terre\";\npublic static function donnePlanete() {\n    return self::$planete;\n}",
+    "explanation": "Ligne 1 : déclare la propriété de classe. Ligne 2 : déclare le getter statique. Ligne 3 : lit la propriété avec self::$. Ligne 4 : ferme le getter.",
+    "lineExplanation": [
+      "Ligne 1 : déclare la propriété de classe.",
+      "Ligne 2 : déclare le getter statique.",
+      "Ligne 3 : lit la propriété avec self::$.",
+      "Ligne 4 : ferme le getter."
+    ],
+    "hint": "Une propriété statique garde son $ après ::.",
+    "commonErrors": [
+      "Écrire self::planete.",
+      "Utiliser $this dans la méthode statique."
+    ],
+    "rubric": [
+      "La propriété est privée et statique.",
+      "La méthode est publique et statique.",
+      "La propriété est renvoyée avec une syntaxe valide."
+    ],
+    "alternatives": [],
+    "context": "Fragment à l’intérieur de Personne.",
+    "essential": false,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e014",
+    "chapter": 2,
+    "slides": [
+      28
+    ],
+    "theme": "Statique",
+    "difficulty": "facile",
+    "type": "code",
+    "prompt": "Affiche la valeur renvoyée par donnePlanete(), méthode publique statique de Personne.",
+    "answer": "echo Personne::donnePlanete();",
+    "explanation": "Ligne 1 : appelle la méthode de classe avec :: puis affiche son retour.",
+    "lineExplanation": [
+      "Ligne 1 : appelle la méthode de classe avec :: puis affiche son retour."
+    ],
+    "hint": "Aucun objet ne doit être créé pour cet appel.",
+    "commonErrors": [
+      "Utiliser Personne->.",
+      "Oublier les parenthèses de l’appel."
+    ],
+    "rubric": [
+      "Personne est la classe appelée.",
+      "L’opérateur est ::.",
+      "Le résultat est affiché."
+    ],
+    "alternatives": [],
+    "context": "",
+    "essential": true,
+    "validation": "self"
+  },
+  {
+    "id": "c2-e015",
+    "chapter": 2,
+    "slides": [
+      31
+    ],
+    "theme": "Compteur",
+    "difficulty": "intermediaire",
+    "type": "code",
+    "prompt": "Dans Utilisateur, déclare nombreUtilisateurs privé statique initialisé à zéro et getNombreUtilisateurs() public statique qui le renvoie.",
+    "answer": "private static $nombreUtilisateurs = 0;\npublic static function getNombreUtilisateurs() {\n    return self::$nombreUtilisateurs;\n}",
+    "explanation": "Ligne 1 : initialise le compteur commun. Ligne 2 : expose un getter de classe. Ligne 3 : renvoie sans modifier le compteur. Ligne 4 : ferme la méthode.",
+    "lineExplanation": [
+      "Ligne 1 : initialise le compteur commun.",
+      "Ligne 2 : expose un getter de classe.",
+      "Ligne 3 : renvoie sans modifier le compteur.",
+      "Ligne 4 : ferme la méthode."
+    ],
+    "hint": "Un getter ne doit pas incrémenter le total.",
+    "commonErrors": [
+      "Utiliser $this.",
+      "Incrémenter au moment de la lecture."
+    ],
+    "rubric": [
+      "Le compteur commence à zéro.",
+      "Il est privé statique.",
+      "Le getter public statique renvoie sa valeur."
+    ],
+    "alternatives": [],
+    "context": "Fragment interne de Utilisateur ; l’incrémentation dans le constructeur est hors de cet exercice.",
+    "essential": false,
+    "validation": "self"
+  }
+]
