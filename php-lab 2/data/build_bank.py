@@ -281,6 +281,7 @@ C(4,[47,48],'Ajout films','Les données sont déjà récupérées et validées d
 C(4,49,'Point d’entrée','Dans le catalogue, récupère GET controleur dans $controleur avec défaut "films", puis GET action dans $action avec défaut "liste".','$controleur = $_GET["controleur"] ?? "films";\n$action = $_GET["action"] ?? "liste";',['Ligne 1 : choisit le sous-contrôleur avec défaut.','Ligne 2 : choisit sa fonctionnalité avec défaut.'],'Les deux paramètres ont des rôles distincts.',['Inverser films et liste.','Lire seulement l’action sans prévoir de défaut.'],['controleur est récupéré.','action est récupérée.','Les défauts sont films et liste.'],'facile')
 import runpy
 runpy.run_path(str(D/'editorial.py'))['apply'](banks)
+runpy.run_path(str(D/'self_contained.py'))['apply'](banks)
 
 if __name__=='__main__':
  for ch,items in banks.items():

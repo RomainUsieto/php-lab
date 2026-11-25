@@ -244,7 +244,7 @@
     "theme": "Conditions",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelle condition inclut exactement l’âge limite de 18 ans ?",
+    "prompt": "Quelle condition accepte tous les âges supérieurs ou égaux à 18 ans, en incluant 18 ans ?",
     "options": [
       {
         "id": "0",
@@ -758,7 +758,7 @@
       "0"
     ],
     "explanation": "La flèche => sépare la clé et sa valeur.",
-    "code": null,
+    "code": "$etudiant = [\"nom\" => \"Anna\", \"age\" => 20];\nforeach ($etudiant as $cle => $valeur) {\n    echo $cle . \" : \" . $valeur;\n}",
     "essential": true
   },
   {
@@ -875,7 +875,7 @@
       "0"
     ],
     "explanation": "Une clé textuelle s’écrit entre guillemets dans cet exemple.",
-    "code": null,
+    "code": "$etudiant = [\"nom\" => \"Alex\", \"age\" => 20, \"ville\" => \"Anglet\"];",
     "essential": true
   },
   {
@@ -947,13 +947,13 @@
       {
         "id": "3",
         "text": "44",
-        "explanation": "44 correspond à l’autre scénario de la capture."
+        "explanation": "44 € n’est pas la somme des cinq prix donnés dans cet énoncé."
       }
     ],
     "answer": [
       "0"
     ],
-    "explanation": "La capture du scénario initial affiche 60 €.",
+    "explanation": "En additionnant les cinq prix indiqués : 12 + 8 + 15 + 20 + 5 = 60 €.",
     "code": null,
     "essential": false
   },
@@ -1062,7 +1062,7 @@
       "0"
     ],
     "explanation": "Paramètre : variable de la fonction ; argument : valeur fournie.",
-    "code": null,
+    "code": "function saluer($nom) {\n    echo \"Bonjour \" . $nom;\n}\nsaluer(\"Alex\");",
     "essential": false
   },
   {
@@ -1179,7 +1179,7 @@
     "answer": [
       "0"
     ],
-    "explanation": "La capture du cours confirme une moyenne de 12 et le statut Admis.",
+    "explanation": "La moyenne arithmétique vaut (12 + 15 + 9) / 3 = 12. Elle est supérieure ou égale à 10.",
     "code": null,
     "essential": false
   },
@@ -1310,7 +1310,7 @@
     "theme": "GET",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelle URL correspond au formulaire GET de recherche du cours ?",
+    "prompt": "Ce formulaire est envoyé avec le texte « PHP » dans le champ mot. Quelle URL est obtenue ?",
     "options": [
       {
         "id": "0",
@@ -1337,7 +1337,7 @@
       "0"
     ],
     "explanation": "Un couple nom=valeur est ajouté après le point d’interrogation.",
-    "code": null,
+    "code": "<form action=\"recherche.php\" method=\"get\">\n    <input type=\"text\" name=\"mot\" value=\"PHP\">\n    <button type=\"submit\">Rechercher</button>\n</form>",
     "essential": true
   },
   {
@@ -1614,7 +1614,7 @@
     "theme": "Validation",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelle fonction du cours teste si une valeur est numérique ?",
+    "prompt": "Quelle fonction teste si $prix contient une valeur numérique ?",
     "options": [
       {
         "id": "0",
@@ -1654,7 +1654,7 @@
     "theme": "Validation",
     "difficulty": "difficile",
     "type": "unique",
-    "prompt": "L’énoncé exige un prix strictement positif. Quelle condition rejette un prix invalide après le test is_numeric ?",
+    "prompt": "On impose un prix strictement positif. Après avoir vérifié is_numeric($prix), quelle condition rejette les nombres invalides ?",
     "options": [
       {
         "id": "0",
@@ -1680,7 +1680,7 @@
     "answer": [
       "0"
     ],
-    "explanation": "La diapositive 41 exige > 0 ; la solution 43 tolère zéro. Cet énoncé fixe explicitement la règle.",
+    "explanation": "Un prix strictement positif vérifie $prix > 0. Il faut donc rejeter $prix <= 0, ce qui exclut aussi zéro.",
     "code": null,
     "essential": false
   },
@@ -1771,7 +1771,7 @@
     "theme": "Sessions",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Pourquoi utiliser $_SESSION dans l’extension de gestion des produits ?",
+    "prompt": "Une page ajoute des produits lors de plusieurs soumissions de formulaire. Pourquoi conserver la liste dans $_SESSION ?",
     "options": [
       {
         "id": "0",
@@ -1797,7 +1797,7 @@
     "answer": [
       "0"
     ],
-    "explanation": "Le cours utilise la session pour ne pas perdre les ajouts précédents.",
+    "explanation": "La session permet de conserver les ajouts entre plusieurs requêtes de la même navigation.",
     "code": null,
     "essential": false
   },
@@ -2208,7 +2208,7 @@
       "Le séparateur et <br> sont présents."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "$produits est déjà défini, par exemple [\"Clavier\" => 25, \"Souris\" => 15]. La boucle doit fonctionner aussi avec d’autres produits.",
     "essential": false,
     "validation": "self"
   },
@@ -2244,7 +2244,7 @@
     "alternatives": [
       "$total = 0;\nforeach ($produits as $prix) { $total += $prix; }"
     ],
-    "context": "",
+    "context": "$produits est déjà défini, par exemple [\"Clavier\" => 25, \"Souris\" => 15]. Calcule un total pour toutes ses valeurs, pas seulement pour cet exemple.",
     "essential": false,
     "validation": "self"
   },

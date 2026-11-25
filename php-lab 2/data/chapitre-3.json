@@ -47,7 +47,7 @@
     "theme": "Persistance",
     "difficulty": "facile",
     "type": "multiple",
-    "prompt": "Quelles sont les deux étapes de mise en place de la persistance décrites ?",
+    "prompt": "Pour conserver puis retrouver les informations d’objets après la fin du programme, quels éléments faut-il mettre en place ?",
     "options": [
       {
         "id": "0",
@@ -87,7 +87,7 @@
     "theme": "Stockage",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quels supports permanents le cours cite-t-il ?",
+    "prompt": "Quel couple contient deux supports permettant de conserver des données après l’arrêt d’un programme PHP ?",
     "options": [
       {
         "id": "0",
@@ -301,7 +301,7 @@
     "theme": "Architecture",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Quel chemin correspond au schéma de couches du cours ?",
+    "prompt": "Dans une application séparant présentation, métier et persistance par des DAO, quel parcours des couches respecte leurs responsabilités ?",
     "options": [
       {
         "id": "0",
@@ -369,7 +369,7 @@
     "theme": "DAO",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelle association de classes le cours propose-t-il ?",
+    "prompt": "On veut séparer les données d’une personne des opérations qui l’enregistrent dans une base. Quelle organisation est cohérente ?",
     "options": [
       {
         "id": "0",
@@ -486,7 +486,7 @@
     "theme": "Métier",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quel membre est cohérent dans la classe métier Soiree ?",
+    "prompt": "Soiree est une classe métier contenant la date, la nature et le nombre de places d’une soirée. Quel membre correspond à son rôle métier ?",
     "options": [
       {
         "id": "0",
@@ -525,7 +525,7 @@
     "theme": "DAO",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Dans creer($objLaSoiree), pourquoi appeler les getters de l’objet ?",
+    "prompt": "Une méthode DAO creer($objLaSoiree) reçoit une soirée à enregistrer. Pourquoi lit-elle les attributs via les getters publics de cet objet ?",
     "options": [
       {
         "id": "0",
@@ -564,7 +564,7 @@
     "theme": "XML",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Que montre le remplacement de la base par du XML dans SoireeDAO ?",
+    "prompt": "La méthode creer de SoireeDAO conserve le même contrat public mais enregistre désormais en XML au lieu d’une base relationnelle. Que montre cette modification ?",
     "options": [
       {
         "id": "0",
@@ -603,7 +603,7 @@
     "theme": "Conception",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Pour une structure importante, quelle granularité le cours suggère-t-il ?",
+    "prompt": "Pour une base comportant de nombreuses tables, quelle organisation des DAO permet de regrouper les opérations relatives à chaque table ?",
     "options": [
       {
         "id": "0",
@@ -642,7 +642,7 @@
     "theme": "PDO",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelle API PHP d’accès aux bases relationnelles est citée ?",
+    "prompt": "Parmi ces propositions, quelle API PHP sert à accéder à des bases de données relationnelles ?",
     "options": [
       {
         "id": "0",
@@ -720,7 +720,7 @@
     "theme": "Connexion",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quel est le rôle de GestionConnexion ?",
+    "prompt": "Une classe technique GestionConnexion centralise l’ouverture et le partage d’une connexion PDO. Quel rôle remplit-elle vis-à-vis des DAO ?",
     "options": [
       {
         "id": "0",
@@ -798,7 +798,7 @@
     "theme": "Singleton",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Pourquoi le constructeur de GestionConnexion est-il private ?",
+    "prompt": "On construit un Singleton de connexion : GestionConnexion expose getConnexion() public statique et son constructeur est private. Pourquoi choisir cette visibilité pour le constructeur ?",
     "options": [
       {
         "id": "0",
@@ -837,7 +837,7 @@
     "theme": "Singleton",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quel appel le programme doit-il utiliser pour obtenir la connexion ?",
+    "prompt": "GestionConnexion expose public static function getConnexion() qui renvoie PDO et possède un constructeur privé. Quel appel permet d’obtenir la connexion ?",
     "options": [
       {
         "id": "0",
@@ -876,7 +876,7 @@
     "theme": "Singleton",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "À quoi sert is_null(self::$_instance) dans getConnexion ?",
+    "prompt": "Une méthode statique getConnexion() crée une instance de GestionConnexion seulement si is_null(self::$_instance) est vrai. Que permet ce test ?",
     "options": [
       {
         "id": "0",
@@ -915,7 +915,7 @@
     "theme": "PDO",
     "difficulty": "intermediaire",
     "type": "multiple",
-    "prompt": "Quelles informations apparaissent dans new PDO(...) dans le support ?",
+    "prompt": "Quels éléments de configuration sont transmis dans cet appel PDO ?",
     "options": [
       {
         "id": "0",
@@ -942,8 +942,8 @@
       "0",
       "1"
     ],
-    "explanation": "Le cours montre new PDO(DSN, login, mdp).",
-    "code": null,
+    "explanation": "Le premier argument est le DSN qui précise le pilote, l’hôte et la base ; les deux suivants sont l’identifiant et le mot de passe.",
+    "code": "$pdo = new PDO(\n    \"mysql:host=localhost;dbname=nomBase\",\n    \"login\",\n    \"mdp\"\n);",
     "essential": false
   },
   {
@@ -955,7 +955,7 @@
     "theme": "Singleton",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Que renvoie getConnexion dans l’exemple ?",
+    "prompt": "GestionConnexion conserve l’objet de gestion dans $_instance et l’objet PDO dans $laConnexion, tous deux statiques. Quelle expression sa méthode getConnexion() doit-elle renvoyer aux DAO ?",
     "options": [
       {
         "id": "0",
@@ -981,7 +981,7 @@
     "answer": [
       "0"
     ],
-    "explanation": "$_instance pilote la création ; $laConnexion est la valeur renvoyée.",
+    "explanation": "Les DAO ont besoin de PDO, conservé dans self::$laConnexion. self::$_instance désigne l’objet GestionConnexion utilisé pour contrôler sa création.",
     "code": null,
     "essential": false
   },
@@ -994,7 +994,7 @@
     "theme": "Connexion",
     "difficulty": "difficile",
     "type": "unique",
-    "prompt": "Que fait liberer() dans la classe technique du cours ?",
+    "prompt": "Que fait cette méthode liberer(), placée dans GestionConnexion ?",
     "options": [
       {
         "id": "0",
@@ -1020,9 +1020,10 @@
     "answer": [
       "0"
     ],
-    "explanation": "D’autres références éventuelles à PDO peuvent encore exister.",
-    "code": null,
-    "essential": false
+    "explanation": "La méthode retire les références détenues par ces deux propriétés. Elle ne supprime aucune donnée persistante et ne garantit pas la destruction de PDO si une autre référence existe.",
+    "code": "public static function liberer() {\n    self::$_instance = null;\n    self::$laConnexion = null;\n}",
+    "essential": false,
+    "context": "Les deux propriétés sont statiques. D’autres objets peuvent encore conserver une référence à la même connexion PDO."
   },
   {
     "id": "c3-q028",
@@ -1033,7 +1034,7 @@
     "theme": "DAO instance",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Où l’approche avec un objet DAO conserve-t-elle sa connexion ?",
+    "prompt": "On veut qu’un objet DAO réutilise, dans plusieurs méthodes, la connexion reçue à sa construction. Où la conserver dans la forme d’instance ?",
     "options": [
       {
         "id": "0",
@@ -1072,7 +1073,7 @@
     "theme": "DAO instance",
     "difficulty": "difficile",
     "type": "unique",
-    "prompt": "Quel constructeur initialise correctement la connexion du DAO ?",
+    "prompt": "Un DAO déclare private $laConnexion. Quel constructeur initialise cet attribut pour que ses autres méthodes puissent utiliser PDO ?",
     "options": [
       {
         "id": "0",
@@ -1100,7 +1101,8 @@
     ],
     "explanation": "Il faut affecter l’attribut utilisé par les autres méthodes.",
     "code": null,
-    "essential": false
+    "essential": false,
+    "context": "GestionConnexion::getConnexion() est une méthode publique statique qui renvoie la connexion."
   },
   {
     "id": "c3-q030",
@@ -1111,7 +1113,7 @@
     "theme": "DAO statique",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Dans la seconde forme de DAO, comment les méthodes sont-elles déclarées ?",
+    "prompt": "On souhaite appeler les opérations du DAO directement avec NomTableDAO::methode(), sans créer d’objet DAO. Comment déclarer ces méthodes publiques ?",
     "options": [
       {
         "id": "0",
@@ -1269,7 +1271,7 @@
     "theme": "Create",
     "difficulty": "intermediaire",
     "type": "multiple",
-    "prompt": "Quelles signatures de création sont proposées ?",
+    "prompt": "Une soirée contient une date, une nature et un nombre de places. Quelles signatures permettent de transmettre ces informations à une méthode DAO de création ?",
     "options": [
       {
         "id": "0",
@@ -1298,7 +1300,8 @@
     ],
     "explanation": "Les données peuvent être transmises séparément ou via un objet.",
     "code": null,
-    "essential": false
+    "essential": false,
+    "context": "$objetSoiree est un objet métier dont les getters publics donnent accès à ces trois informations."
   },
   {
     "id": "c3-q035",
@@ -1349,7 +1352,7 @@
     "theme": "Read",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Lesquels sont les trois types de résultats de lecture du cours ?",
+    "prompt": "Quel groupe décrit trois formes possibles de résultat d’une opération de lecture Read dans un DAO ?",
     "options": [
       {
         "id": "0",
@@ -1388,7 +1391,7 @@
     "theme": "Finders",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quel est le rôle de findById($id) ?",
+    "prompt": "Dans un DAO, une méthode de recherche s’appelle findById($id). Quel est le contrat habituel correspondant à ce nom ?",
     "options": [
       {
         "id": "0",
@@ -1427,7 +1430,7 @@
     "theme": "Finders",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelle méthode lit toute la table selon les noms du cours ?",
+    "prompt": "Un DAO utilise les noms findById, findAll, creer et detruire pour ses opérations. Quelle méthode choisir pour lire tous les enregistrements ?",
     "options": [
       {
         "id": "0",
@@ -1574,7 +1577,7 @@
     "theme": "Delete",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Comment désigner l’élément à supprimer selon le cours ?",
+    "prompt": "Quelles informations peut-on transmettre à une méthode Delete pour désigner un enregistrement précis à supprimer ?",
     "options": [
       {
         "id": "0",
@@ -1613,7 +1616,7 @@
     "theme": "Stratégie 1",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Dans la stratégie 1, qui connaît le DAO ?",
+    "prompt": "Un objet métier possède une référence vers un DAO et lui délègue lui-même sa sauvegarde. Dans cette organisation, qui connaît directement le DAO ?",
     "options": [
       {
         "id": "0",
@@ -1623,7 +1626,7 @@
       {
         "id": "1",
         "text": "Seulement le programme, jamais l’objet métier",
-        "explanation": "Ce serait la stratégie 2."
+        "explanation": "Dans cette autre organisation, le programme principal connaît le DAO et l’objet métier reste indépendant."
       },
       {
         "id": "2",
@@ -1652,7 +1655,7 @@
     "theme": "Stratégie 1",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Quel appel illustre la stratégie 1 au niveau du programme ?",
+    "prompt": "Soiree possède sauvegardeToi(), qui appelle son propre DAO pour s’enregistrer. Quel appel permet au programme de demander une sauvegarde sans manipuler le DAO lui-même ?",
     "options": [
       {
         "id": "0",
@@ -1680,7 +1683,8 @@
     ],
     "explanation": "L’objet métier connaît et utilise sa passerelle.",
     "code": null,
-    "essential": false
+    "essential": false,
+    "context": "$uneSoiree est une instance de Soiree. sauvegardeToi() est une méthode publique d’instance."
   },
   {
     "id": "c3-q045",
@@ -1691,7 +1695,7 @@
     "theme": "Stratégie 2",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Pourquoi le cours privilégie-t-il souvent la stratégie 2 ?",
+    "prompt": "Le programme appelle un DAO avec un objet métier ; cet objet ne possède aucune référence au DAO. Quel avantage apporte cette organisation ?",
     "options": [
       {
         "id": "0",
@@ -1701,7 +1705,7 @@
       {
         "id": "1",
         "text": "L’absence de tout DAO dans le programme",
-        "explanation": "La stratégie 2 le fait appeler explicitement par le programme."
+        "explanation": "Le programme connaît et appelle bien le DAO ; c’est l’objet métier qui n’en garde pas de référence."
       },
       {
         "id": "2",
@@ -1711,13 +1715,13 @@
       {
         "id": "3",
         "text": "Une sauvegarde automatique dès new Soiree",
-        "explanation": "La stratégie demande toujours un appel à la méthode du DAO."
+        "explanation": "Créer une soirée ne l’enregistre pas automatiquement : le programme doit appeler le DAO."
       }
     ],
     "answer": [
       "0"
     ],
-    "explanation": "Le programme orchestre la persistance et le métier reste indépendant.",
+    "explanation": "L’objet métier reste indépendant de la passerelle de persistance. Le programme coordonne les appels au DAO, ce qui isole mieux les responsabilités.",
     "code": null,
     "essential": false
   },
@@ -1730,7 +1734,7 @@
     "theme": "Stratégie 2",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Quelle séquence représente la stratégie 2 ?",
+    "prompt": "On veut garder Soiree indépendante de tout DAO et confier la sauvegarde au programme principal. Quelle séquence correspond à ce choix ?",
     "options": [
       {
         "id": "0",
@@ -1740,7 +1744,7 @@
       {
         "id": "1",
         "text": "Faire Soiree appeler son propre DAO via sauvegardeToi",
-        "explanation": "C’est la stratégie 1."
+        "explanation": "Si Soiree appelle son propre DAO, elle connaît la passerelle, contrairement au choix annoncé."
       },
       {
         "id": "2",
@@ -1756,7 +1760,7 @@
     "answer": [
       "0"
     ],
-    "explanation": "Le programme connaît explicitement les deux objets.",
+    "explanation": "Le programme crée les deux objets puis transmet la soirée à $dao->creer($soiree). La classe Soiree n’a pas besoin de conserver le DAO.",
     "code": null,
     "essential": false
   },
@@ -1795,7 +1799,7 @@
     "answer": [
       "0"
     ],
-    "explanation": "Le support demande de ne pas contourner les DAO.",
+    "explanation": "L’accès aux données doit passer par les méthodes des DAO pour garder la persistance centralisée.",
     "code": null,
     "essential": true
   },
@@ -1808,7 +1812,7 @@
     "theme": "Syntaxe",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Quelle correction donne accès à la connexion statique ?",
+    "prompt": "Dans une méthode statique de GestionConnexion, quelle expression lit la propriété statique $laConnexion de cette classe ?",
     "options": [
       {
         "id": "0",
@@ -1888,7 +1892,7 @@
     "theme": "Connexion",
     "difficulty": "difficile",
     "type": "unique",
-    "prompt": "Quelle instruction correspond à la méthode liberer définie dans GestionConnexion ?",
+    "prompt": "GestionConnexion définit public static function liberer(). Quelle instruction appelle correctement cette méthode ?",
     "options": [
       {
         "id": "0",
@@ -1947,7 +1951,7 @@
       "Le constructeur affecte cette propriété avec le service technique."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "GestionConnexion existe et sa méthode publique statique getConnexion() renvoie PDO. Écris la classe DAO complète, sans implémenter d’opération CRUD.",
     "essential": true,
     "validation": "self"
   },
@@ -1977,7 +1981,7 @@
       "$pdo reçoit le résultat."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "GestionConnexion existe. Elle propose public static function getConnexion(), qui renvoie la connexion PDO partagée. Écris uniquement l’appel et son affectation.",
     "essential": true,
     "validation": "self"
   },
@@ -2070,7 +2074,7 @@
       "L’instance est conservée dans la propriété statique."
     ],
     "alternatives": [],
-    "context": "Fragment de méthode statique à l’intérieur de GestionConnexion.",
+    "context": "Fragment du corps de getConnexion(), méthode statique de GestionConnexion. La classe possède private static $_instance = null et son constructeur privé initialise la connexion.",
     "essential": false,
     "validation": "self"
   },
@@ -2103,7 +2107,7 @@
       "La connexion est renvoyée."
     ],
     "alternatives": [],
-    "context": "Méthode interne de GestionConnexion ; le constructeur crée self::$laConnexion.",
+    "context": "Dans GestionConnexion : private static $_instance = null conserve l’objet de gestion ; private static $laConnexion conserve PDO. Le constructeur privé __construct() initialise $laConnexion. Écris uniquement la méthode publique statique getConnexion().",
     "essential": false,
     "validation": "self"
   },
@@ -2167,7 +2171,7 @@
       "creer reçoit l’objet métier."
     ],
     "alternatives": [],
-    "context": "Soiree et SoireeDAO existent avec les signatures du cours.",
+    "context": "Soiree possède public function __construct($date, $nature, $places). SoireeDAO est instanciable sans argument et possède public function creer($soiree). Écris uniquement les trois instructions du programme appelant.",
     "essential": true,
     "validation": "self"
   },
@@ -2199,7 +2203,7 @@
       "$this est transmis et le résultat renvoyé."
     ],
     "alternatives": [],
-    "context": "Fragment de Soiree ; objSoireeDAO est une propriété déjà initialisée.",
+    "context": "Fragment à placer dans Soiree. Sa propriété privée $objSoireeDAO est déjà initialisée avec un DAO. Ce DAO possède la méthode publique d’instance creer($soiree), qui reçoit la soirée à enregistrer et renvoie un résultat.",
     "essential": false,
     "validation": "self"
   },
@@ -2230,7 +2234,7 @@
       "findAll est stocké dans $personnes."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "$dao est un objet DAO déjà initialisé. Sa méthode publique findById($id) renvoie une personne ; findAll() renvoie la collection de toutes les personnes.",
     "essential": true,
     "validation": "self"
   },
@@ -2244,7 +2248,7 @@
     "theme": "Create",
     "difficulty": "intermediaire",
     "type": "code",
-    "prompt": "Dans SoireeDAO, écris creer($soiree) qui récupère date, nature et places dans $date, $nature et $places avec les getters du cours. Pas de SQL demandé.",
+    "prompt": "Dans SoireeDAO, écris creer($soiree) qui extrait la date dans $date, la nature dans $nature et le nombre de places dans $places. Écris uniquement cette préparation, sans SQL.",
     "answer": "public function creer($soiree) {\n    $date = $soiree->getLaDateSoiree();\n    $nature = $soiree->getLaNature();\n    $places = $soiree->getLeNbPlaces();\n}",
     "explanation": "Ligne 1 : reçoit l’objet métier. Lignes 2–4 : extraient les informations à enregistrer. Ligne 5 : ferme le fragment de méthode.",
     "lineExplanation": [
@@ -2263,7 +2267,7 @@
       "Les valeurs sont stockées dans les variables demandées."
     ],
     "alternatives": [],
-    "context": "Méthode interne de SoireeDAO ; exercice limité à la préparation des données.",
+    "context": "$soiree propose les getters publics getLaDateSoiree(), getLaNature() et getLeNbPlaces(). Écris une méthode publique d’instance creer($soiree) à placer dans SoireeDAO.",
     "essential": false,
     "validation": "self"
   },
@@ -2323,7 +2327,7 @@
       "Le retour est stocké dans $succes."
     ],
     "alternatives": [],
-    "context": "Le nom et la signature sont fournis par cet exercice ; ils illustrent la variante Update du cours.",
+    "context": "$dao est un objet DAO déjà initialisé. Sa méthode publique modifier($id, $nom) modifie la personne indiquée et renvoie un booléen de réussite.",
     "essential": true,
     "validation": "self"
   },
@@ -2384,7 +2388,7 @@
       "L’affectation est syntaxiquement valide."
     ],
     "alternatives": [],
-    "context": "Cette instruction se place dans le constructeur du DAO.",
+    "context": "Dans le constructeur de SoireeDAO, la propriété private $_db doit conserver PDO. GestionConnexion expose public static function getConnexion(), qui renvoie cette connexion.",
     "essential": false,
     "validation": "self"
   }

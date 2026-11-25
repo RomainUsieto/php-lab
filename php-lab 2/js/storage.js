@@ -1,3 +1,4 @@
+import {EXAM_CHAPTERS, hasExamComposition} from './exam.js';
 export const KEY='php-lab-v1';
 export function freshState() { return {version:1,progress:{},favorites:[],history:[],current:null,prefs:{theme:'light',duration:45,qcmWeight:1,codeWeight:5}}; }
 const plain=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
@@ -18,7 +19,12 @@ export function validateState(data, byId) {
     const s={id:raw.id.slice(0,100),mode:['exam','custom','chapter','code','errors','express'].includes(raw.mode)?raw.mode:'custom',title:typeof raw.title==='string'?raw.title.slice(0,100):'Session',items:[],answers:{},grades:{},recorded:{},marked:[],revealed:[],hints:[],index:Math.min(ids.length-1,Math.max(0,Math.floor(Number(raw.index)||0))),startedAt:raw.startedAt,duration:Math.max(0,Math.min(10800,Number(raw.duration)||0)),immediate:!!raw.immediate,weights:{qcm:Math.min(20,Math.max(.25,Number(raw.weights?.qcm)||1)),code:Math.min(20,Math.max(.25,Number(raw.weights?.code)||5))},status:raw.status,submittedAt:finite(raw.submittedAt)?raw.submittedAt:null};
     for(const item of raw.items){const q=byId.get(item.id), allowed=q.options?.map(o=>o.id)||[]; const order=Array.isArray(item.order)?item.order:[];s.items.push({id:q.id,order:order.length===allowed.length&&new Set(order).size===allowed.length&&order.every(x=>allowed.includes(x))?order:allowed});const a=raw.answers[q.id];if(q.type==='code') {if(typeof a==='string')s.answers[q.id]=a.slice(0,30000);if([0,.5,1].includes(raw.grades[q.id]))s.grades[q.id]=raw.grades[q.id];}else if(Array.isArray(a)&&new Set(a).size===a.length&&a.every(x=>allowed.includes(x))&&(q.type==='multiple'||a.length<=1))s.answers[q.id]=a;if(raw.recorded?.[q.id]===true)s.recorded[q.id]=true;}
     for(const key of ['marked','revealed','hints'])s[key]=Array.isArray(raw[key])?[...new Set(raw[key].filter(id=>ids.includes(id)))]:[];
-    if(s.mode==='exam'&&(s.items.length!==24||s.immediate||[1,2,3,4].some(c=>s.items.filter(i=>byId.get(i.id).chapter===c&&byId.get(i.id).type!=='code').length!==5||s.items.filter(i=>byId.get(i.id).chapter===c&&byId.get(i.id).type==='code').length!==1)))throw new Error('Composition d’examen invalide.');
+    if(s.mode==='exam') {
+      const scope=raw.examChapters ?? (hasExamComposition(s.items,byId,EXAM_CHAPTERS)?[...EXAM_CHAPTERS]:[1,2,3,4]);
+      if(s.immediate||!hasExamComposition(s.items,byId,scope))throw new Error('Composition d’examen invalide.');
+      s.examChapters=[...scope];
+      if(scope.length===4&&s.status==='active')s.title='Ancien examen · 4 chapitres';
+    }
     if(s.status==='submitted'&&!s.submittedAt)throw new Error('Date de remise manquante.');
     if(s.status==='active'&&s.mode==='exam'){s.revealed=[];s.grades={};s.recorded={};}
     return s;

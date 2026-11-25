@@ -86,7 +86,7 @@
     "theme": "Conception",
     "difficulty": "intermediaire",
     "type": "multiple",
-    "prompt": "Quels problèmes relèvent de la conception décrite ?",
+    "prompt": "Quelles questions portent sur la conception et l’organisation d’une application ?",
     "options": [
       {
         "id": "0",
@@ -126,7 +126,7 @@
     "theme": "Modèle",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Où se trouvent les requêtes SQL dans l’architecture du cours ?",
+    "prompt": "Dans une architecture MVC séparant données, affichage et coordination, où placer les requêtes SQL ?",
     "options": [
       {
         "id": "0",
@@ -428,7 +428,7 @@
     "theme": "Contrôleur",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Pourquoi inclure la vue après obtenirLesEtudiants($pdo) ?",
+    "prompt": "Le contrôleur doit afficher une liste d’étudiants. Pourquoi préparer $etudiants avant l’inclusion de la vue ?",
     "options": [
       {
         "id": "0",
@@ -455,8 +455,9 @@
       "0"
     ],
     "explanation": "La préparation des données précède l’appel de la vue.",
-    "code": null,
-    "essential": false
+    "code": "$etudiants = obtenirLesEtudiants($pdo);\ninclude(\"vues/liste_etudiants.php\");",
+    "essential": false,
+    "context": "obtenirLesEtudiants($pdo) est une fonction du modèle qui renvoie la collection ; la vue parcourt $etudiants pour produire le HTML."
   },
   {
     "id": "c4-q013",
@@ -467,7 +468,7 @@
     "theme": "Cycle MVC",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Que reçoit finalement l’utilisateur dans le schéma ?",
+    "prompt": "Dans le cycle d’une page PHP utilisant MVC, quel contenu le serveur envoie-t-il finalement au navigateur ?",
     "options": [
       {
         "id": "0",
@@ -506,7 +507,7 @@
     "theme": "Sous-vues",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Qu’est-ce qu’une vue externe dans le cours ?",
+    "prompt": "Dans une interface composée d’un en-tête, d’un menu, d’un contenu central et d’un pied de page, que désigne la vue externe complète ?",
     "options": [
       {
         "id": "0",
@@ -663,7 +664,7 @@
     "theme": "Organisation",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Où le cours regroupe-t-il les vues ?",
+    "prompt": "On sépare les fichiers entre controleurs/, modeles/ et vues/. Dans quel dossier ranger les fichiers PHP/HTML responsables de l’affichage ?",
     "options": [
       {
         "id": "0",
@@ -780,7 +781,7 @@
     "theme": "Point d’entrée",
     "difficulty": "intermediaire",
     "type": "multiple",
-    "prompt": "Quelles tâches sont attribuées au contrôleur principal dans ce cours ?",
+    "prompt": "index.php est le point d’entrée d’une application MVC et délègue le traitement à des sous-contrôleurs. Quelles tâches lui correspondent ?",
     "options": [
       {
         "id": "0",
@@ -820,7 +821,7 @@
     "theme": "Routage",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Que désigne le paramètre controleur dans l’URL du cours ?",
+    "prompt": "Une application utilise index.php?controleur=films&action=liste. Par convention, controleur choisit un groupe de traitements et action sa fonctionnalité. Que sélectionne controleur ?",
     "options": [
       {
         "id": "0",
@@ -899,7 +900,7 @@
     "theme": "Sous-contrôleurs",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quel regroupement correspond aux exemples du cours ?",
+    "prompt": "Une application sépare les traitements des étudiants, de l’authentification et des formations. Quel regroupement de sous-contrôleurs respecte ces domaines ?",
     "options": [
       {
         "id": "0",
@@ -938,7 +939,7 @@
     "theme": "Paramètres",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Quelle expression récupère controleur via la superglobale employée sur la diapositive 26 ?",
+    "prompt": "Quelle expression PHP lit le paramètre controleur dans la superglobale $_REQUEST ?",
     "options": [
       {
         "id": "0",
@@ -1016,7 +1017,7 @@
     "theme": "Actions",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Quel traitement correspond à voirCategories ?",
+    "prompt": "Quel enchaînement est réalisé lorsque $action vaut \"voirCategories\" ?",
     "options": [
       {
         "id": "0",
@@ -1043,8 +1044,9 @@
       "0"
     ],
     "explanation": "Chaque case prépare les données utiles à sa vue.",
-    "code": null,
-    "essential": false
+    "code": "switch ($action) {\n    case \"voirCategories\":\n        $lesCategories = $laConnexion->getLesCategories();\n        include(\"vues/v_categories.php\");\n        break;\n}",
+    "essential": false,
+    "context": "$laConnexion est ici un objet du modèle ; getLesCategories() renvoie les données à afficher."
   },
   {
     "id": "c4-q028",
@@ -1055,7 +1057,7 @@
     "theme": "Actions",
     "difficulty": "difficile",
     "type": "multiple",
-    "prompt": "Quelles données sont préparées avant v_modif_produit.php ?",
+    "prompt": "D’après cet extrait du contrôleur, quelles données sont préparées pour la vue de modification ?",
     "options": [
       {
         "id": "0",
@@ -1083,8 +1085,9 @@
       "1"
     ],
     "explanation": "Le formulaire de modification a besoin du produit et des catégories.",
-    "code": null,
-    "essential": false
+    "code": "$idProduit = $_REQUEST[\"produit\"];\n$leProduit = $laConnexion->getLeProduit($idProduit);\n$lesCategories = $laConnexion->getLesCategories();\ninclude(\"vues/v_modif_produit.php\");",
+    "essential": false,
+    "context": "Le paramètre produit existe. Les méthodes du modèle renvoient respectivement le produit identifié et la collection des catégories."
   },
   {
     "id": "c4-q029",
@@ -1134,7 +1137,7 @@
     "theme": "Cycle MVC",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Dans le schéma étudiants, qui appelle le modèle avant la vue ?",
+    "prompt": "index.php appelle controleurs/etudiant.php. Celui-ci demande les étudiants au modèle puis inclut la vue de liste. Quel composant appelle ici le modèle avant la vue ?",
     "options": [
       {
         "id": "0",
@@ -1202,7 +1205,7 @@
     "theme": "Démarche",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelle est la première étape de la démarche ?",
+    "prompt": "Avant de dessiner les écrans et d’organiser les fichiers d’une application, quelle première étape permet d’identifier les fonctionnalités attendues ?",
     "options": [
       {
         "id": "0",
@@ -1242,7 +1245,7 @@
     "theme": "Démarche",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Que fait-on après avoir défini les cas d’utilisation ?",
+    "prompt": "Les cas d’utilisation sont définis. Quelle étape permet maintenant de déterminer les pages que l’utilisateur devra voir ?",
     "options": [
       {
         "id": "0",
@@ -1283,7 +1286,7 @@
     "theme": "Démarche",
     "difficulty": "difficile",
     "type": "unique",
-    "prompt": "Quel ordre respecte les étapes centrales du cours ?",
+    "prompt": "Les besoins et les écrans sont définis. Quel ordre est cohérent pour organiser les fichiers, créer le point d’entrée puis implémenter les traitements ?",
     "options": [
       {
         "id": "0",
@@ -1467,7 +1470,8 @@
     ],
     "explanation": "Le cours l’emploie avant include ; existence et autorisation ne sont pas synonymes.",
     "code": null,
-    "essential": false
+    "essential": false,
+    "context": "$fichier contient un chemin choisi dans l’application. Le test d’existence ne remplace pas le contrôle des chemins autorisés."
   },
   {
     "id": "c4-q039",
@@ -1478,7 +1482,7 @@
     "theme": "Fichiers",
     "difficulty": "difficile",
     "type": "unique",
-    "prompt": "Que fait include($fichier) ici ?",
+    "prompt": "Que réalise include($fichier) lorsqu’il charge un sous-contrôleur PHP existant ?",
     "options": [
       {
         "id": "0",
@@ -1506,7 +1510,8 @@
     ],
     "explanation": "Le mot « redirection » du cours désigne ici une orientation interne, pas un en-tête HTTP.",
     "code": null,
-    "essential": false
+    "essential": false,
+    "context": "$fichier contient le chemin autorisé de ce sous-contrôleur."
   },
   {
     "id": "c4-q040",
@@ -1517,7 +1522,7 @@
     "theme": "Navigation",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelle URL respecte le point d’entrée du cours ?",
+    "prompt": "index.php est le point d’entrée qui charge la connexion puis choisit un sous-contrôleur. Quelle URL respecte ce passage par le point d’entrée ?",
     "options": [
       {
         "id": "0",
@@ -1595,7 +1600,7 @@
     "theme": "Films",
     "difficulty": "intermediaire",
     "type": "multiple",
-    "prompt": "Quelles fonctionnalités sont demandées pour le catalogue de films ?",
+    "prompt": "Un catalogue est limité à la consultation des fiches de films, au filtrage par catégorie et à l’ajout de films. Quelles opérations respectent ce périmètre ?",
     "options": [
       {
         "id": "0",
@@ -1635,7 +1640,7 @@
     "theme": "Modèle films",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelle méthode du modèle sélectionne un seul film ?",
+    "prompt": "Un modèle propose les quatre méthodes ci-dessous. D’après leurs noms et paramètres, laquelle permet de lire un seul film identifié ?",
     "options": [
       {
         "id": "0",
@@ -1663,7 +1668,8 @@
     ],
     "explanation": "Les noms expriment les opérations de données.",
     "code": null,
-    "essential": true
+    "essential": true,
+    "context": "Contrats proposés : obtenirLesFilms() lit tous les films ; obtenirUnFilm($id) lit un film ; obtenirFilmsParCategorie($idCategorie) filtre la collection ; ajouterFilm($donnees) insère un film."
   },
   {
     "id": "c4-q044",
@@ -1674,7 +1680,7 @@
     "theme": "Modèle films",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Quelle méthode choisir pour le filtre de catégorie ?",
+    "prompt": "Quel appel du modèle sélectionne les films appartenant à la catégorie $idCategorie ?",
     "options": [
       {
         "id": "0",
@@ -1702,7 +1708,8 @@
     ],
     "explanation": "Identifiant de film et identifiant de catégorie ne sont pas interchangeables.",
     "code": null,
-    "essential": false
+    "essential": false,
+    "context": "obtenirUnFilm($id) recherche un film par son identifiant ; obtenirLesFilms() lit tout ; obtenirFilmsParCategorie($idCategorie) applique un filtre de catégorie ; ajouterFilm($donnees) ajoute un film."
   },
   {
     "id": "c4-q045",
@@ -1713,7 +1720,7 @@
     "theme": "Vues films",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Dans quelle sous-vue placer le titre commun « Catalogue de films » ?",
+    "prompt": "Une page est composée de header.php, menu.php, d’un contenu spécifique et de footer.php. Dans quelle sous-vue placer le titre commun « Catalogue de films » ?",
     "options": [
       {
         "id": "0",
@@ -1752,7 +1759,7 @@
     "theme": "Vues films",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "Quelles informations sont demandées dans liste_films.php ?",
+    "prompt": "La vue parcourt ces données. Quel ensemble d’informations peut-elle afficher pour chaque ligne de la liste ?",
     "options": [
       {
         "id": "0",
@@ -1762,24 +1769,24 @@
       {
         "id": "1",
         "text": "Le titre et uniquement la description longue",
-        "explanation": "L’énoncé de liste demande aussi réalisateur et année."
+        "explanation": "Aucune clé description n’est fournie dans les données affichées."
       },
       {
         "id": "2",
         "text": "Les informations complètes du film sans liste",
-        "explanation": "Cela décrit plutôt details_film.php."
+        "explanation": "Ces données constituent une liste synthétique, pas toutes les informations d’une fiche complète."
       },
       {
         "id": "3",
         "text": "Uniquement les catégories sans les films",
-        "explanation": "La vue est une liste de films avec leurs informations."
+        "explanation": "Il n’y a aucune clé catégorie dans cet extrait ; des informations de film sont bien présentes."
       }
     ],
     "answer": [
       "0"
     ],
-    "explanation": "La vue de liste fournit aussi un lien vers les détails.",
-    "code": null,
+    "explanation": "Chaque entrée contient exactement les clés titre, realisateur et annee : la vue peut donc afficher ces trois informations.",
+    "code": "$films = [\n    [\"titre\" => \"Les Lumières\", \"realisateur\" => \"A. Martin\", \"annee\" => 2024]\n];",
     "essential": true
   },
   {
@@ -1791,7 +1798,7 @@
     "theme": "Formulaire films",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "D’où proviennent les choix de la liste déroulante Catégorie ?",
+    "prompt": "Un formulaire d’ajout doit proposer les catégories existantes en base. Comment fournir les choix à la liste déroulante dans une architecture MVC ?",
     "options": [
       {
         "id": "0",
@@ -1830,7 +1837,7 @@
     "theme": "Formulaire films",
     "difficulty": "facile",
     "type": "unique",
-    "prompt": "À qui le formulaire doit-il transmettre les données pour traitement ?",
+    "prompt": "Dans une application MVC à point d’entrée index.php, à quel composant un formulaire doit-il transmettre sa soumission pour coordonner son traitement ?",
     "options": [
       {
         "id": "0",
@@ -1869,7 +1876,7 @@
     "theme": "Actions films",
     "difficulty": "intermediaire",
     "type": "unique",
-    "prompt": "Quelle différence existe entre ajouter et enregistrer ?",
+    "prompt": "On distingue une action ajouter pour ouvrir un formulaire et une action enregistrer pour traiter sa soumission. Quel traitement correspond à chaque action ?",
     "options": [
       {
         "id": "0",
@@ -1909,7 +1916,7 @@
     "theme": "Tests",
     "difficulty": "intermediaire",
     "type": "multiple",
-    "prompt": "Quels scénarios de vérification sont demandés pour le catalogue ?",
+    "prompt": "Un catalogue permet liste, détail, filtrage par catégorie et ajout de films. Quels parcours de test vérifient réellement ces fonctionnalités ?",
     "options": [
       {
         "id": "0",
@@ -1998,7 +2005,7 @@
       "Le suffixe est .php."
     ],
     "alternatives": [],
-    "context": "Exercice de concaténation du cours ; le choix du nom de contrôleur doit être contrôlé par l’application réelle.",
+    "context": "$controleur est une chaîne déjà choisie parmi les noms de sous-contrôleurs autorisés, par exemple \"etudiant\". Écris une concaténation valable pour chacun de ces noms.",
     "essential": true,
     "validation": "self"
   },
@@ -2061,7 +2068,7 @@
       "La vue demandée est incluse ensuite."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "La fonction du modèle obtenirLesEtudiants($pdo) existe et renvoie la liste. $pdo est une connexion déjà disponible ; la vue vues/liste_etudiants.php utilise la variable $etudiants.",
     "essential": true,
     "validation": "self"
   },
@@ -2125,7 +2132,7 @@
       "L’échappement précède l’affichage."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "$etudiants est une collection déjà fournie à la vue, par exemple [[\"nom\" => \"Anna\"], [\"nom\" => \"Alex\"]]. Chaque entrée possède la clé nom.",
     "essential": false,
     "validation": "self"
   },
@@ -2224,7 +2231,7 @@
       "La vue est chargée puis break quitte le cas."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "$action est une chaîne déjà reçue. $laConnexion est un objet du modèle avec la méthode publique getLesCategories() renvoyant la collection ; vues/v_categories.php utilise $lesCategories.",
     "essential": false,
     "validation": "self"
   },
@@ -2257,7 +2264,7 @@
       "La vue de modification est appelée ensuite."
     ],
     "alternatives": [],
-    "context": "Le paramètre produit est présent ; $laConnexion expose les méthodes du cours.",
+    "context": "$_REQUEST[\"produit\"] est présent. L’objet du modèle $laConnexion possède getLeProduit($id) et getLesCategories(). La vue vues/v_modif_produit.php utilise $leProduit et $lesCategories.",
     "essential": false,
     "validation": "self"
   },
@@ -2289,7 +2296,7 @@
       "La vue liste_films est incluse."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "$modele est déjà initialisé. Sa méthode publique obtenirLesFilms() renvoie la collection ; la vue vues/liste_films.php utilise $films.",
     "essential": true,
     "validation": "self"
   },
@@ -2322,7 +2329,7 @@
       "La vue de détail est incluse."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "$modele est déjà initialisé et possède la méthode publique obtenirUnFilm($id). $id est un identifiant valide ; vues/details_film.php utilise $film.",
     "essential": true,
     "validation": "self"
   },
@@ -2354,7 +2361,7 @@
       "La liste filtrée est fournie à la vue."
     ],
     "alternatives": [],
-    "context": "",
+    "context": "$modele est déjà initialisé et propose obtenirFilmsParCategorie($idCategorie). $idCategorie est valide ; vues/liste_films.php utilise la variable $films.",
     "essential": false,
     "validation": "self"
   },
@@ -2387,7 +2394,7 @@
       "La vue affiche cette nouvelle collection."
     ],
     "alternatives": [],
-    "context": "Variante courte du parcours d’enregistrement ; le support demande aussi un retour vers la liste.",
+    "context": "$modele existe et propose ajouterFilm($donnees) puis obtenirLesFilms(). La vue à charger est vues/liste_films.php et elle parcourt $films. Les données d’entrée sont déjà validées.",
     "essential": false,
     "validation": "self"
   },

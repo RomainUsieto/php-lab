@@ -2,6 +2,14 @@
 
 Application de révision statique, en français, à partir des quatre PowerPoint fournis : **164 diapositives analysées, 200 QCM et 60 exercices courts**. Chaque chapitre contient 50 QCM et 15 exercices. Aucune dépendance à installer pour utiliser le site ; aucun compte, service payant, CDN ou serveur PHP.
 
+## Mise à jour du site déjà publié
+
+La révision 2 corrige les renvois à des exemples absents et limite les nouveaux examens blancs aux chapitres 2 et 3. La banque des quatre chapitres reste disponible dans les autres modes. Les identifiants et réponses attendues sont conservés ; les anciens résultats et examens sauvegardés restent lisibles. Une copie commencée avec l’ancienne formule est identifiée comme « Ancien examen · 4 chapitres ».
+
+Pour remplacer un seul fichier sur GitHub, utiliser l’`index.html` autonome fourni dans `php-lab-mise-a-jour`. Dans le dépôt actuel, ouvrir le dossier **php-lab 2**, puis **Add file → Upload files**, envoyer cet `index.html` et valider **Commit changes**. Il contient tout le code et toutes les questions : les anciens dossiers ne sont plus utilisés par cette page. L’adresse publique reste la même et la clé LocalStorage est conservée.
+
+Pour travailler sur la version modulaire, remplacer les fichiers du projet complet, puis régénérer `PHP-Lab-autonome.html` après toute modification. Le fichier de déploiement autonome est généré à partir des mêmes sources, sans banque différente.
+
 ## Ouvrir sans installation
 
 Ouvrir **`PHP-Lab-autonome.html`** dans un navigateur : ce fichier contient le style, le JavaScript et les 260 questions. Il ne charge aucun JSON externe et ne nécessite aucun serveur ni connexion Internet. Les statistiques restent propres à ce fichier et au navigateur ; utiliser l’export/import pour les transférer.
@@ -24,7 +32,7 @@ Pour `index.html`, le serveur sert uniquement les fichiers statiques. Il n’ex�
 
 ## Les six modes
 
-- **Examen blanc** : exactement 20 QCM et 4 exercices, soit cinq QCM et un code par chapitre. Ordre des questions et propositions mélangé, sans répétition dans la copie. Durée et poids QCM/code configurables. Réponses modifiables, marquage, navigation, confirmation de remise, correction complète.
+- **Examen blanc** : exactement 20 QCM et 4 exercices, sur les chapitres 2 et 3 uniquement : dix QCM et deux exercices de code par chapitre. Ordre des questions et propositions mélangé, sans répétition dans la copie. Durée et poids QCM/code configurables. Réponses modifiables, marquage, navigation, confirmation de remise, correction complète.
 - **Par chapitre** : résumé, fiche détaillée, 10 ou 50 QCM, 15 exercices, couverture, taux de réussite et thèmes à retravailler.
 - **QCM personnalisé** : chapitres, nombre, difficulté, choix unique/multiples/vrai-faux, correction immédiate ou différée, minuterie facultative. Si le filtre fournit moins de questions, la taille réelle est annoncée et limitée au disponible.
 - **Code** : éditeur avec coloration, numéros de ligne, Tab et indentation à la ligne suivante, indice, référence, variantes, explications et grille de vérification.
@@ -82,13 +90,14 @@ data/chapitre-1.json … chapitre-4.json
 data/chapters.json  Fiches et résumés
 data/build_bank.py  Source éditoriale reproductible
 data/editorial.py   Relecture des distracteurs
+data/self_contained.py  Énoncés autonomes et contrats explicites
 tests/core.test.js
 docs/ANALYSE.md
 docs/VALIDATION.md
 lancer.command
 ```
 
-Chaque question a `id`, `chapter`, `slides`, `theme`, `difficulty`, `type`, `prompt`, `answer`, `explanation` et `essential`. Les QCM contiennent des options à identifiants stables et une explication par proposition ; `answer` contient leurs identifiants, jamais leur position affichée. Le code contient `context`, `hint`, `lineExplanation`, `commonErrors`, `rubric`, `alternatives` et `validation: "self"`.
+Chaque question a `id`, `chapter`, `slides`, `theme`, `difficulty`, `type`, `prompt`, `answer`, `explanation` et `essential`. Les énoncés sont autonomes : données, contrats et code nécessaires sont fournis sur la question. Les QCM contiennent des options à identifiants stables et une explication par proposition ; `answer` contient leurs identifiants, jamais leur position affichée. Le code contient `context`, `hint`, `lineExplanation`, `commonErrors`, `rubric`, `alternatives` et `validation: "self"`.
 
 Pour modifier la banque, éditer les sources Python puis exécuter `python3 data/build_bank.py`, ou modifier directement les JSON sans les régénérer ensuite. Pour augmenter les effectifs à partir des sources Python, adapter les assertions 50/15 du générateur et les contrôles de taille/import. Le fichier `data/chapters.json` contient les cinq fiches (la globale est assemblée dans l’interface).
 

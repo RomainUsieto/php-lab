@@ -1,4 +1,8 @@
-# Journal de validation — 25 novembre 2026
+# Journal de validation
+
+La révision 2 comporte **21 tests réussis**, des questions autonomes et des examens limités aux chapitres 2 et 3. Voir [le rapport de révision 2](REVISION-2.md) pour la portée actuelle et la limite du contrôle visuel.
+
+## Validation initiale — avant la révision 2
 
 ## Contrôles automatisés
 
